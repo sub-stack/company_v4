@@ -3,7 +3,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://github.com/sub-stack/company_v4",
+  site: "https://sub-stack.github.io",
   base: "/company_v4",
   vite: {
     plugins: [tailwindcss()],

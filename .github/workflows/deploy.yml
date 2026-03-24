@@ -16,6 +16,18 @@ jobs:
       - name: Checkout your repository
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build with Astro
+        run: npm run build
+
       - name: Install, build, and upload with Astro
         uses: withastro/action@v2
         # This action automatically detects npm/pnpm/yarn and runs the build
