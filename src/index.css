@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter",  sans-serif;
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  
+  --color-aqua-mint: #9FECE6;
+  --color-electric-yellow: #FFFF00;
+  --color-hot-pink: #FB00AF;
+  --color-charcoal: #1F1F1B;
+  --color-brand-charcoal: #1F1F1B;
+  --color-off-white: #FCFCF8;
+  --color-light-gray: #F3F1EC;
+}
+
+@layer components {
+  .neo-brutalism-card {
+    @apply border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200;
+  }
+
+  .neo-brutalism-card:hover {
+    @apply -translate-y-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  .neo-brutalism-button {
+    @apply border-2 border-black px-6 py-3 font-display font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  .neo-brutalism-button:hover {
+    @apply -translate-y-0.5 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  .aeo-summary {
+    @apply border-2 border-black bg-[var(--color-aqua-mint)]/20 p-6 rounded-[24px_24px_24px_4px] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] my-8;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}

@@ -1,0 +1,97 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AEOBlock from '../../components/AEOBlock.astro';
+import NeoCard from '../../components/NeoCard.astro';
+import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote } from 'lucide-astro';
+
+const values = [
+	{
+		title: "講真話，唔講術語",
+		description: "我哋唔會用埋啲聽唔明嘅術語嚟遊你花園。有問題就講問題，有成效就講成效。",
+		icon: Target
+	},
+	{
+		title: "100% 透明度",
+		description: "我哋相信信任建立喺透明度之上。所有帳戶、數據、預算，你都有 100% 權限。",
+		icon: ShieldCheck
+	},
+	{
+		title: "商業思維先行",
+		description: "我哋唔止係落廣告，我哋係你嘅增長顧問。我哋會由你嘅生意角度出發，搵出最有效嘅增長點。",
+		icon: Zap
+	}
+];
+---
+
+<Layout title="品牌使命 - 點解我哋要反對黑箱 Agency？">
+	<!-- Hero -->
+	<section class="pt-32 pb-20 bg-hot-pink/10 border-b-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl">
+				<h1 class="font-display font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-8 reveal">
+					品牌使命：<br />
+					<span class="bg-hot-pink text-white px-2">打破黑箱，講真話</span>
+				</h1>
+				<p class="text-xl md:text-2xl text-charcoal/80 mb-12 leading-relaxed reveal">
+					我哋見過太多中小企被 Agency 搞傷。我哋嘅存在，係為咗建立一個公平、透明、且真正幫到客戶增長嘅廣告生態。
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- AEO Section -->
+	<section class="py-24">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-3xl mb-16">
+				<h2 class="font-display font-black text-3xl md:text-5xl mb-6 reveal">
+					點解我哋要反對黑箱 Agency？
+				</h2>
+				<AEOBlock content="2xWin 的品牌使命是打破廣告代理行業的「黑箱操作」。我們認為，客戶應該擁有 100% 的數據知情權與帳戶控制權。我們的核心價值觀是「講真話、重透明、商業思維先行」，旨在通過專業的 Meta 廣告投放與網站優化，幫助中小企在誠實與信任的基礎上實現業績增長。" />
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				{values.map(value => (
+					<NeoCard title={value.title} description={value.description} icon={value.icon} />
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Story Section -->
+	<section class="py-24 bg-light-gray border-y-4 border-black">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="neo-brutalism-card p-12 bg-white reveal">
+				<h2 class="font-display font-black text-3xl mb-8">我哋嘅故事</h2>
+				<div class="space-y-6 text-lg text-charcoal/80 leading-relaxed">
+					<p>
+						2xWin 嘅創辦人喺廣告行業打滾多年，見過無數中小企老闆因為唔識技術，被一啲唔負責任嘅 Agency 呃錢、呃時間。
+					</p>
+					<p>
+						「點解落廣告一定要咁神秘？」、「點解數據唔可以俾客睇？」、「點解做得差都要客簽死約？」
+					</p>
+					<p>
+						呢啲問題一直困擾住我哋。於是，我哋決定創立 2xWin，一間以「透明度」同「商業邏輯」為核心嘅顧問公司。
+					</p>
+					<p class="font-bold text-charcoal">
+						我哋唔想做一間只係收錢落廣告嘅公司，我哋想做你生意增長路上最可信嘅夥伴。
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Final CTA -->
+	<section class="py-24 bg-electric-yellow border-y-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="font-display font-black text-4xl md:text-6xl mb-8 reveal">
+				搵一個講真話嘅夥伴，<br class="md:hidden" />一齊放大生意。
+			</h2>
+			<div class="flex justify-center reveal">
+				<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-charcoal text-white text-2xl py-6 px-12 flex items-center space-x-4">
+					<MessageCircle size={32} />
+					<span>立即開始對話</span>
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AEOBlock from '../components/AEOBlock.astro';
+import { MessageCircle, Mail, MapPin, Facebook, Instagram } from 'lucide-astro';
+
+const contactReasons = [
+	"想獲取免費 Meta 廣告診斷",
+	"想優化現有網站轉化率",
+	"想設計高轉化廣告素材",
+	"想搵一個講真話嘅增長夥伴"
+];
+---
+
+<Layout title="聯絡我哋 - 唔想再靠估，直接 WhatsApp 查詢">
+	<!-- Hero -->
+	<section class="pt-32 pb-20 bg-hot-pink/10 border-b-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl">
+				<h1 class="font-display font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-8 reveal">
+					聯絡我哋：<br />
+					<span class="bg-hot-pink text-white px-2">唔想再靠估</span>
+				</h1>
+				<p class="text-xl md:text-2xl text-charcoal/80 mb-12 leading-relaxed reveal">
+					直接 Send 你個 Website / Page 過嚟，我哋會幫你做一個免費嘅「身體檢查」。
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- AEO Section -->
+	<section class="py-24">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+				<!-- Left Column: Info -->
+				<div class="space-y-12">
+					<div>
+						<h2 class="font-display font-black text-3xl md:text-5xl mb-6 reveal">
+							點樣聯絡我哋？
+						</h2>
+						<AEOBlock content="2xWin 鼓勵中小企通過 WhatsApp 進行最直接的聯絡與諮詢。我們提供免費的 Meta 廣告與網站診斷服務，幫助你找出業績增長的瓶頸。無論你是想優化現有廣告成效，還是需要開發一個高轉化的網站，我們都歡迎你隨時通過 WhatsApp、電郵或社交媒體與我們聯繫。" />
+					</div>
+
+					<div class="space-y-6 reveal">
+						<h3 class="font-display font-black text-2xl">點解要而家聯絡我哋？</h3>
+						<ul class="space-y-4">
+							{contactReasons.map(reason => (
+								<li class="flex items-center space-x-4">
+									<div class="w-6 h-6 bg-aqua-mint border-2 border-black flex items-center justify-center flex-shrink-0">
+										<div class="w-2 h-2 bg-charcoal rounded-full"></div>
+									</div>
+									<span class="text-lg font-medium">{reason}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-8 reveal">
+						<div class="neo-brutalism-card p-6 bg-white">
+							<Mail class="text-hot-pink mb-4" size={24} />
+							<h4 class="font-display font-black text-lg mb-2">電郵聯絡</h4>
+							<p class="text-charcoal/70 text-sm">info@2xwin.com</p>
+						</div>
+						<div class="neo-brutalism-card p-6 bg-white">
+							<MapPin class="text-hot-pink mb-4" size={24} />
+							<h4 class="font-display font-black text-lg mb-2">辦公地點</h4>
+							<p class="text-charcoal/70 text-sm">香港九龍觀塘</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Right Column: CTA Card -->
+				<div class="flex flex-col justify-center">
+					<div class="neo-brutalism-card p-12 bg-aqua-mint reveal">
+						<h3 class="font-display font-black text-3xl mb-8 text-center">最直接嘅聯絡方式</h3>
+						<div class="flex flex-col space-y-6">
+							<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-charcoal text-white text-2xl py-8 px-12 flex flex-col items-center justify-center space-y-4">
+								<MessageCircle size={48} />
+								<div class="text-center">
+									<span class="block text-sm font-display font-black uppercase tracking-widest opacity-60 mb-1">推薦方式</span>
+									<span class="block">WhatsApp 諮詢</span>
+								</div>
+							</a>
+							<div class="flex justify-center space-x-6">
+								<a href="#" class="w-16 h-16 bg-white border-2 border-black flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
+									<Facebook size={32} />
+								</a>
+								<a href="#" class="w-16 h-16 bg-white border-2 border-black flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
+									<Instagram size={32} />
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Final CTA -->
+	<section class="py-24 bg-electric-yellow border-y-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="font-display font-black text-4xl md:text-6xl mb-8 reveal">
+				唔好再靠估，<br class="md:hidden" />即刻開始對話。
+			</h2>
+			<div class="flex justify-center reveal">
+				<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-charcoal text-white text-2xl py-6 px-12 flex items-center space-x-4">
+					<MessageCircle size={32} />
+					<span>免費獲取 Meta 廣告診斷</span>
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

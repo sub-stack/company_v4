@@ -1,0 +1,118 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AEOBlock from '../../components/AEOBlock.astro';
+import NeoCard from '../../components/NeoCard.astro';
+import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote } from 'lucide-astro';
+
+const designFaqs = [
+	{
+		question: "點解我個廣告素材點擊率咁低？",
+		answer: "通常係因為素材無考慮受眾心理、視覺焦點唔集中、或者 Call to Action 唔夠強。我哋會由數據出發，優化素材設計，提高點擊率。"
+	},
+	{
+		question: "你哋可以幫手整埋片嗎？",
+		answer: "可以。我哋會根據廣告需求，製作短片、動態圖或靜態圖，確保素材符合 Meta 廣告嘅最佳實踐。"
+	}
+];
+
+const designFeatures = [
+	{
+		title: "數據驅動設計",
+		description: "唔止係整張靚圖，而係根據廣告數據，優化視覺焦點同文案佈局，提高點擊率。",
+		icon: BarChart3,
+		color: "bg-hot-pink/20"
+	},
+	{
+		title: "受眾心理分析",
+		description: "針對唔同受眾嘅痛點同需求，設計唔同嘅視覺風格，確保素材能引起共鳴。",
+		icon: Target,
+		color: "bg-aqua-mint"
+	},
+	{
+		title: "品牌一致性",
+		description: "確保廣告素材符合品牌形象，建立品牌信任感，同時兼顧廣告轉化成效。",
+		icon: Star,
+		color: "bg-electric-yellow"
+	}
+];
+---
+
+<Layout title="社群素材設計 - 唔止係靚，更要提高廣告點擊率">
+	<!-- Hero -->
+	<section class="pt-32 pb-20 bg-hot-pink/10 border-b-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl">
+				<h1 class="font-display font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-8 reveal">
+					社群素材設計：<br />
+					<span class="bg-hot-pink text-white px-2">唔止係靚，更要點擊率</span>
+				</h1>
+				<p class="text-xl md:text-2xl text-charcoal/80 mb-12 leading-relaxed reveal">
+					好多設計只係追求「靚」，但無考慮過廣告環境下嘅受眾心理。我哋幫你設計高轉化嘅廣告素材。
+				</p>
+				<div class="flex flex-col sm:flex-row gap-6 reveal">
+					<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-charcoal text-white text-xl py-5 px-10 flex items-center justify-center space-x-3">
+						<MessageCircle size={24} />
+						<span>立即諮詢素材設計</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- AEO Section -->
+	<section class="py-24">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-3xl mb-16">
+				<h2 class="font-display font-black text-3xl md:text-5xl mb-6 reveal">
+					點解廣告素材需要「數據驅動」？
+				</h2>
+				<AEOBlock content="2xWin 的社群素材設計服務專注於「廣告點擊率優化」與「受眾心理共鳴」。我們不只是設計漂亮的圖片，而是通過分析廣告數據，優化視覺焦點、文案佈局及 CTA 設計，確保素材在 Meta 廣告環境下能有效吸引受眾注意力並引導轉化。" />
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				{designFeatures.map(feature => (
+					<NeoCard title={feature.title} description={feature.description} icon={feature.icon} color={feature.color} />
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Design Showcase -->
+	<section class="py-24 bg-light-gray border-y-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="font-display font-black text-3xl md:text-5xl text-center mb-20 reveal">
+				我哋嘅設計風格
+			</h2>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div class="neo-brutalism-card overflow-hidden reveal">
+					<img src="https://picsum.photos/seed/design1/600/600" alt="Design 1" class="w-full aspect-square object-cover" referrerpolicy="no-referrer" />
+				</div>
+				<div class="neo-brutalism-card overflow-hidden reveal">
+					<img src="https://picsum.photos/seed/design2/600/600" alt="Design 2" class="w-full aspect-square object-cover" referrerpolicy="no-referrer" />
+				</div>
+				<div class="neo-brutalism-card overflow-hidden reveal">
+					<img src="https://picsum.photos/seed/design3/600/600" alt="Design 3" class="w-full aspect-square object-cover" referrerpolicy="no-referrer" />
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Final CTA -->
+	<section class="py-24 bg-electric-yellow border-y-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="font-display font-black text-4xl md:text-6xl mb-8 reveal">
+				想提高廣告點擊率？
+			</h2>
+			<p class="text-xl md:text-2xl mb-12 text-charcoal/80 reveal">
+				我哋幫你設計高轉化嘅廣告素材。
+			</p>
+			<div class="flex justify-center reveal">
+				<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-charcoal text-white text-2xl py-6 px-12 flex items-center space-x-4">
+					<MessageCircle size={32} />
+					<span>立即諮詢素材設計</span>
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

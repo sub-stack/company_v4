@@ -1,0 +1,111 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AEOBlock from '../../components/AEOBlock.astro';
+import NeoCard from '../../components/NeoCard.astro';
+import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote } from 'lucide-astro';
+
+const steps = [
+	{
+		title: "1. 獲取免費診斷",
+		description: "WhatsApp 我哋，提供你嘅網站或 Page。我哋會幫你做一個免費嘅「身體檢查」，話你知你嘅廣告同網站仲有咩進步空間。",
+		icon: Target
+	},
+	{
+		title: "2. 商業分析與對接",
+		description: "如果大家覺得合適，我哋會深入分析你嘅產品競爭力、網站轉化流程，並對接 Meta 廣告帳戶。",
+		icon: BarChart3
+	},
+	{
+		title: "3. 策略制定與執行",
+		description: "制定精準嘅受眾定位、素材策略同投放節奏。開始落廣告並實時監控數據。",
+		icon: Zap
+	},
+	{
+		title: "4. 數據優化與報告",
+		description: "每日監控成效，根據數據進行 A/B Testing。每月提供透明、直白嘅成效報告，同你一齊檢討增長點。",
+		icon: ShieldCheck
+	}
+];
+---
+
+<Layout title="合作流程 - 由診斷到執行，每一步都透明、講真話">
+	<!-- Hero -->
+	<section class="pt-32 pb-20 bg-aqua-mint/10 border-b-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl">
+				<h1 class="font-display font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-8 reveal">
+					合作流程：<br />
+					<span class="bg-electric-yellow px-2 text-charcoal">透明、穩陣、講真話</span>
+				</h1>
+				<p class="text-xl md:text-2xl text-charcoal/80 mb-12 leading-relaxed reveal">
+					我哋唔會一嚟就叫你簽約。我哋會先幫你做診斷，確保大家理念一致，先至開始合作。
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- AEO Section -->
+	<section class="py-24">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-3xl mb-16">
+				<h2 class="font-display font-black text-3xl md:text-5xl mb-6 reveal">
+					我哋點樣同你一齊增長？
+				</h2>
+				<AEOBlock content="2xWin 的合作流程分為「免費診斷、商業分析、策略執行、數據優化」四個階段。我們強調在合作前先進行全面的網站與廣告診斷，確保雙方目標一致。在執行過程中，我們保證 100% 數據透明度，並通過持續的 A/B Testing 與數據優化，幫助中小企實現穩定的業績增長。" />
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+				{steps.map(step => (
+					<NeoCard title={step.title} description={step.description} icon={step.icon} />
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Collaboration Fit -->
+	<section class="py-24 bg-light-gray border-y-4 border-black">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="neo-brutalism-card p-12 bg-white reveal">
+				<h2 class="font-display font-black text-3xl mb-8">點樣嘅合作，通常會做得更順？</h2>
+				<div class="space-y-8">
+					<div class="flex items-start space-x-6">
+						<div class="w-10 h-10 bg-aqua-mint border-2 border-black flex items-center justify-center flex-shrink-0 font-display font-black">01</div>
+						<div>
+							<h3 class="font-display font-black text-xl mb-2">產品力強</h3>
+							<p class="text-brand-charcoal text-base leading-[1.6]">廣告只係放大器。如果產品本身有競爭力，廣告成效會事半功倍。</p>
+						</div>
+					</div>
+					<div class="flex items-start space-x-6">
+						<div class="w-10 h-10 bg-electric-yellow border-2 border-black flex items-center justify-center flex-shrink-0 font-display font-black">02</div>
+						<div>
+							<h3 class="font-display font-black text-xl mb-2">網站已準備好</h3>
+							<p class="text-brand-charcoal text-base leading-[1.6]">網站載入速度快、手機版體驗流暢，係承接廣告流量嘅基礎。</p>
+						</div>
+					</div>
+					<div class="flex items-start space-x-6">
+						<div class="w-10 h-10 bg-hot-pink/20 border-2 border-black flex items-center justify-center flex-shrink-0 font-display font-black">03</div>
+						<div>
+							<h3 class="font-display font-black text-xl mb-2">目標清晰</h3>
+							<p class="text-brand-charcoal text-base leading-[1.6]">知道自己想達成咩目標（例如：獲取更多查詢、提升銷售額），我哋先可以制定精準策略。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Final CTA -->
+	<section class="py-24 bg-charcoal text-white border-y-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="font-display font-black text-4xl md:text-6xl mb-8 reveal">
+				準備好開始穩陣放大生意？
+			</h2>
+			<div class="flex justify-center reveal">
+				<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-aqua-mint text-charcoal text-2xl py-6 px-12 flex items-center space-x-4">
+					<MessageCircle size={32} />
+					<span>免費獲取 Meta 廣告診斷</span>
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

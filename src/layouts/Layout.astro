@@ -1,0 +1,83 @@
+---
+import '../index.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "2xWin - 幫中小企擺脫黑箱 Agency，用透明 Meta 廣告穩陣放大生意" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-HK">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | 2xWin</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Organization",
+				"name": "2xWin",
+				"url": "https://2xwin.com",
+				"logo": "https://2xwin.com/logo.png",
+				"description": "幫中小企擺脫黑箱 Agency，用透明 Meta 廣告穩陣放大生意。",
+				"contactPoint": {
+					"@type": "ContactPoint",
+					"telephone": "+852-1234-5678",
+					"contactType": "customer service"
+				}
+			}
+		</script>
+	</head>
+	<body class="bg-[#FCFCF8] text-[#1F1F1B] font-sans selection:bg-hot-pink selection:text-white">
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+		<WhatsAppButton />
+		
+		<script>
+			// Reveal animation logic
+			const observerOptions = {
+				threshold: 0.1
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('active');
+					}
+				});
+			}, observerOptions);
+
+			document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+			// Floating CTA hide logic
+			const whatsappBtn = document.getElementById('whatsapp-btn');
+			const footer = document.querySelector('footer');
+
+			if (whatsappBtn && footer) {
+				window.addEventListener('scroll', () => {
+					const footerRect = footer.getBoundingClientRect();
+					if (footerRect.top < window.innerHeight) {
+						whatsappBtn.classList.add('opacity-0', 'pointer-events-none');
+					} else {
+						whatsappBtn.classList.remove('opacity-0', 'pointer-events-none');
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+---
+import { Plus, Minus } from 'lucide-astro';
+
+interface Props {
+	items: {
+		question: string;
+		answer: string;
+	}[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="space-y-4">
+	{items.map((item, index) => (
+		<div class="neo-brutalism-card bg-white reveal">
+			<button 
+				class="faq-btn w-full p-6 flex justify-between items-center text-left"
+				data-index={index}
+			>
+				<span class="font-display font-black text-xl text-charcoal">{item.question}</span>
+				<div class="w-8 h-8 bg-electric-yellow border-2 border-black flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+					<Plus class="plus-icon" size={20} />
+					<Minus class="minus-icon hidden" size={20} />
+				</div>
+			</button>
+			<div class="faq-content hidden px-6 pb-6 border-t-2 border-black/5 pt-4">
+				<p class="text-brand-charcoal text-base leading-[1.6]">
+					{item.answer}
+				</p>
+			</div>
+		</div>
+	))}
+</div>
+
+<script>
+	document.querySelectorAll('.faq-btn').forEach(btn => {
+		btn.addEventListener('click', () => {
+			const content = btn.nextElementSibling;
+			const plusIcon = btn.querySelector('.plus-icon');
+			const minusIcon = btn.querySelector('.minus-icon');
+			
+			content?.classList.toggle('hidden');
+			plusIcon?.classList.toggle('hidden');
+			minusIcon?.classList.toggle('hidden');
+			
+			// Close others
+			document.querySelectorAll('.faq-content').forEach(otherContent => {
+				if (otherContent !== content) {
+					otherContent.classList.add('hidden');
+					const otherBtn = otherContent.previousElementSibling;
+					otherBtn?.querySelector('.plus-icon')?.classList.remove('hidden');
+					otherBtn?.querySelector('.minus-icon')?.classList.add('hidden');
+				}
+			});
+		});
+	});
+</script>

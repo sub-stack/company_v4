@@ -1,0 +1,81 @@
+---
+import { Facebook, Instagram, MessageCircle, Mail, MapPin } from 'lucide-astro';
+
+const footerLinks = [
+	{
+		title: '服務項目',
+		links: [
+			{ name: 'Meta 廣告投放', href: '/services/meta-ads' },
+			{ name: '轉換型網站開發', href: '/services/website-development' },
+			{ name: '社群素材設計', href: '/services/social-media-design' },
+		]
+	},
+	{
+		title: '關於我們',
+		links: [
+			{ name: '品牌使命', href: '/about/mission' },
+			{ name: '合作流程', href: '/about/process' },
+			{ name: 'Blog', href: '/insights/blog' },
+			{ name: '常見問題', href: '/faq' },
+		]
+	},
+	{
+		title: '聯絡資訊',
+		links: [
+			{ name: 'WhatsApp 查詢', href: 'https://wa.me/85212345678' },
+			{ name: '電郵聯絡', href: 'mailto:info@2xwin.com' },
+		]
+	}
+];
+---
+
+<footer class="bg-charcoal text-off-white pt-20 pb-10 border-t-4 border-black">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+			<!-- Brand Column -->
+			<div class="space-y-6">
+				<a href="/" class="flex items-center space-x-2">
+					<div class="w-10 h-10 bg-electric-yellow border-2 border-black flex items-center justify-center font-display font-black text-xl text-charcoal shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)]">
+						2x
+					</div>
+					<span class="font-display font-black text-2xl tracking-tight">Win</span>
+				</a>
+				<p class="text-off-white/60 text-sm leading-relaxed max-w-xs">
+					幫中小企擺脫黑箱 Agency，用透明 Meta 廣告穩陣放大生意。唔靠花巧術語，唔靠死約留客。
+				</p>
+				<div class="flex space-x-4">
+					<a href="#" class="w-10 h-10 bg-white/10 border border-white/20 flex items-center justify-center hover:bg-hot-pink transition-colors">
+						<Facebook size={20} />
+					</a>
+					<a href="#" class="w-10 h-10 bg-white/10 border border-white/20 flex items-center justify-center hover:bg-hot-pink transition-colors">
+						<Instagram size={20} />
+					</a>
+				</div>
+			</div>
+
+			<!-- Links Columns -->
+			{footerLinks.map(group => (
+				<div>
+					<h4 class="font-display font-bold text-lg mb-6 text-aqua-mint">{group.title}</h4>
+					<ul class="space-y-4">
+						{group.links.map(link => (
+							<li>
+								<a href={link.href} class="text-off-white/70 hover:text-white transition-colors text-sm">
+									{link.name}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+
+		<div class="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-xs text-off-white/40">
+			<p>© 2026 2xWin. All rights reserved.</p>
+			<div class="flex space-x-6">
+				<a href="#" class="hover:text-white">私隱政策</a>
+				<a href="#" class="hover:text-white">條款及細則</a>
+			</div>
+		</div>
+	</div>
+</footer>

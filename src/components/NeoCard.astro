@@ -1,0 +1,24 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	icon?: any;
+	color?: string;
+	class?: string;
+}
+
+const { title, description, icon: Icon, color = "bg-white", class: className } = Astro.props;
+---
+
+<div class={`neo-brutalism-card p-8 flex flex-col space-y-4 reveal ${color} ${className}`}>
+	{Icon && (
+		<div class="w-12 h-12 bg-electric-yellow border-2 border-black flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] mb-2">
+			<Icon size={24} />
+		</div>
+	)}
+	<h3 class="font-display font-black text-2xl tracking-tight text-charcoal">{title}</h3>
+	<p class="text-brand-charcoal text-base leading-[1.6]">
+		{description}
+	</p>
+	<slot />
+</div>

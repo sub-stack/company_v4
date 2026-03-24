@@ -1,0 +1,154 @@
+---
+import Layout from './Layout.astro';
+import { ArrowLeft, MessageCircle } from 'lucide-astro';
+
+interface Props {
+  title: string;
+  date: string;
+  image?: string;
+  author?: string;
+}
+
+const { title, date, image, author = "2xWin Team" } = Astro.props;
+---
+
+<Layout title={`${title} - 2xWin Blog`}>
+  <article class="pt-32 pb-24 bg-white min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a href="/insights/blog" class="inline-flex items-center space-x-2 text-charcoal hover:text-hot-pink font-bold mb-8 transition-colors">
+        <ArrowLeft size={20} />
+        <span>返回 Blog</span>
+      </a>
+
+      <header class="mb-12">
+        <h1 class="font-display font-black text-4xl md:text-5xl lg:text-6xl leading-[1.2] mb-6 text-charcoal">
+          {title}
+        </h1>
+        <div class="flex items-center space-x-4 font-mono text-charcoal/80 border-b-4 border-black pb-8">
+          <span>{date}</span>
+          <span>•</span>
+          <span>{author}</span>
+        </div>
+      </header>
+
+      {image && (
+        <div class="neo-brutalism-card overflow-hidden mb-12 p-0">
+          <img src={image} alt={title} class="w-full h-auto object-cover max-h-[500px]" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        </div>
+      )}
+
+      <div class="blog-content">
+        <slot />
+      </div>
+    </div>
+  </article>
+  
+  <!-- Final CTA -->
+  <section class="py-24 bg-charcoal text-white border-y-4 border-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display font-black text-4xl md:text-6xl mb-8 reveal">
+        準備好開始穩陣放大生意？
+      </h2>
+      <div class="flex justify-center reveal">
+        <a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-aqua-mint text-charcoal text-2xl py-6 px-12 flex items-center space-x-4">
+          <MessageCircle size={32} />
+          <span>免費獲取 Meta 廣告診斷</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  .blog-content h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-family: var(--font-display);
+    font-weight: 900;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-charcoal);
+  }
+  @media (min-width: 768px) {
+    .blog-content h2 {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+  }
+  .blog-content h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-charcoal);
+  }
+  @media (min-width: 768px) {
+    .blog-content h3 {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+  }
+  .blog-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.625;
+    font-size: 1.125rem;
+    color: rgba(26, 26, 26, 0.9);
+  }
+  .blog-content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+    color: rgba(26, 26, 26, 0.9);
+  }
+  .blog-content ul li {
+    margin-bottom: 0.5rem;
+  }
+  .blog-content ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+    color: rgba(26, 26, 26, 0.9);
+  }
+  .blog-content ol li {
+    margin-bottom: 0.5rem;
+  }
+  .blog-content a {
+    color: var(--color-hot-pink);
+    text-decoration: underline;
+    font-weight: 700;
+    transition: color 0.2s;
+  }
+  .blog-content a:hover {
+    color: var(--color-charcoal);
+  }
+  .blog-content blockquote {
+    border-left: 4px solid #000;
+    padding-left: 1.5rem;
+    font-style: italic;
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: rgba(26, 26, 26, 0.8);
+    background-color: var(--color-light-gray);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+  }
+  .blog-content img {
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+    border-radius: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    height: auto;
+  }
+  .blog-content strong {
+    font-weight: 700;
+    color: var(--color-charcoal);
+  }
+</style>

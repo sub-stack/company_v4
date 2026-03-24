@@ -1,0 +1,21 @@
+---
+interface Props {
+	content: string;
+}
+
+const { content } = Astro.props;
+---
+
+<div class="aeo-summary reveal">
+	<div class="flex items-start space-x-4">
+		<div class="w-10 h-10 bg-electric-yellow border-2 border-black flex-shrink-0 flex items-center justify-center font-display font-black text-xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+			AI
+		</div>
+		<div class="space-y-2">
+			<span class="font-display font-black text-sm uppercase tracking-widest text-charcoal/60">AEO 重點摘要</span>
+			<p class="text-brand-charcoal text-base leading-[1.6] font-medium">
+				{content}
+			</p>
+		</div>
+	</div>
+</div>

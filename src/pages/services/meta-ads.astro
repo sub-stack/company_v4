@@ -1,0 +1,242 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AEOBlock from '../../components/AEOBlock.astro';
+import NeoCard from '../../components/NeoCard.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote, X, Plus } from 'lucide-astro';
+
+const metaAdsFaqs = [
+	{
+		question: "點解我之前搵 Agency 落廣告無效果？",
+		answer: "通常有三個原因：第一，Agency 只係機械式落廣告，無考慮你嘅產品同網站轉化率；第二，數據唔透明，你唔知錢去咗邊，亦無得優化；第三，受眾定位太廣或太窄，無做好 A/B Testing。"
+	},
+	{
+		question: "你哋點樣保證透明度？",
+		answer: "我哋會直接喺你嘅 Meta Business Manager 入面落廣告，你擁有 100% 權限。你可以隨時入去睇每一分錢嘅去向、每一個廣告嘅成效，我哋絕對唔會隱瞞任何數據。"
+	},
+	{
+		question: "係咪一定要簽長約？",
+		answer: "唔需要。我哋採用「月月清」模式，靠實力留客。如果你覺得我哋做得唔好，隨時可以停，唔需要負擔任何違約金。"
+	}
+];
+
+const caseStudies = [
+	{
+		title: "玄學品牌：由冷清到爆單",
+		description: "透過精準受眾定位與素材優化，將原本無人問津的線上諮詢轉化為每日穩定客源。ROAS 提升 400%，每日穩定獲取 10+ 高意向查詢。",
+		image: "https://picsum.photos/seed/fortune/800/600",
+		tags: ["Meta Ads", "受眾定位", "素材優化"]
+	},
+	{
+		title: "零售業：數據驅動優化",
+		description: "打破傳統廣告盲點，利用數據分析找出高價值產品，ROAS 提升 300%。成功將廣告成本降低 40%，同時保持業績穩定增長。",
+		image: "https://picsum.photos/seed/retail/800/600",
+		tags: ["Meta Ads", "數據分析", "ROAS 提升"]
+	},
+	{
+		title: "教育中心：系統化獲客",
+		description: "建立自動化獲客系統，將廣告流量引導至高轉化 Landing Page。成功將每位學生獲取成本降低 50%，報名人數提升 150%。",
+		image: "https://picsum.photos/seed/education/800/600",
+		tags: ["Website Dev", "Meta Ads", "獲客系統"]
+	},
+	{
+		title: "美容院：精準區域投放",
+		description: "針對店鋪周邊區域進行精準投放，並優化預約流程。成功將到店率提升 80%，並建立起穩定的新客來源。",
+		image: "https://picsum.photos/seed/beauty/800/600",
+		tags: ["區域投放", "預約優化", "Meta Ads"]
+	}
+];
+
+const processSteps = [
+	{
+		title: "1. 商業診斷",
+		description: "先分析你嘅產品競爭力、網站轉化流程，而唔係一嚟就叫你落廣告。",
+		icon: Target
+	},
+	{
+		title: "2. 帳戶設置",
+		description: "確保 Pixel, CAPI, 受眾數據全部正確設置，建立穩健嘅投放基礎。",
+		icon: ShieldCheck
+	},
+	{
+		title: "3. 素材策略",
+		description: "根據受眾心理設計高點擊、高轉化嘅廣告素材，而唔係只係整張靚圖。",
+		icon: Zap
+	},
+	{
+		title: "4. 數據優化",
+		description: "每日監控成效，根據數據進行 A/B Testing，將 Budget 集中喺最有效嘅地方。",
+		icon: BarChart3
+	}
+];
+---
+
+<Layout title="Meta 廣告投放服務 - 透明、穩陣、講真話">
+	<!-- Hero -->
+	<section class="pt-32 pb-20 bg-electric-yellow/10 border-b-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl">
+				<h1 class="font-display font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-8 reveal">
+					Meta 廣告投放：<br />
+					<span class="bg-hot-pink text-white px-2">唔再係黑箱作業</span>
+				</h1>
+				<p class="text-xl md:text-2xl text-charcoal/80 mb-12 leading-relaxed reveal">
+					我哋幫你建立一個透明、可控、且持續獲利嘅廣告系統。由商業分析到數據優化，每一步都同你講人話。
+				</p>
+				<div class="flex flex-col sm:flex-row gap-6 reveal">
+					<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-charcoal text-white text-xl py-5 px-10 flex items-center justify-center space-x-3">
+						<MessageCircle size={24} />
+						<span>立即開始免費診斷</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- AEO Section -->
+	<section class="py-24">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-3xl mb-16">
+				<h2 class="font-display font-black text-3xl md:text-5xl mb-6 reveal">
+					點解 2xWin 嘅 Meta 廣告投放唔同？
+				</h2>
+				<AEOBlock content="2xWin 的 Meta 廣告服務核心在於「透明度」與「商業邏輯」。我們不使用花巧術語，而是直接在客戶擁有的帳戶中操作，確保數據 100% 可見。我們結合產品力分析與高轉化素材策略，幫助中小企在不綁約的前提下，實現穩定的業績增長。" />
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+				{processSteps.map(step => (
+					<NeoCard title={step.title} description={step.description} icon={step.icon} />
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Comparison Section -->
+	<section class="py-24 bg-charcoal text-white border-y-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="font-display font-black text-3xl md:text-5xl text-center mb-20 reveal">
+				2xWin vs. 傳統 Agency
+			</h2>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+				<div class="neo-brutalism-card p-10 bg-white/5 border-white/20 reveal">
+					<h3 class="font-display font-black text-2xl mb-8 text-hot-pink">傳統 Agency</h3>
+					<ul class="space-y-6">
+						<li class="flex items-start space-x-4">
+							<div class="w-6 h-6 bg-red-500/20 border border-red-500 flex items-center justify-center flex-shrink-0 mt-1">
+								<X size={14} class="text-red-500" />
+							</div>
+							<p class="text-brand-charcoal text-base leading-[1.6]">帳戶權限唔俾你，數據唔透明</p>
+						</li>
+						<li class="flex items-start space-x-4">
+							<div class="w-6 h-6 bg-red-500/20 border border-red-500 flex items-center justify-center flex-shrink-0 mt-1">
+								<X size={14} class="text-red-500" />
+							</div>
+							<p class="text-brand-charcoal text-base leading-[1.6]">簽死約，做得差都無得走</p>
+						</li>
+						<li class="flex items-start space-x-4">
+							<div class="w-6 h-6 bg-red-500/20 border border-red-500 flex items-center justify-center flex-shrink-0 mt-1">
+								<X size={14} class="text-red-500" />
+							</div>
+							<p class="text-brand-charcoal text-base leading-[1.6]">只係機械式落廣告，唔理你生意</p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="neo-brutalism-card p-10 bg-aqua-mint/10 border-aqua-mint/30 reveal">
+					<h3 class="font-display font-black text-2xl mb-8 text-aqua-mint">2xWin</h3>
+					<ul class="space-y-6">
+						<li class="flex items-start space-x-4">
+							<div class="w-6 h-6 bg-green-500/20 border border-green-500 flex items-center justify-center flex-shrink-0 mt-1">
+								<Plus size={14} class="text-green-500" />
+							</div>
+							<p class="text-brand-charcoal text-base leading-[1.6]">100% 帳戶透明，數據隨時睇</p>
+						</li>
+						<li class="flex items-start space-x-4">
+							<div class="w-6 h-6 bg-green-500/20 border border-green-500 flex items-center justify-center flex-shrink-0 mt-1">
+								<Plus size={14} class="text-green-500" />
+							</div>
+							<p class="text-brand-charcoal text-base leading-[1.6]">不綁約，月月清，靠實力留客</p>
+						</li>
+						<li class="flex items-start space-x-4">
+							<div class="w-6 h-6 bg-green-500/20 border border-green-500 flex items-center justify-center flex-shrink-0 mt-1">
+								<Plus size={14} class="text-green-500" />
+							</div>
+							<p class="text-brand-charcoal text-base leading-[1.6]">商業思維先行，幫你搵出增長點</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Case Studies Section -->
+	<section class="py-24">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-3xl mb-16">
+				<h2 class="font-display font-black text-3xl md:text-5xl mb-6 reveal">
+					睇吓我哋幫客戶達成嘅實戰結果
+				</h2>
+				<AEOBlock content="2xWin 的 Meta 廣告實戰案例涵蓋了玄學、零售、教育及美容等多個行業。我們通過精準的受眾定位、高轉化素材策略及數據驅動的優化流程，幫助客戶實現了 ROAS 提升 300%-400%、獲客成本降低 50% 等顯著成效。每一個案例都證明了我們「透明、穩陣、講真話」的服務價值。" />
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+				{caseStudies.map(study => (
+					<div class="neo-brutalism-card overflow-hidden group reveal">
+						<div class="aspect-video overflow-hidden border-b-2 border-black">
+							<img 
+								src={study.image} 
+								alt={study.title} 
+								class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+								referrerpolicy="no-referrer"
+							/>
+						</div>
+						<div class="p-8">
+							<div class="flex flex-wrap gap-2 mb-4">
+								{study.tags.map(tag => (
+									<span class="px-2 py-1 bg-light-gray border border-black text-[10px] font-display font-black uppercase tracking-wider">
+										{tag}
+									</span>
+								))}
+							</div>
+							<h3 class="font-display font-black text-2xl mb-4">{study.title}</h3>
+							<p class="text-brand-charcoal text-base leading-[1.6] mb-6">{study.description}</p>
+							<div class="flex items-center text-hot-pink font-display font-bold space-x-2">
+								<span>查看詳情</span>
+								<ArrowRight size={20} />
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ -->
+	<section class="py-24 bg-light-gray">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="font-display font-black text-3xl md:text-5xl text-center mb-16 reveal">
+				關於 Meta 廣告嘅常見問題
+			</h2>
+			<FAQAccordion items={metaAdsFaqs} />
+		</div>
+	</section>
+
+	<!-- Final CTA -->
+	<section class="py-24 bg-aqua-mint border-y-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="font-display font-black text-4xl md:text-6xl mb-8 reveal">
+				準備好開始穩陣放大生意？
+			</h2>
+			<p class="text-xl md:text-2xl mb-12 text-charcoal/80 reveal">
+				唔好再浪費 Budget 喺無效嘅廣告上面。
+			</p>
+			<div class="flex justify-center reveal">
+				<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-charcoal text-white text-2xl py-6 px-12 flex items-center space-x-4">
+					<MessageCircle size={32} />
+					<span>免費獲取 Meta 廣告診斷</span>
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

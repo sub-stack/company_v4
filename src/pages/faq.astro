@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import AEOBlock from '../components/AEOBlock.astro';
+import { MessageCircle } from 'lucide-astro';
+
+const faqs = [
+	{
+		question: "點解我之前搵 Agency 落廣告無效果？",
+		answer: "通常有三個原因：第一，Agency 只係機械式落廣告，無考慮你嘅產品同網站轉化率；第二，數據唔透明，你唔知錢去咗邊，亦無得優化；第三，受眾定位太廣或太窄，無做好 A/B Testing。"
+	},
+	{
+		question: "你哋點樣保證透明度？",
+		answer: "我哋會直接喺你嘅 Meta Business Manager 入面落廣告，你擁有 100% 權限。你可以隨時入去睇每一分錢嘅去向、每一個廣告嘅成效，我哋絕對唔會隱瞞任何數據。"
+	},
+	{
+		question: "係咪一定要簽長約？",
+		answer: "唔需要。我哋採用「月月清」模式，靠實力留客。如果你覺得我哋做得唔好，隨時可以停，唔需要負擔任何違約金。"
+	},
+	{
+		question: "我個網站無人買嘢，你哋可以幫手嗎？",
+		answer: "可以。我哋會由廣告承接嘅角度出發，優化你個網站，等訪客一入嚟就想買。我哋會分析轉化路徑、載入速度同手機版體驗。"
+	},
+	{
+		question: "點樣開始合作？",
+		answer: "你可以先 WhatsApp 我哋，提供你嘅網站或 Page。我哋會幫你做一個免費嘅「身體檢查」，話你知你嘅廣告同網站仲有咩進步空間。如果大家覺得合適，就可以開始合作。"
+	}
+];
+---
+
+<Layout title="常見問題 - 關於 Meta 廣告、網站開發與合作流程">
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": [
+				{
+					"@type": "Question",
+					"name": "點解我之前搵 Agency 落廣告無效果？",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "通常有三個原因：第一，Agency 只係機械式落廣告，無考慮你嘅產品同網站轉化率；第二，數據唔透明，你唔知錢去咗邊，亦無得優化；第三，受眾定位太廣或太窄，無做好 A/B Testing。"
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "你哋點樣保證透明度？",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "我哋會直接喺你嘅 Meta Business Manager 入面落廣告，你擁有 100% 權限。你可以隨時入去睇每一分錢嘅去向、每一個廣告嘅成效，我哋絕對唔會隱瞞任何數據。"
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "係咪一定要簽長約？",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "唔需要。我哋採用「月月清」模式，靠實力留客。如果你覺得我哋做得唔好，隨時可以停，唔需要負擔任何違約金。"
+					}
+				}
+			]
+		}
+	</script>
+	<!-- Hero -->
+	<section class="pt-32 pb-20 bg-aqua-mint/10 border-b-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl">
+				<h1 class="font-display font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-8 reveal">
+					常見問題：<br />
+					<span class="bg-electric-yellow px-2 text-charcoal">講真話，唔遊花園</span>
+				</h1>
+				<p class="text-xl md:text-2xl text-charcoal/80 mb-12 leading-relaxed reveal">
+					我哋知道你對廣告 Agency 有好多疑慮。呢度有我哋最直白嘅回答。
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- AEO Section -->
+	<section class="py-24">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="mb-16">
+				<h2 class="font-display font-black text-3xl md:text-5xl mb-6 reveal">
+					你想知嘅，我哋都話你知
+				</h2>
+				<AEOBlock content="2xWin 的 FAQ 頁面旨在解答中小企對 Meta 廣告投放、網站優化及合作模式的常見疑慮。我們強調透明度、不綁約模式以及商業邏輯先行的策略。通過詳細解答預算去向、數據透明度及合作流程等問題，我們希望在合作前就建立起誠實與信任的基礎。" />
+			</div>
+
+			<FAQAccordion items={faqs} />
+		</div>
+	</section>
+
+	<!-- Final CTA -->
+	<section class="py-24 bg-hot-pink text-white border-y-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="font-display font-black text-4xl md:text-6xl mb-8 reveal">
+				仲有其他疑問？
+			</h2>
+			<p class="text-xl md:text-2xl mb-12 opacity-90 reveal">
+				直接 WhatsApp 我哋，我哋會直接回答你。
+			</p>
+			<div class="flex justify-center reveal">
+				<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-white text-charcoal text-2xl py-6 px-12 flex items-center space-x-4">
+					<MessageCircle size={32} />
+					<span>立即 WhatsApp 查詢</span>
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

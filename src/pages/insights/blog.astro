@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { MessageCircle } from 'lucide-astro';
+
+---
+
+<Layout title="Blog - 最實用嘅獲客知識">
+	<!-- Hero -->
+	<section class="pt-32 pb-24 bg-charcoal text-white border-b-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl">
+				<h1 class="font-display font-black text-4xl md:text-5xl lg:text-6xl leading-[1.2] mb-8 reveal">
+					最實用嘅獲客知識，<br />
+					保證即學即用。
+				</h1>
+				<p class="text-lg md:text-xl text-white/90 leading-relaxed reveal">
+					我哋想同你分享最<strong class="text-white">實用嘅 Insights</strong> 同 <strong class="text-white">Best Practices</strong>，教你點樣善用科技去維持你嘅<strong class="text-white">獲客流程</strong>。由淺入深嘅 Lead Gen 知識，<strong class="text-white">保證即學即用</strong>。
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Banner -->
+	<section class="bg-aqua-mint border-b-4 border-black relative z-20">
+		<div class="py-12 text-center px-4">
+			<h2 class="font-display font-black text-3xl md:text-4xl text-charcoal reveal">
+				睇吓我哋有咩實戰心得分享。
+			</h2>
+		</div>
+		<!-- Triangle pointing down -->
+		<div class="absolute left-1/2 -bottom-[45px] -translate-x-1/2 w-16 h-16 bg-aqua-mint border-b-4 border-r-4 border-black transform rotate-45 z-10"></div>
+	</section>
+
+	<!-- Blog Posts Grid -->
+	<section class="py-24 bg-white relative z-10">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+				<!-- Post 1 -->
+				<a href="/insights/blog/google-ads-pmax-2026" class="group block reveal">
+					<p class="font-mono text-charcoal/80 mb-4">2026年3月23日</p>
+					<div class="neo-brutalism-card overflow-hidden mb-6 p-0">
+						<div class="aspect-[4/3] bg-light-gray relative">
+							<img src="https://picsum.photos/seed/blog1/800/600" alt="4 Critical Google Ads Performance Max Updates in 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" crossorigin="anonymous" referrerpolicy="no-referrer" />
+						</div>
+					</div>
+					<h3 class="font-display font-bold text-xl text-charcoal group-hover:text-hot-pink transition-colors leading-snug">
+						2026 年 Google Ads PMax 4 大關鍵更新：香港廣告主必讀
+					</h3>
+				</a>
+
+				<!-- Post 2 -->
+				<a href="/insights/blog/lead-gen-engine-2026" class="group block reveal" style="transition-delay: 100ms;">
+					<p class="font-mono text-charcoal/80 mb-4">2026年2月27日</p>
+					<div class="neo-brutalism-card overflow-hidden mb-6 p-0">
+						<div class="aspect-[4/3] bg-light-gray relative">
+							<img src="https://picsum.photos/seed/blog2/800/600" alt="The 2026 Lead Gen Engine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" crossorigin="anonymous" referrerpolicy="no-referrer" />
+						</div>
+					</div>
+					<h3 class="font-display font-bold text-xl text-charcoal group-hover:text-hot-pink transition-colors leading-snug">
+						2026 獲客引擎：點樣同步 SEO、Google、Meta 同 YouTube 廣告將 ROI 推到極致
+					</h3>
+				</a>
+
+				<!-- Post 3 -->
+				<a href="/insights/blog/ai-overviews-seo-2026" class="group block reveal" style="transition-delay: 200ms;">
+					<p class="font-mono text-charcoal/80 mb-4">2026年1月26日</p>
+					<div class="neo-brutalism-card overflow-hidden mb-6 p-0">
+						<div class="aspect-[4/3] bg-light-gray relative">
+							<img src="https://picsum.photos/seed/blog3/800/600" alt="The Evolution of Search" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" crossorigin="anonymous" referrerpolicy="no-referrer" />
+						</div>
+					</div>
+					<h3 class="font-display font-bold text-xl text-charcoal group-hover:text-hot-pink transition-colors leading-snug">
+						搜尋引擎大進化：點樣將 AI Overviews 融入你嘅 2026 SEO 策略
+					</h3>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Final CTA -->
+	<section class="py-24 bg-charcoal text-white border-y-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="font-display font-black text-4xl md:text-6xl mb-8 reveal">
+				準備好開始穩陣放大生意？
+			</h2>
+			<div class="flex justify-center reveal">
+				<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-aqua-mint text-charcoal text-2xl py-6 px-12 flex items-center space-x-4">
+					<MessageCircle size={32} />
+					<span>免費獲取 Meta 廣告診斷</span>
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

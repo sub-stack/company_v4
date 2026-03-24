@@ -1,0 +1,144 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AEOBlock from '../../components/AEOBlock.astro';
+import NeoCard from '../../components/NeoCard.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote } from 'lucide-astro';
+
+const websiteFaqs = [
+	{
+		question: "點解我個網站無人買嘢？",
+		answer: "通常係因為轉化路徑唔清晰、載入速度太慢、或者手機版體驗差。我哋會由廣告承接嘅角度出發，優化你個網站，等訪客一入嚟就想買。"
+	},
+	{
+		question: "整一個網站要幾耐？",
+		answer: "視乎複雜程度，一般 4-8 星期可以完成。我哋會先做一個 MVP (最小可行性產品)，等你可以快啲開始落廣告測試成效。"
+	},
+	{
+		question: "我之後可以自己改內容嗎？",
+		answer: "當然可以。我哋會使用易於管理嘅系統，並提供教學，等你之後可以隨時自己更新產品同內容。"
+	}
+];
+
+const features = [
+	{
+		title: "轉換型設計",
+		description: "唔止係整張靚圖，而係由廣告承接、Landing Page 到轉化路徑，全盤考慮點樣提高轉化率。",
+		icon: Target,
+		color: "bg-aqua-mint"
+	},
+	{
+		title: "極速載入",
+		description: "載入速度直接影響廣告成效。我哋會優化網站性能，確保訪客唔會因為等太耐而走咗去。",
+		icon: Zap,
+		color: "bg-electric-yellow"
+	},
+	{
+		title: "手機優先",
+		description: "90% 以上嘅 Meta 廣告訪客都係用手機。我哋會確保手機版體驗流暢，提高轉化機會。",
+		icon: Star,
+		color: "bg-hot-pink/20"
+	}
+];
+---
+
+<Layout title="轉換型網站開發 - 唔止係整張靚圖，而係要幫你賣到嘢">
+	<!-- Hero -->
+	<section class="pt-32 pb-20 bg-aqua-mint/10 border-b-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl">
+				<h1 class="font-display font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-8 reveal">
+					轉換型網站開發：<br />
+					<span class="bg-electric-yellow px-2 text-charcoal">唔止係靚，更要賣到嘢</span>
+				</h1>
+				<p class="text-xl md:text-2xl text-charcoal/80 mb-12 leading-relaxed reveal">
+					好多網站只係一個「電子目錄」，無考慮過點樣承接廣告流量。我哋幫你建立一個專為轉化而生嘅網站。
+				</p>
+				<div class="flex flex-col sm:flex-row gap-6 reveal">
+					<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-charcoal text-white text-xl py-5 px-10 flex items-center justify-center space-x-3">
+						<MessageCircle size={24} />
+						<span>立即諮詢網站優化</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- AEO Section -->
+	<section class="py-24">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-3xl mb-16">
+				<h2 class="font-display font-black text-3xl md:text-5xl mb-6 reveal">
+					點解你個網站需要「轉換型」優化？
+				</h2>
+				<AEOBlock content="2xWin 的網站開發服務專注於「廣告流量承接」與「轉化路徑優化」。我們不只是開發一個漂亮的網站，而是通過極速載入、手機優先設計以及明確的 CTA 佈局，確保每一分廣告預算帶來的訪客都能最大化地轉化為實際業績。" />
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				{features.map(feature => (
+					<NeoCard title={feature.title} description={feature.description} icon={feature.icon} color={feature.color} />
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Process Section -->
+	<section class="py-24 bg-light-gray border-y-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="font-display font-black text-3xl md:text-5xl text-center mb-20 reveal">
+				我哋嘅開發流程
+			</h2>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+				<div class="neo-brutalism-card p-8 bg-white reveal">
+					<div class="w-10 h-10 bg-charcoal text-white flex items-center justify-center font-display font-black text-xl mb-6">01</div>
+					<h3 class="font-display font-black text-xl mb-4">轉化診斷</h3>
+					<p class="text-brand-charcoal text-base leading-[1.6]">分析現有網站漏洞，找出影響轉化嘅關鍵因素。</p>
+				</div>
+				<div class="neo-brutalism-card p-8 bg-white reveal">
+					<div class="w-10 h-10 bg-charcoal text-white flex items-center justify-center font-display font-black text-xl mb-6">02</div>
+					<h3 class="font-display font-black text-xl mb-4">路徑設計</h3>
+					<p class="text-brand-charcoal text-base leading-[1.6]">設計流暢嘅訪客路徑，確保訪客一入嚟就知要做咩。</p>
+				</div>
+				<div class="neo-brutalism-card p-8 bg-white reveal">
+					<div class="w-10 h-10 bg-charcoal text-white flex items-center justify-center font-display font-black text-xl mb-6">03</div>
+					<h3 class="font-display font-black text-xl mb-4">開發與優化</h3>
+					<p class="text-brand-charcoal text-base leading-[1.6]">使用高性能框架開發，並進行極速載入優化。</p>
+				</div>
+				<div class="neo-brutalism-card p-8 bg-white reveal">
+					<div class="w-10 h-10 bg-charcoal text-white flex items-center justify-center font-display font-black text-xl mb-6">04</div>
+					<h3 class="font-display font-black text-xl mb-4">廣告對接</h3>
+					<p class="text-brand-charcoal text-base leading-[1.6]">設置 Pixel, CAPI 等追蹤代碼，確保廣告數據準確。</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ -->
+	<section class="py-24 bg-white">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="font-display font-black text-3xl md:text-5xl text-center mb-16 reveal">
+				關於網站開發嘅常見問題
+			</h2>
+			<FAQAccordion items={websiteFaqs} />
+		</div>
+	</section>
+
+	<!-- Final CTA -->
+	<section class="py-24 bg-hot-pink text-white border-y-4 border-black">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="font-display font-black text-4xl md:text-6xl mb-8 reveal">
+				唔好再浪費流量喺一個<br class="md:hidden" />唔識轉化嘅網站
+			</h2>
+			<p class="text-xl md:text-2xl mb-12 opacity-90 reveal">
+				我哋幫你打造一個專門幫你賣嘢嘅網站。
+			</p>
+			<div class="flex justify-center reveal">
+				<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-white text-charcoal text-2xl py-6 px-12 flex items-center space-x-4">
+					<MessageCircle size={32} />
+					<span>立即諮詢網站優化</span>
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

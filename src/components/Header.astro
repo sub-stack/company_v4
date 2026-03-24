@@ -1,0 +1,167 @@
+---
+import { Menu, X, MessageCircle, ChevronDown } from 'lucide-astro';
+
+const navLinks = [
+	{ name: '首頁', href: '/' },
+	{ 
+		name: '服務項目', 
+		children: [
+			{ name: 'Meta 廣告', href: '/services/meta-ads' },
+			{ name: '網站開發', href: '/services/website-development' },
+			
+		]
+	},
+	{ name: '關於我們', href: '/about/mission' },
+	{ name: 'Blog', href: '/insights/blog' },
+	{ name: 'FAQ', href: '/faq' },
+];
+---
+
+<header class="fixed top-0 left-0 w-full z-50 bg-off-white/80 backdrop-blur-md border-b-2 border-black">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="flex justify-between items-center h-20">
+			<!-- Logo -->
+			<a href="/" class="flex items-center space-x-2 group">
+				<div class="w-10 h-10 bg-electric-yellow border-2 border-black flex items-center justify-center font-display font-black text-xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:shadow-none transition-all">
+					2x
+				</div>
+				<span class="font-display font-black text-2xl tracking-tight">Win</span>
+			</a>
+
+			<!-- Desktop Nav -->
+			<nav class="hidden lg:flex items-center space-x-8">
+				{navLinks.map(link => (
+					link.children ? (
+						<div class="relative group dropdown-container">
+							<button class="dropdown-toggle flex items-center space-x-1 font-display font-bold text-sm hover:text-hot-pink transition-colors">
+								<span>{link.name}</span>
+								<ChevronDown size={16} class="transition-transform duration-200" />
+							</button>
+							<div class="dropdown-menu hidden absolute top-full left-0 mt-2 w-48 bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-2">
+								{link.children.map(child => (
+									<a href={child.href} class="block px-4 py-2 text-sm font-display font-bold hover:bg-hot-pink hover:text-white transition-colors">
+										{child.name}
+									</a>
+								))}
+							</div>
+						</div>
+					) : (
+						<a href={link.href} class="font-display font-bold text-sm hover:text-hot-pink transition-colors">
+							{link.name}
+						</a>
+					)
+				))}
+				<a 
+					href="https://wa.me/85212345678" 
+					target="_blank" 
+					class="neo-brutalism-button bg-aqua-mint text-sm flex items-center space-x-2"
+				>
+					<MessageCircle size={18} />
+					<span>免費診斷</span>
+				</a>
+			</nav>
+
+			<!-- Mobile Menu Button -->
+			<button id="mobile-menu-btn" class="lg:hidden p-2 border-2 border-black bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+				<Menu id="menu-icon" class="block" />
+				<X id="close-icon" class="hidden" />
+			</button>
+		</div>
+	</div>
+
+	<!-- Mobile Nav -->
+	<div id="mobile-menu" class="hidden lg:hidden border-b-2 border-black bg-off-white max-h-[calc(100vh-80px)] overflow-y-auto">
+		<div class="px-4 pt-2 pb-6 space-y-1">
+			{navLinks.map(link => (
+				link.children ? (
+					<div class="mobile-dropdown-container">
+						<button class="mobile-dropdown-toggle w-full flex justify-between items-center px-3 py-4 font-display font-bold text-lg border-b border-black/5">
+							<span>{link.name}</span>
+							<ChevronDown size={20} />
+						</button>
+						<div class="mobile-dropdown-menu hidden bg-light-gray/50 px-4 py-2 border-b border-black/5">
+							{link.children.map(child => (
+								<a href={child.href} class="block py-3 font-display font-bold text-base hover:text-hot-pink">
+									{child.name}
+								</a>
+							))}
+						</div>
+					</div>
+				) : (
+					<a href={link.href} class="block px-3 py-4 font-display font-bold text-lg border-b border-black/5 last:border-none">
+						{link.name}
+					</a>
+				)
+			))}
+			<div class="pt-4">
+				<a 
+					href="https://wa.me/85212345678" 
+					target="_blank" 
+					class="neo-brutalism-button bg-aqua-mint w-full flex items-center justify-center space-x-2"
+				>
+					<MessageCircle size={20} />
+					<span>WhatsApp 診斷</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+<script>
+	// Mobile Menu Toggle
+	const btn = document.getElementById('mobile-menu-btn');
+	const menu = document.getElementById('mobile-menu');
+	const menuIcon = document.getElementById('menu-icon');
+	const closeIcon = document.getElementById('close-icon');
+
+	btn?.addEventListener('click', () => {
+		menu?.classList.toggle('hidden');
+		menuIcon?.classList.toggle('hidden');
+		closeIcon?.classList.toggle('hidden');
+	});
+
+	// Desktop Dropdown Toggle
+	const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+	dropdownToggles.forEach(toggle => {
+		toggle.addEventListener('click', (e) => {
+			e.stopPropagation();
+			const container = toggle.closest('.dropdown-container');
+			const menu = container?.querySelector('.dropdown-menu');
+			const icon = toggle.querySelector('svg');
+			
+			// Close other dropdowns
+			document.querySelectorAll('.dropdown-menu').forEach(m => {
+				if (m !== menu) m.classList.add('hidden');
+			});
+			document.querySelectorAll('.dropdown-toggle svg').forEach(i => {
+				if (i !== icon) i.style.transform = 'rotate(0deg)';
+			});
+
+			menu?.classList.toggle('hidden');
+			if (icon) {
+				icon.style.transform = menu?.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+			}
+		});
+	});
+
+	// Mobile Dropdown Toggle
+	const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+	mobileDropdownToggles.forEach(toggle => {
+		toggle.addEventListener('click', () => {
+			const container = toggle.closest('.mobile-dropdown-container');
+			const menu = container?.querySelector('.mobile-dropdown-menu');
+			const icon = toggle.querySelector('svg');
+
+			menu?.classList.toggle('hidden');
+			if (icon) {
+				icon.style.transform = menu?.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+			}
+		});
+	});
+
+	// Close dropdowns when clicking outside
+	document.addEventListener('click', () => {
+		document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('hidden'));
+		document.querySelectorAll('.dropdown-toggle svg').forEach(i => i.style.transform = 'rotate(0deg)');
+	});
+</script>
