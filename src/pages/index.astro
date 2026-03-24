@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import AEOBlock from '../components/AEOBlock.astro';
 import NeoCard from '../components/NeoCard.astro';
+import { withBase } from '../utils/withBase';
 import {Image} from 'astro:assets';
 import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote, Check } from 'lucide-astro';
 
@@ -203,7 +204,7 @@ const caseStudies = [
 						我哋唔講空話，只睇結果。以下係我哋幫客戶達成嘅部分成效。
 					</p>
 				</div>
-				<a href="/insights/blog" class="neo-brutalism-button bg-white reveal">
+				<a href={withBase('/insights/blog')} class="neo-brutalism-button bg-white reveal">
 					查看更多 Blog
 				</a>
 			</div>

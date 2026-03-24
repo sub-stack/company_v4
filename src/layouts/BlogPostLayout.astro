@@ -1,6 +1,7 @@
 ---
 import Layout from './Layout.astro';
 import { ArrowLeft, MessageCircle } from 'lucide-astro';
+import { withBase } from '../utils/withBase';
 
 interface Props {
   title: string;
@@ -15,7 +16,7 @@ const { title, date, image, author = "2xWin Team" } = Astro.props;
 <Layout title={`${title} - 2xWin Blog`}>
   <article class="pt-32 pb-24 bg-white min-h-screen">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <a href="/insights/blog" class="inline-flex items-center space-x-2 text-charcoal hover:text-hot-pink font-bold mb-8 transition-colors">
+      <a href={withBase('/insights/blog')} class="inline-flex items-center space-x-2 text-charcoal hover:text-hot-pink font-bold mb-8 transition-colors">
         <ArrowLeft size={20} />
         <span>返回 Blog</span>
       </a>

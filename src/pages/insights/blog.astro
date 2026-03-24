@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { MessageCircle } from 'lucide-astro';
+import { withBase } from '../../utils/withBase';
 
 ---
 
@@ -36,7 +37,7 @@ import { MessageCircle } from 'lucide-astro';
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
 				<!-- Post 1 -->
-				<a href="/insights/blog/google-ads-pmax-2026" class="group block reveal">
+				<a href={withBase('/insights/blog/google-ads-pmax-2026')} class="group block reveal">
 					<p class="font-mono text-charcoal/80 mb-4">2026年3月23日</p>
 					<div class="neo-brutalism-card overflow-hidden mb-6 p-0">
 						<div class="aspect-[4/3] bg-light-gray relative">
@@ -49,7 +50,7 @@ import { MessageCircle } from 'lucide-astro';
 				</a>
 
 				<!-- Post 2 -->
-				<a href="/insights/blog/lead-gen-engine-2026" class="group block reveal" style="transition-delay: 100ms;">
+				<a href={withBase('/insights/blog/lead-gen-engine-2026')} class="group block reveal" style="transition-delay: 100ms;">
 					<p class="font-mono text-charcoal/80 mb-4">2026年2月27日</p>
 					<div class="neo-brutalism-card overflow-hidden mb-6 p-0">
 						<div class="aspect-[4/3] bg-light-gray relative">
@@ -62,7 +63,7 @@ import { MessageCircle } from 'lucide-astro';
 				</a>
 
 				<!-- Post 3 -->
-				<a href="/insights/blog/ai-overviews-seo-2026" class="group block reveal" style="transition-delay: 200ms;">
+				<a href={withBase('/insights/blog/ai-overviews-seo-2026')} class="group block reveal" style="transition-delay: 200ms;">
 					<p class="font-mono text-charcoal/80 mb-4">2026年1月26日</p>
 					<div class="neo-brutalism-card overflow-hidden mb-6 p-0">
 						<div class="aspect-[4/3] bg-light-gray relative">

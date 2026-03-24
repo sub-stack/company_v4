@@ -1,10 +1,21 @@
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 
+const [owner = "", repo = ""] = (process.env.GITHUB_REPOSITORY ?? "").split("/");
+const isUserOrOrgSite = owner && repo.toLowerCase() === `${owner.toLowerCase()}.github.io`;
+
+const site =
+  process.env.SITE ??
+  (owner ? `https://${owner}.github.io` : "https://sub-stack.github.io");
+
+const base =
+  process.env.BASE ??
+  (isUserOrOrgSite ? "/" : repo ? `/${repo}` : "/company_v4");
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://sub-stack.github.io",
-  base: "/company_v4",
+  site,
+  base,
   vite: {
     plugins: [tailwindcss()],
   },

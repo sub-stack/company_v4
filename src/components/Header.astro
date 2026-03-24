@@ -1,5 +1,6 @@
 ---
 import { Menu, X, MessageCircle, ChevronDown } from 'lucide-astro';
+import { withBase } from '../utils/withBase';
 
 const navLinks = [
 	{ name: '首頁', href: '/' },
@@ -21,7 +22,7 @@ const navLinks = [
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex justify-between items-center h-20">
 			<!-- Logo -->
-			<a href="/" class="flex items-center space-x-2 group">
+			<a href={withBase('/')} class="flex items-center space-x-2 group">
 				<div class="w-10 h-10 bg-electric-yellow border-2 border-black flex items-center justify-center font-display font-black text-xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:shadow-none transition-all">
 					2x
 				</div>
@@ -39,14 +40,14 @@ const navLinks = [
 							</button>
 							<div class="dropdown-menu hidden absolute top-full left-0 mt-2 w-48 bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-2">
 								{link.children.map(child => (
-									<a href={child.href} class="block px-4 py-2 text-sm font-display font-bold hover:bg-hot-pink hover:text-white transition-colors">
+									<a href={withBase(child.href)} class="block px-4 py-2 text-sm font-display font-bold hover:bg-hot-pink hover:text-white transition-colors">
 										{child.name}
 									</a>
 								))}
 							</div>
 						</div>
 					) : (
-						<a href={link.href} class="font-display font-bold text-sm hover:text-hot-pink transition-colors">
+						<a href={withBase(link.href)} class="font-display font-bold text-sm hover:text-hot-pink transition-colors">
 							{link.name}
 						</a>
 					)
@@ -81,14 +82,14 @@ const navLinks = [
 						</button>
 						<div class="mobile-dropdown-menu hidden bg-light-gray/50 px-4 py-2 border-b border-black/5">
 							{link.children.map(child => (
-								<a href={child.href} class="block py-3 font-display font-bold text-base hover:text-hot-pink">
+								<a href={withBase(child.href)} class="block py-3 font-display font-bold text-base hover:text-hot-pink">
 									{child.name}
 								</a>
 							))}
 						</div>
 					</div>
 				) : (
-					<a href={link.href} class="block px-3 py-4 font-display font-bold text-lg border-b border-black/5 last:border-none">
+					<a href={withBase(link.href)} class="block px-3 py-4 font-display font-bold text-lg border-b border-black/5 last:border-none">
 						{link.name}
 					</a>
 				)
