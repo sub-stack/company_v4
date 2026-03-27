@@ -4,6 +4,8 @@ import AEOBlock from '../components/AEOBlock.astro';
 import NeoCard from '../components/NeoCard.astro';
 import { withBase } from '../utils/withBase';
 import {Image} from 'astro:assets';
+import caseStudy1 from "../assets/img/case-studies/cases-1.jpg";
+import caseStudy2 from "../assets/img/case-studies/cases-2.jpg";
 import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote, Check } from 'lucide-astro';
 import whatsappImg from '../assets/img/whatsapp.png';
 
@@ -60,15 +62,16 @@ const advantages = [
 
 const caseStudies = [
 	{
-		title: "玄學品牌：由冷清到爆單",
-		description: "透過精準受眾定位與素材優化，將原本無人問津的線上諮詢轉化為每日穩定客源。",
-		image: "https://picsum.photos/seed/fortune/800/600"
+		title: "醫美行業：2個月大幅提升",
+		
+		image: caseStudy1.src
 	},
 	{
 		title: "零售業：數據驅動優化",
-		description: "打破傳統廣告盲點，利用數據分析找出高價值產品，ROAS 提升 300%。",
-		image: "https://picsum.photos/seed/retail/800/600"
-	}
+		
+		image: caseStudy2.src
+	},
+	
 ];
 ---
 
@@ -195,43 +198,44 @@ const caseStudies = [
 
 	<!-- Case Studies Preview -->
 	<section class="py-24 bg-aqua-mint/10 border-y-4 border-black overflow-hidden">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
 				<div class="max-w-2xl">
 					<h2 class="font-display font-black text-3xl md:text-5xl mb-6 reveal">
 						用實戰數據說話
 					</h2>
 					<p class="text-xl text-brand-charcoal leading-[1.6] reveal">
-						我哋唔講空話，只睇結果。以下係我哋幫客戶達成嘅部分成效。
+						我哋唔講空話，只睇結果。以下係我哋幫客戶達成嘅部分成績。
 					</p>
 				</div>
-				<a href={withBase('/services/meta-ads#case-studies')} class="neo-brutalism-button bg-white reveal">
-					查看更多 Blog
+				<a href={withBase('/services/meta-ads#case-studies')} class="invisible lg:visible neo-brutalism-button bg-white reveal">
+					查看更多案例
 				</a>
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 				{caseStudies.map(study => (
 					<div class="neo-brutalism-card overflow-hidden group reveal">
-						<div class="aspect-video overflow-hidden border-b-2 border-black">
+						<div class=" overflow-hidden border-b-2 border-black">
 							<img 
 								src={study.image} 
 								alt={study.title} 
-								class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+								class=" h-full object-cover group-hover:scale-105 transition-transform duration-500"
 								referrerpolicy="no-referrer"
 							/>
 						</div>
 						<div class="p-8">
 							<h3 class="font-display font-black text-2xl mb-4">{study.title}</h3>
-							<p class="text-brand-charcoal text-base leading-[1.6] mb-6">{study.description}</p>
-							<div class="flex items-center text-hot-pink font-display font-bold space-x-2">
-								<span>查看詳情</span>
-								<ArrowRight size={20} />
-							</div>
+							
 						</div>
 					</div>
 				))}
+			
 			</div>
+			<div class="lg:invisible right-3 -bottom-12 absolute"><a href={withBase('/services/meta-ads#case-studies')} class=" neo-brutalism-button bg-white reveal">
+					查看更多案例
+				</a></div>
+			
 		</div>
 	</section>
 
@@ -244,18 +248,18 @@ const caseStudies = [
   <div class="max-w-[1200px] mx-auto reveal">
     
     <div class="text-center max-w-[760px] mx-auto mb-16">
-      <div class="inline-block bg-[#00f5d4] border-2 border-black px-4 py-1.5 rounded-full font-bold text-sm mb-6 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-charcoal transform -rotate-2">
-        Testimonials
+      <div class="inline-block bg-[#00f5d4] border-2 border-black px-4 py-1.5 rounded-full font-bold text-lg mb-6 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-charcoal transform -rotate-2">
+        讓顧客說話
       </div>
       <h2 class="font-display font-black text-[28px] md:text-[36px] text-charcoal mb-6 leading-[1.3]">
-        What People Say<br />
-        <span class="text-xl md:text-2xl text-brand-charcoal font-medium mt-2 block">客戶最真實的 WhatsApp 回饋</span>
+       客戶最真實的 WhatsApp 回饋<br />
+        <span class="text-xl md:text-2xl text-brand-charcoal font-medium mt-2 block"></span>
       </h2>
 
       <div class="bg-white border-l-4 border-[#ff006e] p-5 text-left shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-r-lg inline-block border-2 border-black">
         <p class="text-brand-charcoal text-base leading-[1.6]">
           <strong>【客戶真實評價】</strong>真正的成效不需要過度包裝。這裡展示了 2xWin
-          與各行各業客戶的真實對話紀錄與截圖。從消除初期的疑慮，到看見實際業績增長，透明溝通是我們建立長期信任的基石。
+          各行各業客戶給我們的真實感受。從消除初期的疑慮，到看見實際業績增長，透明溝通是我們建立長期信任的基石。
         </p>
       </div>
     </div>
