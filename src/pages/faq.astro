@@ -2,7 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import AEOBlock from '../components/AEOBlock.astro';
-import { MessageCircle } from 'lucide-astro';
+import { Image } from 'astro:assets';
+import whatsapp from '../assets/img/whatsapp.png';
 
 const faqs = [
 	{
@@ -11,15 +12,11 @@ const faqs = [
 	},
 	{
 		question: "你哋點樣保證透明度？",
-		answer: "我哋會直接喺你嘅 Meta Business Manager 入面落廣告，你擁有 100% 權限。你可以隨時入去睇每一分錢嘅去向、每一個廣告嘅成效，我哋絕對唔會隱瞞任何數據。"
+		answer: "我哋會畀權限你入廣告後台，俾你睇到最原始無加工既數據。"
 	},
 	{
 		question: "係咪一定要簽長約？",
 		answer: "唔需要。我哋採用「月月清」模式，靠實力留客。如果你覺得我哋做得唔好，隨時可以停，唔需要負擔任何違約金。"
-	},
-	{
-		question: "我個網站無人買嘢，你哋可以幫手嗎？",
-		answer: "可以。我哋會由廣告承接嘅角度出發，優化你個網站，等訪客一入嚟就想買。我哋會分析轉化路徑、載入速度同手機版體驗。"
 	},
 	{
 		question: "點樣開始合作？",
@@ -100,8 +97,8 @@ const faqs = [
 				直接 WhatsApp 我哋，我哋會直接回答你。
 			</p>
 			<div class="flex justify-center reveal">
-				<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-white text-charcoal text-2xl py-6 px-12 flex items-center space-x-4">
-					<MessageCircle size={32} />
+				<a href="https://api.whatsapp.com/send/?phone=85252232817&text=%E6%83%B3%E6%9F%A5%E8%A9%A2%E3%80%8C%E7%B7%9A%E4%B8%8A%E5%BB%A3%E5%91%8A%E3%80%8D%E6%9C%8D%E5%8B%99+%28%E6%9F%A5%E8%A9%A2%E7%B7%A8%E8%99%9F%3A+%23225361%29&type=phone_number&app_absent=0" target="_blank" class="neo-brutalism-button bg-white text-charcoal text-2xl py-6 px-12 flex items-center space-x-4">
+					<Image src={whatsapp} alt="WhatsApp" class="w-8 h-8" />
 					<span>立即 WhatsApp 查詢</span>
 				</a>
 			</div>

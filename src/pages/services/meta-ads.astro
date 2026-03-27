@@ -3,47 +3,67 @@ import Layout from '../../layouts/Layout.astro';
 import AEOBlock from '../../components/AEOBlock.astro';
 import NeoCard from '../../components/NeoCard.astro';
 import FAQAccordion from '../../components/FAQAccordion.astro';
+import { Image } from 'astro:assets';
+import whatsapp from '../../assets/img/whatsapp.png';
 import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote, X, Plus } from 'lucide-astro';
+
+const caseStudyImageModules = import.meta.glob('../../assets/img/case-studies/cases-*.jpg', { eager: true });
+const caseStudyImages = Object.values(caseStudyImageModules)
+	.map((img: any) => img.default)
+	.sort((a, b) => a.src.localeCompare(b.src));
+const getCaseStudyImage = (index: number) => caseStudyImages[index]?.src ?? caseStudyImages[0]?.src ?? '';
 
 const metaAdsFaqs = [
 	{
-		question: "點解我之前搵 Agency 落廣告無效果？",
-		answer: "通常有三個原因：第一，Agency 只係機械式落廣告，無考慮你嘅產品同網站轉化率；第二，數據唔透明，你唔知錢去咗邊，亦無得優化；第三，受眾定位太廣或太窄，無做好 A/B Testing。"
+		question: "之前試過俾 Agency「水」過一頸血，點信你哋？",
+		answer: "我哋非常明白被行家燒錢嘅痛，所以我哋嘅定位係行業「揭秘者」，專門踢爆同行 Agency 不良手段 。我哋用過往戰績同商業智慧幫你，唔再做羊牯，比個機會大家由頭黎過。"
 	},
 	{
-		question: "你哋點樣保證透明度？",
-		answer: "我哋會直接喺你嘅 Meta Business Manager 入面落廣告，你擁有 100% 權限。你可以隨時入去睇每一分錢嘅去向、每一個廣告嘅成效，我哋絕對唔會隱瞞任何數據。"
+		question: "你哋敢唔敢「包單」/ ROAS 肯定有幾多？",
+		answer: "行內揭秘： 邊個同你講「保證包單」，佢一定係「水」緊你。生意無必賺，但我敢對天發誓，我哋會用最真實嘅數據操作。如果你的產品本身有問題，神仙都難救。我哋會直接畀商業顧問意見，話你知問題喺邊，而唔係繼續燒你錢。"
 	},
 	{
-		question: "係咪一定要簽長約？",
-		answer: "唔需要。我哋採用「月月清」模式，靠實力留客。如果你覺得我哋做得唔好，隨時可以停，唔需要負擔任何違約金。"
-	}
+		question: "係咪又要簽死一年約？有無得走盞？",
+		answer: "絕對唔鎖死你，我哋實行按月收費模式 (No lock-in contracts)，你可以隨時停。因為我哋有信心靠真實業績留客，而唔係靠死約綁住你。",
+	},
+	{
+		question: "我個網未搞好/生意麻麻，可唔可以落住廣告救命先？",
+		answer: "呢個階段，絕對唔建議搵外判！生意模式未搞掂想靠廣告救命係死路一條。如果你唔太知自己是否合適，歡迎Send 你個Page/網頁嚟，我哋幫你做個 Body Check 先。",
+	},
+	{
+		question: "我做 Dropshipping / 炒賣 / 賭網 / 煙想博一博，接唔接？",
+		answer: "唔好意思，我哋唔做想「空手套白狼」嘅客 。有長遠願景嘅生意先有合作空間。如果你想搵快錢，請繞道; 如果你想踏實做生意，即刻入黎傾 。",
+	},
+	{
+		question: "點知我適唔適合搵你哋？",
+		answer: `坦白講，我哋唔係所有人嘅「嗰杯茶」，但如果你係以下三類人，你會覺得相逢恨晚：<br />1. 受過傷、想要真話嘅老細： 你之前俾人當「水魚」，受夠咗那些只識講專業術語嚇你但交唔出數嘅 Agency。你想要絕對透明同真實意見。2. 有基礎、肯做實業嘅中小企： 你經營緊 SME、網店或美容生意，有實在嘅產品同服務，只係欠缺一套識得幫你放大生意嘅系統，而唔係想用幾百蚊博發達。3. 追求效率嘅決策人： 你係有得直接拍板嘅話事人。你厭倦咗同 Middle Management 耍太極，你想搵個同你一樣講求「快、狠、準」嘅拍檔。`
+	},
 ];
 
 const caseStudies = [
 	{
-		title: "玄學品牌：由冷清到爆單",
+		title: "醫美行業：2個月大幅提升",
 		description: "透過精準受眾定位與素材優化，將原本無人問津的線上諮詢轉化為每日穩定客源。ROAS 提升 400%，每日穩定獲取 10+ 高意向查詢。",
-		image: "https://picsum.photos/seed/fortune/800/600",
+		image: getCaseStudyImage(0),
 		tags: ["Meta Ads", "受眾定位", "素材優化"]
 	},
 	{
 		title: "零售業：數據驅動優化",
 		description: "打破傳統廣告盲點，利用數據分析找出高價值產品，ROAS 提升 300%。成功將廣告成本降低 40%，同時保持業績穩定增長。",
-		image: "https://picsum.photos/seed/retail/800/600",
-		tags: ["Meta Ads", "數據分析", "ROAS 提升"]
+		image: getCaseStudyImage(2),
+		tags: ["Meta Ads", "數據分析", "查詢成本優化"]
 	},
 	{
 		title: "教育中心：系統化獲客",
 		description: "建立自動化獲客系統，將廣告流量引導至高轉化 Landing Page。成功將每位學生獲取成本降低 50%，報名人數提升 150%。",
-		image: "https://picsum.photos/seed/education/800/600",
-		tags: ["Website Dev", "Meta Ads", "獲客系統"]
+		image: getCaseStudyImage(1),
+		tags: [, "Meta Ads", "獲客系統"]
 	},
 	{
-		title: "美容院：精準區域投放",
+		title: "奢侈品回收店: 查詢成本平一倍",
 		description: "針對店鋪周邊區域進行精準投放，並優化預約流程。成功將到店率提升 80%，並建立起穩定的新客來源。",
-		image: "https://picsum.photos/seed/beauty/800/600",
-		tags: ["區域投放", "預約優化", "Meta Ads"]
+		image: getCaseStudyImage(3),
+		tags: [, "預約優化", "Meta Ads"]
 	}
 ];
 
@@ -84,7 +104,7 @@ const processSteps = [
 					我哋幫你建立一個透明、可控、且持續獲利嘅廣告系統。由商業分析到數據優化，每一步都同你講人話。
 				</p>
 				<div class="flex flex-col sm:flex-row gap-6 reveal">
-					<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-charcoal text-white text-xl py-5 px-10 flex items-center justify-center space-x-3">
+					<a href="https://api.whatsapp.com/send/?phone=85252232817&text=%E6%83%B3%E6%9F%A5%E8%A9%A2%E3%80%8C%E7%B7%9A%E4%B8%8A%E5%BB%A3%E5%91%8A%E3%80%8D%E6%9C%8D%E5%8B%99+%28%E6%9F%A5%E8%A9%A2%E7%B7%A8%E8%99%9F%3A+%23225361%29&type=phone_number&app_absent=0" target="_blank" class="neo-brutalism-button bg-charcoal text-white text-xl py-5 px-10 flex items-center justify-center space-x-3">
 						<MessageCircle size={24} />
 						<span>立即開始免費診斷</span>
 					</a>
@@ -171,7 +191,7 @@ const processSteps = [
 	</section>
 
 	<!-- Case Studies Section -->
-	<section class="py-24">
+	<section id="case-studies" class="py-24">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="max-w-3xl mb-16">
 				<h2 class="font-display font-black text-3xl md:text-5xl mb-6 reveal">
@@ -182,12 +202,12 @@ const processSteps = [
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 				{caseStudies.map(study => (
-					<div class="neo-brutalism-card overflow-hidden group reveal">
-						<div class="aspect-video overflow-hidden border-b-2 border-black">
+					<div class="neo-brutalism-card  group reveal">
+						<div class="  border-b-2 border-black">
 							<img 
 								src={study.image} 
 								alt={study.title} 
-								class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+								class="w- h-full object-cover group-hover:scale-105 transition-transform duration-500"
 								referrerpolicy="no-referrer"
 							/>
 						</div>
@@ -200,11 +220,9 @@ const processSteps = [
 								))}
 							</div>
 							<h3 class="font-display font-black text-2xl mb-4">{study.title}</h3>
-							<p class="text-off-white/90 text-base leading-[1.6] mb-6">{study.description}</p>
-							<div class="flex items-center text-hot-pink font-display font-bold space-x-2">
-								<span>查看詳情</span>
-								<ArrowRight size={20} />
-							</div>
+							
+						  
+							
 						</div>
 					</div>
 				))}
@@ -232,8 +250,8 @@ const processSteps = [
 				唔好再浪費 Budget 喺無效嘅廣告上面。
 			</p>
 			<div class="flex justify-center reveal">
-				<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-charcoal text-white text-2xl py-6 px-12 flex items-center space-x-4">
-					<MessageCircle size={32} />
+				<a href="https://api.whatsapp.com/send/?phone=85252232817&text=%E6%83%B3%E6%9F%A5%E8%A9%A2%E3%80%8C%E7%B7%9A%E4%B8%8A%E5%BB%A3%E5%91%8A%E3%80%8D%E6%9C%8D%E5%8B%99+%28%E6%9F%A5%E8%A9%A2%E7%B7%A8%E8%99%9F%3A+%23225361%29&type=phone_number&app_absent=0" target="_blank" class="neo-brutalism-button bg-charcoal text-white text-2xl py-6 px-12 flex items-center space-x-4">
+					<Image src={whatsapp} alt="WhatsApp" class="w-8 h-8" />
 					<span>免費獲取 Meta 廣告診斷</span>
 				</a>
 			</div>

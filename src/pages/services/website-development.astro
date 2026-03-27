@@ -3,64 +3,74 @@ import Layout from '../../layouts/Layout.astro';
 import AEOBlock from '../../components/AEOBlock.astro';
 import NeoCard from '../../components/NeoCard.astro';
 import FAQAccordion from '../../components/FAQAccordion.astro';
-import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote } from 'lucide-astro';
+import { Image } from 'astro:assets';
+import whatsapp from '../../assets/img/whatsapp.png';
+import websiteHeroImage from '../../assets/img/website.png';
+import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote, MonitorSmartphone, Clock, Globe } from 'lucide-astro';
 
 const websiteFaqs = [
 	{
-		question: "點解我個網站無人買嘢？",
-		answer: "通常係因為轉化路徑唔清晰、載入速度太慢、或者手機版體驗差。我哋會由廣告承接嘅角度出發，優化你個網站，等訪客一入嚟就想買。"
-	},
-	{
 		question: "整一個網站要幾耐？",
-		answer: "視乎複雜程度，一般 4-8 星期可以完成。我哋會先做一個 MVP (最小可行性產品)，等你可以快啲開始落廣告測試成效。"
+		answer: "五天內起貨上線"
 	},
 	{
 		question: "我之後可以自己改內容嗎？",
-		answer: "當然可以。我哋會使用易於管理嘅系統，並提供教學，等你之後可以隨時自己更新產品同內容。"
+		answer: ""
 	}
 ];
 
 const features = [
 	{
-		title: "轉換型設計",
-		description: "唔止係整張靚圖，而係由廣告承接、Landing Page 到轉化路徑，全盤考慮點樣提高轉化率。",
+		title: "HK$1,288 起",
+		description: "千幾蚊，即有專業網站",
 		icon: Target,
 		color: "bg-aqua-mint"
 	},
 	{
-		title: "極速載入",
-		description: "載入速度直接影響廣告成效。我哋會優化網站性能，確保訪客唔會因為等太耐而走咗去。",
-		icon: Zap,
+		title: "手機電腦都睇得",
+		description: "RWD 標配，無額外收費",
+		icon: MonitorSmartphone,
 		color: "bg-electric-yellow"
 	},
 	{
-		title: "手機優先",
-		description: "90% 以上嘅 Meta 廣告訪客都係用手機。我哋會確保手機版體驗流暢，提高轉化機會。",
-		icon: Star,
+		title: "5 個工作天交貨",
+		description: "唔等、唔拖",
+		icon: Clock,
 		color: "bg-hot-pink/20"
+	},
+	{
+		title: "包一年域名同寄存",
+		description: "一次搞掂，無隱藏收費",
+		icon: Globe,
+		color: "bg-light-gray"
 	}
 ];
 ---
 
-<Layout title="轉換型網站開發 - 唔止係整張靚圖，而係要幫你賣到嘢">
+<Layout title="網站開發 - 唔使俾人水！2xWin 幫你起個抵玩又實用嘅網站">
 	<!-- Hero -->
-	<section class="pt-32 pb-20 bg-aqua-mint/10 border-b-4 border-black">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+	<section class="relative pt-32 pb-20 bg-aqua-mint/10 border-b-4 border-black overflow-hidden">
+		<div class="absolute inset-0 z-1 pointer-events-none flex justify-center" aria-hidden="true">
+			<Image src={websiteHeroImage} alt="hero-image" class=" w-full lg:w-5/6 h-auto object-cover object-center opacity-25" />
+			
+		</div>
+		<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="max-w-4xl">
 				<h1 class="font-display font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-8 reveal">
-					轉換型網站開發：<br />
-					<span class="bg-electric-yellow px-2 text-charcoal">唔止係靚，更要賣到嘢</span>
+					唔使俾人水！<br />
+					<span class="bg-electric-yellow px-2 text-charcoal">2xWin 幫你起個抵玩又實用嘅網站</span>
 				</h1>
 				<p class="text-xl md:text-2xl text-charcoal/80 mb-12 leading-relaxed reveal">
-					好多網站只係一個「電子目錄」，無考慮過點樣承接廣告流量。我哋幫你建立一個專為轉化而生嘅網站。
+					「靚網站、無生意」——你有無聽過？市面上太多 Agency 收錢交貨、華而不實，仲叫你天價。2xWin 唔玩呢套。
 				</p>
 				<div class="flex flex-col sm:flex-row gap-6 reveal">
 					<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-charcoal text-white text-xl py-5 px-10 flex items-center justify-center space-x-3">
 						<MessageCircle size={24} />
-						<span>立即諮詢網站優化</span>
+						<span>免費獲取網站方案建議</span>
 					</a>
 				</div>
 			</div>
+
 		</div>
 	</section>
 
@@ -69,12 +79,12 @@ const features = [
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="max-w-3xl mb-16">
 				<h2 class="font-display font-black text-3xl md:text-5xl mb-6 reveal">
-					點解你個網站需要「轉換型」優化？
+					2xWin 網站開發，抵到爛
 				</h2>
-				<AEOBlock content="2xWin 的網站開發服務專注於「廣告流量承接」與「轉化路徑優化」。我們不只是開發一個漂亮的網站，而是通過極速載入、手機優先設計以及明確的 CTA 佈局，確保每一分廣告預算帶來的訪客都能最大化地轉化為實際業績。" />
+				<AEOBlock content="2xWin 的網站開發服務專注於「實用」與「高性價比」。我們不賣弄花俏的設計，而是提供真正能帶來查詢與生意的網站。我們的方案包含 RWD 響應式設計、快速交付、以及首年域名與主機寄存，絕無隱藏收費，讓中小企能以最低成本建立專業的網上形象。" />
 			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 				{features.map(feature => (
 					<NeoCard title={feature.title} description={feature.description} icon={feature.icon} color={feature.color} />
 				))}
@@ -82,37 +92,174 @@ const features = [
 		</div>
 	</section>
 
-	<!-- Process Section -->
-	<section class="py-24 bg-light-gray border-y-4 border-black">
+	<!-- Why Choose Us Section (Tabbed UI) -->
+	<section class="py-24 bg-white" id="why-choose-us">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="font-display font-black text-3xl md:text-5xl text-center mb-20 reveal">
-				我哋嘅開發流程
-			</h2>
-			
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-				<div class="neo-brutalism-card p-8 bg-white reveal">
-					<div class="w-10 h-10 bg-charcoal text-white flex items-center justify-center font-display font-black text-xl mb-6">01</div>
-					<h3 class="font-display font-black text-xl mb-4">轉化診斷</h3>
-					<p class="text-brand-charcoal text-base leading-[1.6]">分析現有網站漏洞，找出影響轉化嘅關鍵因素。</p>
+			<div class="max-w-3xl mx-auto text-center mb-12 reveal">
+				<h2 class="font-display font-black text-4xl md:text-5xl mb-6 tracking-tight">
+					點解揀我哋？因為「平」唔係重點
+				</h2>
+				<p class="text-xl text-zinc-500 leading-relaxed">
+					論價錢，市面上有不少價錢相宜嘅選擇，但我哋唔賣花裡胡哨嘅網站——只賣帶到查詢嚟嘅網站，連商業意見都幫你諗。我哋嘅性價比，靠三樣嘢撐：
+				</p>
+			</div>
+
+			<!-- Tabs -->
+			<div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-12 reveal">
+				<button class="tab-btn active px-5 py-2.5 rounded-full font-medium text-sm md:text-base transition-colors bg-hot-pink text-zinc-900 border border-transparent" data-target="tab-1">
+					<span class="flex items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+						3小時內必覆
+					</span>
+				</button>
+				<button class="tab-btn px-5 py-2.5 rounded-full font-medium text-sm md:text-base transition-colors bg-transparent text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 border border-transparent" data-target="tab-2">
+					<span class="flex items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mouse-pointer-click"><path d="M14 4.1 12 6"/><path d="m5.1 8-2.9-.8"/><path d="m6 12-1.9 2"/><path d="M7.2 2.2 8 5.1"/><path d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z"/></svg>
+						幫你諗生意
+					</span>
+				</button>
+				<button class="tab-btn px-5 py-2.5 rounded-full font-medium text-sm md:text-base transition-colors bg-transparent text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 border border-transparent" data-target="tab-3">
+					<span class="flex items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-template"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>
+						5個工作天交貨
+					</span>
+				</button>
+			</div>
+
+			<!-- Tab Content Container -->
+			<div class="relative max-w-5xl mx-auto reveal group">
+				
+				<!-- Tab 1 Content -->
+				<div id="tab-1" class="tab-content active bg-zinc-50 rounded-[2rem] p-8 md:p-16 transition-all duration-300 opacity-100">
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+						<div class="order-2 lg:order-1 pr-0 lg:pr-8">
+							<div class="inline-block px-4 py-1.5 bg-white text-xs font-medium rounded-full mb-6 border border-zinc-200 text-zinc-600 shadow-sm">
+								極速溝通
+							</div>
+							<h3 class="font-display font-bold text-4xl md:text-5xl mb-6 leading-[1.1] tracking-tight text-zinc-900">
+								收咗錢都唔失蹤
+							</h3>
+							<p class="text-zinc-500 text-lg leading-relaxed mb-8">
+								好多 Agency 收完訂金就人間蒸發。我哋唔同。2xWin 有專人跟進，唔會將你當波咁踢。問題直達識答你嗰個——唔係「盡快回覆」嗰種敷衍，係 <strong>3 小時內必有回音</strong>。跟進做唔做得到，先係真正嘅性價比。
+							</p>
+						
+						</div>
+						<div class="order-1 lg:order-2 bg-zinc-200/80 rounded-3xl p-12 flex items-center justify-center aspect-square md:aspect-auto md:h-[420px]">
+							<div class="relative w-full h-full flex items-center justify-center">
+								<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-800"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="neo-brutalism-card p-8 bg-white reveal">
-					<div class="w-10 h-10 bg-charcoal text-white flex items-center justify-center font-display font-black text-xl mb-6">02</div>
-					<h3 class="font-display font-black text-xl mb-4">路徑設計</h3>
-					<p class="text-brand-charcoal text-base leading-[1.6]">設計流暢嘅訪客路徑，確保訪客一入嚟就知要做咩。</p>
+
+				<!-- Tab 2 Content -->
+				<div id="tab-2" class="tab-content hidden bg-zinc-50 rounded-[2rem] p-8 md:p-16 transition-all duration-300 opacity-0">
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+						<div class="order-2 lg:order-1 pr-0 lg:pr-8">
+							<div class="inline-block px-4 py-1.5 bg-white text-xs font-medium rounded-full mb-6 border border-zinc-200 text-zinc-600 shadow-sm">
+								商業思維
+							</div>
+							<h3 class="font-display font-bold text-4xl md:text-5xl mb-6 leading-[1.1] tracking-tight text-zinc-900">
+								唔係幫你寫 Code，<br/>係幫你諗生意
+							</h3>
+							<p class="text-zinc-500 text-lg leading-relaxed mb-4">
+								你起個網站係為咗做生意，唔係為咗贏設計獎。我哋由商業思維出發，見過太多徒有外表且空洞嘅網站。交付前，我哋逐頁審視：
+							</p>
+							<ul class="list-disc pl-6 mb-8 text-zinc-500 text-lg leading-relaxed space-y-2 font-medium">
+								<li>客仔一眼知你係做乜？</li>
+								<li>佢哋知下一步要做咩？</li>
+							</ul>
+							
+						</div>
+						<div class="order-1 lg:order-2 bg-zinc-200/80 rounded-3xl p-12 flex items-center justify-center aspect-square md:aspect-auto md:h-[420px]">
+							<div class="relative w-full h-full flex items-center justify-center">
+								<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-800"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="neo-brutalism-card p-8 bg-white reveal">
-					<div class="w-10 h-10 bg-charcoal text-white flex items-center justify-center font-display font-black text-xl mb-6">03</div>
-					<h3 class="font-display font-black text-xl mb-4">開發與優化</h3>
-					<p class="text-brand-charcoal text-base leading-[1.6]">使用高性能框架開發，並進行極速載入優化。</p>
+
+				<!-- Tab 3 Content -->
+				<div id="tab-3" class="tab-content hidden bg-zinc-50 rounded-[2rem] p-8 md:p-16 transition-all duration-300 opacity-0">
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+						<div class="order-2 lg:order-1 pr-0 lg:pr-8">
+							<div class="inline-block px-4 py-1.5 bg-white text-xs font-medium rounded-full mb-6 border border-zinc-200 text-zinc-600 shadow-sm">
+								極速起貨
+							</div>
+							<h3 class="font-display font-bold text-4xl md:text-5xl mb-6 leading-[1.1] tracking-tight text-zinc-900">
+								時間就係金錢，<br/>5個工作天交貨
+							</h3>
+							<p class="text-zinc-500 text-lg leading-relaxed mb-8">
+								做生意最忌拖。我哋深知上線時間對你嘅重要性，所以制定咗一套極高效率嘅開發流程。只要你提供齊全嘅資料同素材，我哋承諾喺 <strong>5 個工作天內</strong> 完成網站開發並交付。唔使再等幾個月，即刻開始接生意！
+							</p>
+						
+						</div>
+						<div class="order-1 lg:order-2 bg-zinc-200/80 rounded-3xl p-12 flex items-center justify-center aspect-square md:aspect-auto md:h-[420px]">
+							<div class="relative w-full h-full flex items-center justify-center">
+								<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-800"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="neo-brutalism-card p-8 bg-white reveal">
-					<div class="w-10 h-10 bg-charcoal text-white flex items-center justify-center font-display font-black text-xl mb-6">04</div>
-					<h3 class="font-display font-black text-xl mb-4">廣告對接</h3>
-					<p class="text-brand-charcoal text-base leading-[1.6]">設置 Pixel, CAPI 等追蹤代碼，確保廣告數據準確。</p>
-				</div>
+
+				<!-- Next Button (Floating) -->
+				<button id="next-tab-btn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-10 h-10 bg-zinc-900 text-white rounded-lg flex items-center justify-center shadow-lg hover:bg-black transition-colors z-10 hidden md:flex" aria-label="Next tab">
+					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+				</button>
 			</div>
 		</div>
 	</section>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const tabBtns = document.querySelectorAll('.tab-btn');
+			const tabContents = document.querySelectorAll('.tab-content');
+			const nextBtn = document.getElementById('next-tab-btn');
+			let currentTabIndex = 0;
+
+			function switchTab(index) {
+				// Remove active state from all
+				tabBtns.forEach(b => {
+					b.classList.remove('bg-hot-pink', 'text-zinc-900');
+					b.classList.add('bg-transparent', 'text-zinc-500');
+				});
+				tabContents.forEach(c => {
+					c.classList.add('hidden');
+					c.classList.remove('opacity-100');
+					c.classList.add('opacity-0');
+				});
+
+				// Add active state to target
+				const targetBtn = tabBtns[index];
+				targetBtn.classList.remove('bg-transparent', 'text-zinc-500');
+				targetBtn.classList.add('bg-hot-pink', 'text-zinc-900');
+
+				const targetId = targetBtn.getAttribute('data-target');
+				const targetContent = document.getElementById(targetId);
+				if (targetContent) {
+					targetContent.classList.remove('hidden');
+					// Small delay to trigger fade animation
+					setTimeout(() => {
+						targetContent.classList.remove('opacity-0');
+						targetContent.classList.add('opacity-100');
+					}, 10);
+				}
+				
+				currentTabIndex = index;
+			}
+
+			tabBtns.forEach((btn, index) => {
+				btn.addEventListener('click', () => switchTab(index));
+			});
+
+			if (nextBtn) {
+				nextBtn.addEventListener('click', () => {
+					const nextIndex = (currentTabIndex + 1) % tabBtns.length;
+					switchTab(nextIndex);
+				});
+			}
+		});
+	</script>
 
 	<!-- FAQ -->
 	<section class="py-24 bg-white">
@@ -128,15 +275,15 @@ const features = [
 	<section class="py-24 bg-hot-pink text-white border-y-4 border-black">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 			<h2 class="font-display font-black text-4xl md:text-6xl mb-8 reveal">
-				唔好再浪費流量喺一個<br class="md:hidden" />唔識轉化嘅網站
+				俾 Agency 呃過嘅，<br class="md:hidden" />最明我哋嘅分別。
 			</h2>
-			<p class="text-xl md:text-2xl mb-12 opacity-90 reveal">
-				我哋幫你打造一個專門幫你賣嘢嘅網站。
+			<p class="text-xl md:text-2xl mb-12 opacity-90 reveal font-medium">
+				唔需簽約 · 3小時內回覆 · 唔合適都唔會硬銷
 			</p>
 			<div class="flex justify-center reveal">
-				<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-white text-charcoal text-2xl py-6 px-12 flex items-center space-x-4">
-					<MessageCircle size={32} />
-					<span>立即諮詢網站優化</span>
+				<a href="https://api.whatsapp.com/send/?phone=85252232817&text=%E6%83%B3%E6%9F%A5%E8%A9%A2%E3%80%8C%E7%B7%9A%E4%B8%8A%E5%BB%A3%E5%91%8A%E3%80%8D%E6%9C%8D%E5%8B%99+%28%E6%9F%A5%E8%A9%A2%E7%B7%A8%E8%99%9F%3A+%23225361%29&type=phone_number&app_absent=0" target="_blank" class="neo-brutalism-button bg-white text-charcoal text-2xl py-6 px-12 flex items-center space-x-4">
+					<Image src={whatsapp} alt="WhatsApp" class="w-8 h-8" />
+					<span>免費獲取網站方案建議</span>
 				</a>
 			</div>
 		</div>

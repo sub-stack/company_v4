@@ -1,6 +1,8 @@
 ---
 import { Facebook, Instagram, MessageCircle, Mail, MapPin } from 'lucide-astro';
 import { withBase } from '../utils/withBase';
+import { Image } from 'astro:assets';
+import logo from '../assets/img/logo.jpg';
 
 const footerLinks = [
 	{
@@ -8,14 +10,14 @@ const footerLinks = [
 		links: [
 			{ name: 'Meta 廣告投放', href: '/services/meta-ads' },
 			{ name: '轉換型網站開發', href: '/services/website-development' },
-			{ name: '社群素材設計', href: '/services/social-media-design' },
+			
 		]
 	},
 	{
 		title: '關於我們',
 		links: [
 			{ name: '品牌使命', href: '/about/mission' },
-			{ name: '合作流程', href: '/about/process' },
+
 			{ name: 'Blog', href: '/insights/blog' },
 			{ name: '常見問題', href: '/faq' },
 		]
@@ -23,8 +25,8 @@ const footerLinks = [
 	{
 		title: '聯絡資訊',
 		links: [
-			{ name: 'WhatsApp 查詢', href: 'https://wa.me/85212345678' },
-			{ name: '電郵聯絡', href: 'mailto:info@2xwin.com' },
+			{ name: 'WhatsApp 查詢', href: 'https://api.whatsapp.com/send/?phone=85252232817&text=%E6%83%B3%E6%9F%A5%E8%A9%A2%E3%80%8C%E7%B7%9A%E4%B8%8A%E5%BB%A3%E5%91%8A%E3%80%8D%E6%9C%8D%E5%8B%99+%28%E6%9F%A5%E8%A9%A2%E7%B7%A8%E8%99%9F%3A+%23225361%29&type=phone_number&app_absent=0' },
+			
 		]
 	}
 ];
@@ -35,20 +37,21 @@ const footerLinks = [
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 			<!-- Brand Column -->
 			<div class="space-y-6">
-				<a href={withBase('/')} class="flex items-center space-x-2">
-					<div class="w-10 h-10 bg-electric-yellow border-2 border-black flex items-center justify-center font-display font-black text-xl text-charcoal shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)]">
-						2x
-					</div>
-					<span class="font-display font-black text-2xl tracking-tight">Win</span>
-				</a>
+				<a href={withBase('/')} class="flex items-center space-x-3 group">
+			     <Image 
+				    src={logo} 
+				    class="w-[60px] h-[60px] object-cover group-hover:scale-125 transition-transform duration-600" 
+				    alt="2xWin Logo" 
+				 />
+			    </a>
 				<p class="text-off-white/60 text-sm leading-relaxed max-w-xs">
 					幫中小企擺脫黑箱 Agency，用透明 Meta 廣告穩陣放大生意。唔靠花巧術語，唔靠死約留客。
 				</p>
 				<div class="flex space-x-4">
-					<a href="#" class="w-10 h-10 bg-white/10 border border-white/20 flex items-center justify-center hover:bg-hot-pink transition-colors">
+					<a href="https://www.facebook.com/2xwin.marketing" target="_blank" class="w-10 h-10 bg-white/10 border border-white/20 flex items-center justify-center hover:bg-hot-pink transition-colors">
 						<Facebook size={20} />
 					</a>
-					<a href="#" class="w-10 h-10 bg-white/10 border border-white/20 flex items-center justify-center hover:bg-hot-pink transition-colors">
+					<a href="https://www.instagram.com/2xwin.marketing" target="_blank" class="w-10 h-10 bg-white/10 border border-white/20 flex items-center justify-center hover:bg-hot-pink transition-colors">
 						<Instagram size={20} />
 					</a>
 				</div>

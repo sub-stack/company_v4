@@ -1,6 +1,10 @@
 ---
 import { Menu, X, MessageCircle, ChevronDown } from 'lucide-astro';
 import { withBase } from '../utils/withBase';
+import { Image } from 'astro:assets';
+import logo from '../assets/img/logo.jpg';
+import whatsapp from '../assets/img/whatsapp.png';
+
 
 const navLinks = [
 	{ name: '首頁', href: '/' },
@@ -22,11 +26,20 @@ const navLinks = [
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex justify-between items-center h-20">
 			<!-- Logo -->
-			<a href={withBase('/')} class="flex items-center space-x-2 group">
-				<div class="w-10 h-10 bg-electric-yellow border-2 border-black flex items-center justify-center font-display font-black text-xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:shadow-none transition-all">
-					2x
+			<a href={withBase('/')} class="flex items-center space-x-3 group">
+			     <Image 
+				    src={logo} 
+				    class="w-[60px] h-[60px] object-cover group-hover:scale-125 transition-transform duration-600" 
+				    alt="2xWin Logo" 
+				 />
+				<div class="flex flex-col justify-center pt-1"> 
+	               <span class="font-display font-black text-lg sm:text-xl uppercase tracking-widest text-charcoal  mb-1.5">
+				   Double Win Marketing
+				   </span>
+				   <span class="text-[10px] sm:text-xs tracking-[0.3em] text-charcoal/80 font-medium ">
+						你的線上廣告投放軍師
+					</span>
 				</div>
-				<span class="font-display font-black text-2xl tracking-tight">Win</span>
 			</a>
 
 			<!-- Desktop Nav -->
@@ -57,7 +70,7 @@ const navLinks = [
 					target="_blank" 
 					class="neo-brutalism-button bg-aqua-mint text-sm flex items-center space-x-2"
 				>
-					<MessageCircle size={18} />
+					<Image src={whatsapp} class="w-8 h-auto object-cover" alt="WhatsApp Logo" />
 					<span>免費診斷</span>
 				</a>
 			</nav>

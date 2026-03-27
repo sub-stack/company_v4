@@ -5,6 +5,7 @@ import NeoCard from '../components/NeoCard.astro';
 import { withBase } from '../utils/withBase';
 import {Image} from 'astro:assets';
 import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote, Check } from 'lucide-astro';
+import whatsappImg from '../assets/img/whatsapp.png';
 
 const testimonialImages = import.meta.glob('../assets/img/testimonial_*.png', { eager: true });
 const images = Object.values(testimonialImages).map((img: any) => img.default);
@@ -95,7 +96,7 @@ const caseStudies = [
 					唔靠花巧術語，唔靠死約留客。由商業分析、帳戶透明，到投放節奏，都會同你講人話、講真話。
 				</p>
 				<div class="flex flex-col sm:flex-row gap-6 reveal">
-					<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-hot-pink text-white text-xl py-5 px-10 flex items-center justify-center space-x-3">
+					<a href="https://api.whatsapp.com/send/?phone=85252232817&text=%E6%83%B3%E6%9F%A5%E8%A9%A2%E3%80%8C%E7%B7%9A%E4%B8%8A%E5%BB%A3%E5%91%8A%E3%80%8D%E6%9C%8D%E5%8B%99+%28%E6%9F%A5%E8%A9%A2%E7%B7%A8%E8%99%9F%3A+%23225361%29&type=phone_number&app_absent=0" target="_blank" class="neo-brutalism-button bg-hot-pink text-white text-xl py-5 px-10 flex items-center justify-center space-x-3">
 						<span>免費獲取 Meta 廣告診斷</span>
 						<ArrowRight size={24} />
 					</a>
@@ -204,7 +205,7 @@ const caseStudies = [
 						我哋唔講空話，只睇結果。以下係我哋幫客戶達成嘅部分成效。
 					</p>
 				</div>
-				<a href={withBase('/insights/blog')} class="neo-brutalism-button bg-white reveal">
+				<a href={withBase('/services/meta-ads#case-studies')} class="neo-brutalism-button bg-white reveal">
 					查看更多 Blog
 				</a>
 			</div>
@@ -392,8 +393,8 @@ const caseStudies = [
 				我哋會幫你做一個免費嘅「身體檢查」，話你知你嘅廣告同網站仲有咩進步空間。
 			</p>
 			<div class="flex justify-center reveal">
-				<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-white text-charcoal text-2xl py-6 px-12 flex items-center space-x-4">
-					<MessageCircle size={32} />
+				<a href="https://api.whatsapp.com/send/?phone=85252232817&text=%E6%83%B3%E6%9F%A5%E8%A9%A2%E3%80%8C%E7%B7%9A%E4%B8%8A%E5%BB%A3%E5%91%8A%E3%80%8D%E6%9C%8D%E5%8B%99+%28%E6%9F%A5%E8%A9%A2%E7%B7%A8%E8%99%9F%3A+%23225361%29&type=phone_number&app_absent=0" target="_blank" class="neo-brutalism-button bg-white text-charcoal text-2xl py-6 px-12 flex items-center space-x-4">
+					<Image src={whatsappImg} alt="WhatsApp logo" class="w-15 h-auto object-contain" />
 					<span>免費獲取 Meta 廣告診斷</span>
 				</a>
 			</div>

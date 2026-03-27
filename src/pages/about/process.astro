@@ -2,7 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 import AEOBlock from '../../components/AEOBlock.astro';
 import NeoCard from '../../components/NeoCard.astro';
-import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote } from 'lucide-astro';
+import { Image } from 'astro:assets';
+import whatsapp from '../../assets/img/whatsapp.png';
+import { Target, ShieldCheck, Zap, BarChart3, ArrowRight, Star, Quote } from 'lucide-astro';
 
 const steps = [
 	{
@@ -101,8 +103,8 @@ const steps = [
 				準備好開始穩陣放大生意？
 			</h2>
 			<div class="flex justify-center reveal">
-				<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-aqua-mint text-charcoal text-2xl py-6 px-12 flex items-center space-x-4">
-					<MessageCircle size={32} />
+				<a href="https://api.whatsapp.com/send/?phone=85252232817&text=%E6%83%B3%E6%9F%A5%E8%A9%A2%E3%80%8C%E7%B7%9A%E4%B8%8A%E5%BB%A3%E5%91%8A%E3%80%8D%E6%9C%8D%E5%8B%99+%28%E6%9F%A5%E8%A9%A2%E7%B7%A8%E8%99%9F%3A+%23225361%29&type=phone_number&app_absent=0" target="_blank" class="neo-brutalism-button bg-aqua-mint text-charcoal text-2xl py-6 px-12 flex items-center space-x-4">
+					<Image src={whatsapp} alt="WhatsApp" class="w-8 h-8" />
 					<span>免費獲取 Meta 廣告診斷</span>
 				</a>
 			</div>
