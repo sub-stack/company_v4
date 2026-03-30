@@ -8,6 +8,8 @@ import caseStudy1 from "../assets/img/case-studies/cases-1.jpg";
 import caseStudy2 from "../assets/img/case-studies/cases-2.jpg";
 import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote, Check } from 'lucide-astro';
 import whatsappImg from '../assets/img/whatsapp.png';
+import metaPartner from '../assets/img/meta-partner.png';
+import metaVerified from '../assets/img/meta-verified.png';
 
 const testimonialImages = import.meta.glob('../assets/img/testimonial_*.png', { eager: true });
 const images = Object.values(testimonialImages).map((img: any) => img.default);
@@ -92,18 +94,22 @@ const caseStudies = [
 					))}
 				</div>
 				<h1 class="font-display font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-8 reveal">
-					幫中小企擺脫黑箱 Agency，<br class="hidden md:block" />
-					用透明 Meta 廣告<span class="bg-electric-yellow px-2">穩陣放大生意</span>
+					幫中小企擺脫黑箱Agency<br class="hidden md:block" />
+					用透明廣告方式</br><span class="bg-electric-yellow px-2">穩陣放大生意</span>
 				</h1>
 				<p class="text-xl md:text-2xl text-charcoal/80 mb-12 leading-relaxed reveal">
 					唔靠花巧術語，唔靠死約留客。由商業分析、帳戶透明，到投放節奏，都會同你講人話、講真話。
 				</p>
 				<div class="flex flex-col sm:flex-row gap-6 reveal">
 					<a href="https://api.whatsapp.com/send/?phone=85252232817&text=%E6%83%B3%E6%9F%A5%E8%A9%A2%E3%80%8C%E7%B7%9A%E4%B8%8A%E5%BB%A3%E5%91%8A%E3%80%8D%E6%9C%8D%E5%8B%99+%28%E6%9F%A5%E8%A9%A2%E7%B7%A8%E8%99%9F%3A+%23225361%29&type=phone_number&app_absent=0" target="_blank" class="neo-brutalism-button bg-hot-pink text-white text-xl py-5 px-10 flex items-center justify-center space-x-3">
-						<span>免費獲取 Meta 廣告診斷</span>
+						<span>免費獲取廣告診斷</span>
 						<ArrowRight size={24} />
 					</a>
-			
+			 <!-- Meta Partner Badges -->
+				<div class="flex flex-wrap items-center gap-4 md:gap-6 reveal">
+					<Image src={metaPartner} alt="Meta Verified" class="h-12 md:h-14 w-auto object-contain rounded-md" />
+					<Image src={metaVerified} alt="Meta Business Partner" class="h-12 md:h-14 w-auto object-contain rounded-md" />
+				</div>
 				</div>
 			</div>
 		</div>
@@ -133,12 +139,12 @@ const caseStudies = [
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 				<div class="space-y-10 reveal">
 					<h2 class="font-display font-black text-4xl md:text-5xl leading-tight text-aqua-mint">
-						點樣的合作，<br />通常會做得更順
+						你準備好合作未?
 					</h2>
 					
 					<div class="border-l-4 border-aqua-mint pl-6 py-1">
 						<p class="text-off-white/90 leading-relaxed text-base">
-							【合作條件評估】盲目投放廣告無法帶來長遠收益。在啟動 Meta 廣告前，我們會先評估你的產品是否具備市場基礎，以及網站與流程是否準備好承接流量。建立正確的投放節奏與合作基礎，是穩定放大生意的唯一法則。
+							【合作條件評估】盲目投放廣告無法帶來長遠收益。在啟動廣告前，我們會先評估你的產品是否具備市場基礎，以及網站與流程是否準備好承接流量。建立正確的投放節奏與合作基礎，是穩定放大生意的唯一法則。
 						</p>
 					</div>
 
@@ -399,7 +405,7 @@ const caseStudies = [
 			<div class="flex justify-center reveal">
 				<a href="https://api.whatsapp.com/send/?phone=85252232817&text=%E6%83%B3%E6%9F%A5%E8%A9%A2%E3%80%8C%E7%B7%9A%E4%B8%8A%E5%BB%A3%E5%91%8A%E3%80%8D%E6%9C%8D%E5%8B%99+%28%E6%9F%A5%E8%A9%A2%E7%B7%A8%E8%99%9F%3A+%23225361%29&type=phone_number&app_absent=0" target="_blank" class="neo-brutalism-button bg-white text-charcoal text-2xl py-6 px-12 flex items-center space-x-4">
 					<Image src={whatsappImg} alt="WhatsApp logo" class="w-15 h-auto object-contain" />
-					<span>免費獲取 Meta 廣告診斷</span>
+					<span>免費獲取廣告診斷</span>
 				</a>
 			</div>
 		</div>

@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import { withBase } from '../utils/withBase';
+import {Image} from 'astro:assets';
+import logo from '../assets/img/logo.jpg';
 
 interface Props {
 	title: string;
@@ -19,7 +21,12 @@ const { title, description = "2xWin - 幫中小企擺脫黑箱 Agency，用透�
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+		<!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K8B9RTLP');</script>
+        <!-- End Google Tag Manager -->
+		<link rel="icon" type="image/jpeg" href={logo.src} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | 2xWin</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +38,6 @@ const { title, description = "2xWin - 幫中小企擺脫黑箱 Agency，用透�
 				"@type": "Organization",
 				"name": "2xWin",
 				"url": "https://2xwin.com",
-				"logo": "https://2xwin.com/logo.png",
 				"description": "幫中小企擺脫黑箱 Agency，用透明 Meta 廣告穩陣放大生意。",
 				"contactPoint": {
 					"@type": "ContactPoint",
@@ -42,6 +48,10 @@ const { title, description = "2xWin - 幫中小企擺脫黑箱 Agency，用透�
 		</script>
 	</head>
 	<body class="bg-[#FCFCF8] text-[#1F1F1B] font-sans selection:bg-hot-pink selection:text-white">
+		<!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8B9RTLP"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
 		<Header />
 		<main>
 			<slot />

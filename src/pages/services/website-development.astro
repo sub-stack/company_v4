@@ -4,7 +4,10 @@ import AEOBlock from '../../components/AEOBlock.astro';
 import NeoCard from '../../components/NeoCard.astro';
 import FAQAccordion from '../../components/FAQAccordion.astro';
 import { Image } from 'astro:assets';
+import ReplyImage from '../../assets/img/website-concept-art/3hour.png';
 import whatsapp from '../../assets/img/whatsapp.png';
+import Code from '../../assets/img/website-concept-art/code.png';
+import deliveryImg from '../../assets/img/website-concept-art/delivery.png';
 import websiteHeroImage from '../../assets/img/website.png';
 import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote, MonitorSmartphone, Clock, Globe } from 'lucide-astro';
 
@@ -146,7 +149,7 @@ const features = [
 						</div>
 						<div class="order-1 lg:order-2 bg-zinc-200/80 rounded-3xl p-12 flex items-center justify-center aspect-square md:aspect-auto md:h-[420px]">
 							<div class="relative w-full h-full flex items-center justify-center">
-								<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-800"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+								<Image src={ReplyImage} alt="table image 1" class=" w-auto h-auto object-Fit overflow-hidden " />
 							</div>
 						</div>
 					</div>
@@ -173,7 +176,7 @@ const features = [
 						</div>
 						<div class="order-1 lg:order-2 bg-zinc-200/80 rounded-3xl p-12 flex items-center justify-center aspect-square md:aspect-auto md:h-[420px]">
 							<div class="relative w-full h-full flex items-center justify-center">
-								<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-800"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+								<Image src={Code} alt="table image 2" class=" w-auto h-auto object-Fit overflow-hidden " />
 							</div>
 						</div>
 					</div>
@@ -196,7 +199,7 @@ const features = [
 						</div>
 						<div class="order-1 lg:order-2 bg-zinc-200/80 rounded-3xl p-12 flex items-center justify-center aspect-square md:aspect-auto md:h-[420px]">
 							<div class="relative w-full h-full flex items-center justify-center">
-								<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-800"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+								<Image src={deliveryImg} alt="table image 3" class=" w-auto h-auto object-Fit overflow-hidden " />
 							</div>
 						</div>
 					</div>
