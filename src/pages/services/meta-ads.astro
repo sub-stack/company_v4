@@ -5,6 +5,8 @@ import NeoCard from '../../components/NeoCard.astro';
 import FAQAccordion from '../../components/FAQAccordion.astro';
 import { Image } from 'astro:assets';
 import whatsapp from '../../assets/img/whatsapp.png';
+import metaVerified from '../../assets/img/meta-verified.png';
+import metaPartner from '../../assets/img/meta-partner.png';
 import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote, X, Plus } from 'lucide-astro';
 
 const caseStudyImageModules = import.meta.glob('../../assets/img/case-studies/cases-*.jpg', { eager: true });
@@ -105,7 +107,13 @@ const processSteps = [
 						<MessageCircle size={24} />
 						<span>立即開始免費診斷</span>
 					</a>
+					 <!-- Meta Partner Badges -->
+				    <div class="flex flex-wrap items-center gap-4 md:gap-6 reveal">
+					<Image src={metaPartner} alt="Meta Verified" class="h-12 md:h-14 w-auto object-contain rounded-md" />
+					<Image src={metaVerified} alt="Meta Business Partner" class="h-12 md:h-14 w-auto object-contain rounded-md" />
+				    </div>
 				</div>
+				
 			</div>
 		</div>
 	</section>
