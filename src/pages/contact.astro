@@ -3,7 +3,17 @@ import Layout from '../layouts/Layout.astro';
 import AEOBlock from '../components/AEOBlock.astro';
 import { Image } from 'astro:assets';
 import whatsapp from '../assets/img/whatsapp.png';
-import { MessageCircle, Mail, MapPin, Facebook, Instagram } from 'lucide-astro';
+import { MessageCircle, Mail, MapPin, Phone, Facebook, Instagram } from 'lucide-astro';
+import {
+	BUSINESS_ADDRESS,
+	BUSINESS_EMAIL,
+	FACEBOOK_URL,
+	GBP_URL,
+	INSTAGRAM_URL,
+	LEGAL_NAME,
+	PHONE_DIGITS,
+	PHONE_DISPLAY,
+} from '../utils/seo';
 
 const contactReasons = [
 	"想獲取免費 Meta 廣告診斷",
@@ -59,16 +69,30 @@ const contactReasons = [
 						</ul>
 					</div>
 
-					<div class="grid grid-cols-1 sm:grid-cols-2 gap-8 reveal">
+					<div class="space-y-6 reveal">
 						<div class="neo-brutalism-card p-6 bg-white">
-							<Mail class="text-hot-pink mb-4" size={24} />
-							<h4 class="font-display font-black text-lg mb-2">電郵聯絡</h4>
-							<p class="text-charcoal/70 text-sm">info@2xwin.com</p>
+							<h4 class="font-display font-black text-lg mb-2">公司名稱</h4>
+							<p class="text-charcoal/70 text-sm leading-relaxed">{LEGAL_NAME}</p>
 						</div>
-						<div class="neo-brutalism-card p-6 bg-white">
-							<MapPin class="text-hot-pink mb-4" size={24} />
-							<h4 class="font-display font-black text-lg mb-2">辦公地點</h4>
-							<p class="text-charcoal/70 text-sm">香港九龍觀塘</p>
+						<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+							<div class="neo-brutalism-card p-6 bg-white sm:col-span-2">
+								<MapPin class="text-hot-pink mb-4" size={24} />
+								<h4 class="font-display font-black text-lg mb-2">辦公地點</h4>
+								<p class="text-charcoal/70 text-sm leading-relaxed">{BUSINESS_ADDRESS}</p>
+								<a href={GBP_URL} target="_blank" rel="noopener noreferrer" class="inline-block mt-3 text-sm font-medium text-charcoal underline underline-offset-4 hover:text-hot-pink">
+									Google Business Profile
+								</a>
+							</div>
+							<div class="neo-brutalism-card p-6 bg-white">
+								<Phone class="text-hot-pink mb-4" size={24} />
+								<h4 class="font-display font-black text-lg mb-2">電話 / WhatsApp</h4>
+								<a href={`tel:+${PHONE_DIGITS}`} class="text-charcoal/70 text-sm hover:text-hot-pink">{PHONE_DISPLAY}</a>
+							</div>
+							<div class="neo-brutalism-card p-6 bg-white">
+								<Mail class="text-hot-pink mb-4" size={24} />
+								<h4 class="font-display font-black text-lg mb-2">電郵聯絡</h4>
+								<a href={`mailto:${BUSINESS_EMAIL}`} class="text-charcoal/70 text-sm hover:text-hot-pink">{BUSINESS_EMAIL}</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -86,10 +110,10 @@ const contactReasons = [
 								</div>
 							</a>
 							<div class="flex justify-center space-x-6">
-								<a href="#" class="w-16 h-16 bg-white border-2 border-black flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
+								<a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-16 h-16 bg-white border-2 border-black flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
 									<Facebook size={32} />
 								</a>
-								<a href="#" class="w-16 h-16 bg-white border-2 border-black flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
+								<a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-16 h-16 bg-white border-2 border-black flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
 									<Instagram size={32} />
 								</a>
 							</div>

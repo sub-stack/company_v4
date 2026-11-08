@@ -3,6 +3,19 @@ import { Facebook, Instagram, MessageCircle, Mail, MapPin } from 'lucide-astro';
 import { withBase } from '../utils/withBase';
 import { Image } from 'astro:assets';
 import logo from '../assets/img/logo.jpg';
+import {
+	BUSINESS_ADDRESS,
+	BUSINESS_EMAIL,
+	FACEBOOK_URL,
+	GBP_URL,
+	INSTAGRAM_URL,
+	LEGAL_NAME,
+	PHONE_DIGITS,
+	PHONE_DISPLAY,
+} from '../utils/seo';
+
+const whatsappHref =
+	'https://api.whatsapp.com/send/?phone=85252232817&text=%E6%83%B3%E6%9F%A5%E8%A9%A2%E3%80%8C%E7%B7%9A%E4%B8%8A%E5%BB%A3%E5%91%8A%E3%80%8D%E6%9C%8D%E5%8B%99+%28%E6%9F%A5%E8%A9%A2%E7%B7%A8%E8%99%9F%3A+%23225361%29&type=phone_number&app_absent=0';
 
 const footerLinks = [
 	{
@@ -22,13 +35,6 @@ const footerLinks = [
 			{ name: '常見問題', href: '/faq' },
 		]
 	},
-	{
-		title: '聯絡資訊',
-		links: [
-			{ name: 'WhatsApp 查詢', href: 'https://api.whatsapp.com/send/?phone=85252232817&text=%E6%83%B3%E6%9F%A5%E8%A9%A2%E3%80%8C%E7%B7%9A%E4%B8%8A%E5%BB%A3%E5%91%8A%E3%80%8D%E6%9C%8D%E5%8B%99+%28%E6%9F%A5%E8%A9%A2%E7%B7%A8%E8%99%9F%3A+%23225361%29&type=phone_number&app_absent=0' },
-			
-		]
-	}
 ];
 ---
 
@@ -50,10 +56,10 @@ const footerLinks = [
 					幫中小企擺脫黑箱 Agency，用透明 Meta 廣告穩陣放大生意。唔靠花巧術語，唔靠死約留客。
 				</p>
 				<div class="flex space-x-4">
-					<a href="https://www.facebook.com/2xwin.marketing" target="_blank" class="w-10 h-10 bg-white/10 border border-white/20 flex items-center justify-center hover:bg-hot-pink transition-colors">
+					<a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 border border-white/20 flex items-center justify-center hover:bg-hot-pink transition-colors" aria-label="Facebook">
 						<Facebook size={20} />
 					</a>
-					<a href="https://www.instagram.com/2xwin.marketing" target="_blank" class="w-10 h-10 bg-white/10 border border-white/20 flex items-center justify-center hover:bg-hot-pink transition-colors">
+					<a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 border border-white/20 flex items-center justify-center hover:bg-hot-pink transition-colors" aria-label="Instagram">
 						<Instagram size={20} />
 					</a>
 				</div>
@@ -74,6 +80,31 @@ const footerLinks = [
 					</ul>
 				</div>
 			))}
+
+			<div>
+				<h4 class="font-display font-bold text-lg mb-6 text-aqua-mint">聯絡資訊</h4>
+				<address class="not-italic space-y-4 text-sm text-off-white/70">
+					<p class="text-off-white font-medium leading-relaxed">{LEGAL_NAME}</p>
+					<p class="flex items-start gap-2 leading-relaxed">
+						<MapPin size={16} class="mt-0.5 shrink-0 text-aqua-mint" />
+						<span>{BUSINESS_ADDRESS}</span>
+					</p>
+					<p class="flex items-start gap-2">
+						<MessageCircle size={16} class="mt-0.5 shrink-0 text-aqua-mint" />
+						<a href={`tel:+${PHONE_DIGITS}`} class="hover:text-white transition-colors">{PHONE_DISPLAY}</a>
+					</p>
+					<p class="flex items-start gap-2">
+						<Mail size={16} class="mt-0.5 shrink-0 text-aqua-mint" />
+						<a href={`mailto:${BUSINESS_EMAIL}`} class="hover:text-white transition-colors">{BUSINESS_EMAIL}</a>
+					</p>
+					<p>
+						<a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">WhatsApp 查詢</a>
+					</p>
+					<p>
+						<a href={GBP_URL} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Google Business Profile</a>
+					</p>
+				</address>
+			</div>
 		</div>
 
 		

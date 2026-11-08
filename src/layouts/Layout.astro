@@ -9,6 +9,7 @@ import {
 	DEFAULT_OG_IMAGE,
 	canonicalUrl,
 	jsonLd,
+	localBusinessSchema,
 	organizationSchema,
 } from '../utils/seo';
 
@@ -70,6 +71,7 @@ const canonical = canonicalUrl(Astro.url.pathname);
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 		<script type="application/ld+json" set:html={jsonLd(organizationSchema())} />
+		<script type="application/ld+json" set:html={jsonLd(localBusinessSchema())} />
 	</head>
 	<body class="bg-[#FCFCF8] text-[#1F1F1B] font-sans selection:bg-hot-pink selection:text-white">
 		<!-- Google Tag Manager (noscript) -->
