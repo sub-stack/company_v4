@@ -4,6 +4,7 @@ import FAQAccordion from '../components/FAQAccordion.astro';
 import AEOBlock from '../components/AEOBlock.astro';
 import { Image } from 'astro:assets';
 import whatsapp from '../assets/img/whatsapp.png';
+import { faqPageSchema, jsonLd } from '../utils/seo';
 
 const faqs = [
 	{
@@ -22,39 +23,11 @@ const faqs = [
 ];
 ---
 
-<Layout title="常見問題 - 關於 Meta 廣告、網站開發與合作流程">
-	<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "FAQPage",
-			"mainEntity": [
-				{
-					"@type": "Question",
-					"name": "點解我之前搵 Agency 落廣告無效果？",
-					"acceptedAnswer": {
-						"@type": "Answer",
-						"text": "通常有三個原因：第一，Agency 只係機械式落廣告，無考慮你嘅產品同網站轉化率；第二，數據唔透明，你唔知錢去咗邊，亦無得優化；第三，受眾定位太廣或太窄，無做好 A/B Testing。"
-					}
-				},
-				{
-					"@type": "Question",
-					"name": "你哋點樣保證透明度？",
-					"acceptedAnswer": {
-						"@type": "Answer",
-						"text": "我哋會直接喺你嘅 Meta Business Manager 入面落廣告，你擁有 100% 權限。你可以隨時入去睇每一分錢嘅去向、每一個廣告嘅成效，我哋絕對唔會隱瞞任何數據。"
-					}
-				},
-				{
-					"@type": "Question",
-					"name": "係咪一定要簽長約？",
-					"acceptedAnswer": {
-						"@type": "Answer",
-						"text": "唔需要。我哋採用「月月清」模式，靠實力留客。如果你覺得我哋做得唔好，隨時可以停，唔需要負擔任何違約金。"
-					}
-				}
-			]
-		}
-	</script>
+<Layout
+	title="常見問題 - 關於 Meta 廣告、網站開發與合作流程"
+	description="我哋知道你對廣告 Agency 有好多疑慮。呢度有我哋最直白嘅回答，包括點解之前落廣告無效果、係咪要簽長約，同點樣開始合作。"
+>
+	<script type="application/ld+json" set:html={jsonLd(faqPageSchema(faqs))} />
 	<!-- Hero -->
 	<section class="pt-32 pb-20 bg-aqua-mint/10 border-b-4 border-black">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
