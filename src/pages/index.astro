@@ -65,19 +65,20 @@ const advantages = [
 const caseStudies = [
 	{
 		title: "醫美行業：2個月大幅提升",
-		
-		image: caseStudy1.src
+		image: caseStudy1
 	},
 	{
 		title: "零售業：數據驅動優化",
-		
-		image: caseStudy2.src
+		image: caseStudy2
 	},
 	
 ];
 ---
 
-<Layout title="幫中小企擺脫黑箱 Agency，用透明 Meta 廣告穩陣放大生意">
+<Layout
+	title="幫中小企擺脫黑箱 Agency，用透明 Meta 廣告穩陣放大生意"
+	description="唔靠花巧術語，唔靠死約留客。由商業分析、帳戶透明，到投放節奏，都會同你講人話、講真話。"
+>
 	<!-- Hero Section -->
 	<section class="relative pt-32 pb-20 overflow-hidden">
 		<!-- Decorative Blur Orbs -->
@@ -223,11 +224,13 @@ const caseStudies = [
 				{caseStudies.map(study => (
 					<div class="min-w-0 neo-brutalism-card overflow-hidden group reveal">
 						<div class="relative aspect-square overflow-hidden border-b-2 border-black">
-							<img 
-								src={study.image} 
-								alt={study.title} 
-								class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-								referrerpolicy="no-referrer"
+							<Image
+								src={study.image}
+								alt={study.title}
+								widths={[640, 960, 1280, 1600]}
+								sizes="(min-width: 768px) 50vw, 100vw"
+								quality={75}
+								class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
 							/>
 						</div>
 						<div class="p-8">

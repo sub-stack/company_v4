@@ -10,6 +10,7 @@ import Code from '../../assets/img/website-concept-art/code.png';
 import deliveryImg from '../../assets/img/website-concept-art/delivery.png';
 import websiteHeroImage from '../../assets/img/website.png';
 import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote, MonitorSmartphone, Clock, Globe } from 'lucide-astro';
+import { faqPageSchema, jsonLd } from '../../utils/seo';
 
 const websiteFaqs = [
 	{
@@ -50,7 +51,11 @@ const features = [
 ];
 ---
 
-<Layout title="網站開發 - 唔使俾人水！2xWin 幫你起個抵玩又實用嘅網站">
+<Layout
+	title="網站開發 - 唔使俾人水！2xWin 幫你起個抵玩又實用嘅網站"
+	description="「靚網站、無生意」——你有無聽過？Double Win Marketing 唔硬銷華而不實的網站，一切從商業思維出發。"
+>
+	<script type="application/ld+json" set:html={jsonLd(faqPageSchema(websiteFaqs))} />
 	<!-- Hero -->
 	<section class="relative pt-32 pb-20 bg-aqua-mint/10 border-b-4 border-black overflow-hidden">
 		<div class="absolute inset-0 z-1 pointer-events-none flex justify-center" aria-hidden="true">
@@ -67,7 +72,7 @@ const features = [
 					「靚網站、無生意」——你有無聽過？Double Win Marketing 唔硬銷華而不實的網站，一切從商業思維出發。
 				</p>
 				<div class="flex flex-col sm:flex-row gap-6 reveal">
-					<a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-charcoal text-white text-xl py-5 px-10 flex items-center justify-center space-x-3">
+					<a href="https://wa.me/85252232817" target="_blank" class="neo-brutalism-button bg-charcoal text-white text-xl py-5 px-10 flex items-center justify-center space-x-3">
 						<Image src={whatsapp} alt="WhatsApp" class="w-8 h-8" />
 						<span>免費獲取網站方案建議</span>
 					</a>

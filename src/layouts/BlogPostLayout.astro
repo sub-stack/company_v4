@@ -8,12 +8,14 @@ interface Props {
   date: string;
   image?: string;
   author?: string;
+  description: string;
+  publishedTime?: string;
 }
 
-const { title, date, image, author = "2xWin Team" } = Astro.props;
+const { title, date, image, author = "2xWin Team", description, publishedTime } = Astro.props;
 ---
 
-<Layout title={`${title} - 2xWin Blog`}>
+<Layout title={`${title} - 2xWin Blog`} description={description} ogType="article" publishedTime={publishedTime}>
   <article class="pt-32 pb-24 bg-white min-h-screen">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <a href={withBase('/insights/blog')} class="inline-flex items-center space-x-2 text-charcoal hover:text-hot-pink font-bold mb-8 transition-colors">
@@ -51,7 +53,7 @@ const { title, date, image, author = "2xWin Team" } = Astro.props;
         準備好開始穩陣放大生意？
       </h2>
       <div class="flex justify-center reveal">
-        <a href="https://wa.me/85212345678" target="_blank" class="neo-brutalism-button bg-aqua-mint text-charcoal text-2xl py-6 px-12 flex items-center space-x-4">
+        <a href="https://wa.me/85252232817" target="_blank" class="neo-brutalism-button bg-aqua-mint text-charcoal text-2xl py-6 px-12 flex items-center space-x-4">
           <MessageCircle size={32} />
           <span>免費獲取 Meta 廣告診斷</span>
         </a>

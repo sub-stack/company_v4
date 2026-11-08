@@ -8,12 +8,13 @@ import whatsapp from '../../assets/img/whatsapp.png';
 import metaVerified from '../../assets/img/meta-verified.png';
 import metaPartner from '../../assets/img/meta-partner.png';
 import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote, X, Plus } from 'lucide-astro';
+import { faqPageSchema, jsonLd } from '../../utils/seo';
 
 const caseStudyImageModules = import.meta.glob('../../assets/img/case-studies/cases-*.jpg', { eager: true });
 const caseStudyImages = Object.values(caseStudyImageModules)
 	.map((img: any) => img.default)
 	.sort((a, b) => a.src.localeCompare(b.src));
-const getCaseStudyImage = (index: number) => caseStudyImages[index]?.src ?? caseStudyImages[0]?.src ?? '';
+const getCaseStudyImage = (index: number) => caseStudyImages[index] ?? caseStudyImages[0];
 
 const metaAdsFaqs = [
 	{
@@ -90,7 +91,11 @@ const processSteps = [
 ];
 ---
 
-<Layout title="Meta 廣告投放服務 - 透明、穩陣、講真話">
+<Layout
+	title="Meta 廣告投放服務 - 透明、穩陣、講真話"
+	description="我哋幫你建立一個透明、可控、且持續獲利嘅廣告系統。由商業分析到數據優化，每一步都同你講人話。"
+>
+	<script type="application/ld+json" set:html={jsonLd(faqPageSchema(metaAdsFaqs))} />
 	<!-- Hero -->
 	<section class="pt-32 pb-20 bg-electric-yellow/10 border-b-4 border-black">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -233,11 +238,13 @@ const processSteps = [
 				{caseStudies.map(study => (
 					<div class="min-w-0 neo-brutalism-card group reveal">
 						<div class="relative aspect-square border-b-2 border-black">
-							<img 
-								src={study.image} 
-								alt={study.title} 
-								class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-								referrerpolicy="no-referrer"
+							<Image
+								src={study.image}
+								alt={study.title}
+								widths={[640, 960, 1280, 1600]}
+								sizes="(min-width: 768px) 50vw, 100vw"
+								quality={75}
+								class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
 							/>
 						</div>
 						<div class="p-8">

@@ -4,15 +4,32 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import { withBase } from '../utils/withBase';
-import {Image} from 'astro:assets';
-import logo from '../assets/img/logo.jpg';
+import {
+	DEFAULT_DESCRIPTION,
+	DEFAULT_OG_IMAGE,
+	canonicalUrl,
+	jsonLd,
+	organizationSchema,
+} from '../utils/seo';
 
 interface Props {
 	title: string;
 	description?: string;
+	ogImage?: string;
+	ogType?: 'website' | 'article';
+	publishedTime?: string;
 }
 
-const { title, description = "2xWin - 幫中小企擺脫黑箱Agency，用透明線上廣告方式穩陣放大生意" } = Astro.props;
+const {
+	title,
+	description = DEFAULT_DESCRIPTION,
+	ogImage = DEFAULT_OG_IMAGE,
+	ogType = 'website',
+	publishedTime,
+} = Astro.props;
+
+const fullTitle = `${title} | 2xWin`;
+const canonical = canonicalUrl(Astro.url.pathname);
 ---
 
 <!doctype html>
@@ -20,34 +37,39 @@ const { title, description = "2xWin - 幫中小企擺脫黑箱Agency，用透明
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
 		<meta name="viewport" content="width=device-width" />
 		<!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K8B9RTLP');</script>
         <!-- End Google Tag Manager -->
-		<link rel="icon" type="image/jpeg" href={logo.src} />
+		<link rel="icon" href={withBase('/favicon.ico')} sizes="any" />
+		<link rel="icon" type="image/png" href={withBase('/favicon-32x32.png')} sizes="32x32" />
+		<link rel="icon" type="image/png" href={withBase('/favicon-16x16.png')} sizes="16x16" />
+		<link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} sizes="180x180" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} | 2xWin</title>
+		<title>{fullTitle}</title>
+		<meta property="og:type" content={ogType} />
+		<meta property="og:site_name" content="Double Win Marketing" />
+		<meta property="og:locale" content="zh_HK" />
+		<meta property="og:title" content={fullTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:image" content={ogImage} />
+		{ogImage === DEFAULT_OG_IMAGE && <meta property="og:image:width" content="1200" />}
+		{ogImage === DEFAULT_OG_IMAGE && <meta property="og:image:height" content="630" />}
+		<meta property="og:image:alt" content="2xWin logo" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={fullTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+		<meta name="twitter:image:alt" content="2xWin logo" />
+		{publishedTime && <meta property="article:published_time" content={publishedTime} />}
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "Organization",
-				"name": "Double Win Marketing",
-				"url": "https://2xwin.com",
-				"description": "幫中小企擺脫黑箱 Agency，用透明 Meta 廣告穩陣放大生意。",
-				"contactPoint": {
-					"@type": "ContactPoint",
-					"telephone": "+852-5223-2817",
-					"contactType": "customer service",
-					  "areaServed": "HK",
-      "availableLanguage": ["en", "zh-Hant"]
-				}
-			}
-		</script>
+		<script type="application/ld+json" set:html={jsonLd(organizationSchema())} />
 	</head>
 	<body class="bg-[#FCFCF8] text-[#1F1F1B] font-sans selection:bg-hot-pink selection:text-white">
 		<!-- Google Tag Manager (noscript) -->
