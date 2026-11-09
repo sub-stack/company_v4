@@ -1,11 +1,10 @@
 ---
-import { Facebook, Instagram, MessageCircle, Mail, MapPin } from 'lucide-astro';
+import { Facebook, Instagram, MessageCircle, MapPin } from 'lucide-astro';
 import { withBase } from '../utils/withBase';
 import { Image } from 'astro:assets';
 import logo from '../assets/img/logo.jpg';
 import {
 	BUSINESS_ADDRESS,
-	BUSINESS_EMAIL,
 	FACEBOOK_URL,
 	GBP_URL,
 	INSTAGRAM_URL,
@@ -96,10 +95,6 @@ const footerLinks = [
 					<p class="flex items-start gap-2">
 						<MessageCircle size={16} class="mt-0.5 shrink-0 text-aqua-mint" />
 						<a href={`tel:+${PHONE_DIGITS}`} class="hover:text-white transition-colors">{PHONE_DISPLAY}</a>
-					</p>
-					<p class="flex items-start gap-2">
-						<Mail size={16} class="mt-0.5 shrink-0 text-aqua-mint" />
-						<a href={`mailto:${BUSINESS_EMAIL}`} class="hover:text-white transition-colors">{BUSINESS_EMAIL}</a>
 					</p>
 					<p>
 						<a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">WhatsApp 查詢</a>
