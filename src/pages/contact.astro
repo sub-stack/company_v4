@@ -3,10 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import AEOBlock from '../components/AEOBlock.astro';
 import { Image } from 'astro:assets';
 import whatsapp from '../assets/img/whatsapp.png';
-import { MessageCircle, Mail, MapPin, Phone, Facebook, Instagram } from 'lucide-astro';
+import { MessageCircle, MapPin, Phone, Facebook, Instagram } from 'lucide-astro';
 import {
 	BUSINESS_ADDRESS,
-	BUSINESS_EMAIL,
 	FACEBOOK_URL,
 	GBP_URL,
 	INSTAGRAM_URL,
@@ -24,7 +23,7 @@ const contactReasons = [
 
 <Layout
 	title="聯絡我哋 - 唔想再靠估，直接 WhatsApp 查詢"
-	description="直接 Send 你個 Website / Page 過嚟，我哋會幫你做一個免費嘅「身體檢查」。WhatsApp +852 5223 2817，電郵 info@2xwin.com。"
+	description="直接 Send 你個 Website / Page 過嚟，我哋會幫你做一個免費嘅「身體檢查」。WhatsApp +852 5223 2817。"
 >
 	<!-- Hero -->
 	<section class="pt-32 pb-20 bg-hot-pink/10 border-b-4 border-black">
@@ -82,15 +81,10 @@ const contactReasons = [
 									Google Business Profile
 								</a>
 							</div>
-							<div class="neo-brutalism-card p-6 bg-white">
+							<div class="neo-brutalism-card p-6 bg-white sm:col-span-2">
 								<Phone class="text-hot-pink mb-4" size={24} />
 								<h4 class="font-display font-black text-lg mb-2">電話 / WhatsApp</h4>
 								<a href={`tel:+${PHONE_DIGITS}`} class="text-charcoal/70 text-sm hover:text-hot-pink">{PHONE_DISPLAY}</a>
-							</div>
-							<div class="neo-brutalism-card p-6 bg-white">
-								<Mail class="text-hot-pink mb-4" size={24} />
-								<h4 class="font-display font-black text-lg mb-2">電郵聯絡</h4>
-								<a href={`mailto:${BUSINESS_EMAIL}`} class="text-charcoal/70 text-sm hover:text-hot-pink">{BUSINESS_EMAIL}</a>
 							</div>
 						</div>
 					</div>
