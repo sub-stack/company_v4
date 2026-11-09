@@ -10,6 +10,7 @@ import metaPartner from '../../assets/img/meta-partner.png';
 import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote, X, Plus } from 'lucide-astro';
 import { faqPageSchema, jsonLd } from '../../utils/seo';
 import { withBase } from '../../utils/withBase';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
 const caseStudyImageModules = import.meta.glob('../../assets/img/case-studies/cases-*.jpg', { eager: true });
 const caseStudyImages = Object.values(caseStudyImageModules)
@@ -100,6 +101,10 @@ const processSteps = [
 	<!-- Hero -->
 	<section class="pt-32 pb-20 bg-electric-yellow/10 border-b-4 border-black">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<Breadcrumbs items={[
+				{ name: '首頁', path: '/' },
+				{ name: 'Meta 廣告投放', path: '/services/meta-ads' },
+			]} />
 			<div class="max-w-4xl">
 				<h1 class="font-display font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-8 reveal">
 					Meta 廣告投放：<br />

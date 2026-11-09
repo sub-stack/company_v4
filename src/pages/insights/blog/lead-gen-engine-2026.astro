@@ -1,5 +1,6 @@
 ---
 import BlogPostLayout from '../../../layouts/BlogPostLayout.astro';
+import { withBase } from '../../../utils/withBase';
 ---
 
 <BlogPostLayout
@@ -31,4 +32,12 @@ import BlogPostLayout from '../../../layouts/BlogPostLayout.astro';
     第一步係打通數據。確保你嘅 Google Analytics 4 (GA4) 同 Meta Pixel 設定正確，並且使用 Server-Side Tracking 應對 Cookie 限制。
   </p>
 
+  <h2>相關閱讀</h2>
+  <p>跨渠道入面，Meta 嗰截可以再睇帳戶、落地頁同點解有流量都落唔到單：</p>
+  <ul>
+    <li><a href={withBase('/insights/blog/why-own-your-meta-ads-account')}>Meta 廣告帳戶點解要用自己嘅？</a></li>
+    <li><a href={withBase('/insights/blog/prepare-site-before-meta-ads')}>接 Meta 流量前，網站／落地頁要準備咩？</a></li>
+    <li><a href={withBase('/insights/blog/meta-ads-not-converting-5-checks')}>Meta 廣告落唔到單？先查呢 5 樣</a></li>
+    <li><a href={withBase('/insights/blog/hk-sme-meta-ads-budget-start')}>中小企 Meta 廣告預算點起步？</a></li>
+  </ul>
 </BlogPostLayout>

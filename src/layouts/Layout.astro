@@ -7,10 +7,12 @@ import { withBase } from '../utils/withBase';
 import {
 	DEFAULT_DESCRIPTION,
 	DEFAULT_OG_IMAGE,
+	SITE_ORIGIN,
 	canonicalUrl,
 	jsonLd,
 	localBusinessSchema,
 	organizationSchema,
+	websiteSchema,
 } from '../utils/seo';
 
 interface Props {
@@ -39,6 +41,7 @@ const canonical = canonicalUrl(Astro.url.pathname);
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonical} />
+		<link rel="alternate" type="text/plain" href={`${SITE_ORIGIN}/llms.txt`} title="llms.txt" />
 		<meta name="viewport" content="width=device-width" />
 		<!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -72,6 +75,7 @@ const canonical = canonicalUrl(Astro.url.pathname);
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 		<script type="application/ld+json" set:html={jsonLd(organizationSchema())} />
 		<script type="application/ld+json" set:html={jsonLd(localBusinessSchema())} />
+		<script type="application/ld+json" set:html={jsonLd(websiteSchema())} />
 	</head>
 	<body class="bg-[#FCFCF8] text-[#1F1F1B] font-sans selection:bg-hot-pink selection:text-white">
 		<!-- Google Tag Manager (noscript) -->

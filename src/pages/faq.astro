@@ -6,6 +6,7 @@ import { Image } from 'astro:assets';
 import whatsapp from '../assets/img/whatsapp.png';
 import { faqPageSchema, jsonLd } from '../utils/seo';
 import { withBase } from '../utils/withBase';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const faqs = [
 	{
@@ -32,6 +33,10 @@ const faqs = [
 	<!-- Hero -->
 	<section class="pt-32 pb-20 bg-aqua-mint/10 border-b-4 border-black">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<Breadcrumbs items={[
+				{ name: '首頁', path: '/' },
+				{ name: '常見問題', path: '/faq' },
+			]} />
 			<div class="max-w-4xl">
 				<h1 class="font-display font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-8 reveal">
 					常見問題：<br />

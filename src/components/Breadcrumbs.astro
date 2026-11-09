@@ -1,0 +1,48 @@
+---
+import { breadcrumbListSchema, jsonLd, type BreadcrumbItem } from '../utils/seo';
+import { withBase } from '../utils/withBase';
+
+interface Props {
+	items: BreadcrumbItem[];
+	/** `inverse` for dark heroes such as the blog index. */
+	tone?: 'default' | 'inverse';
+}
+
+const { items, tone = 'default' } = Astro.props;
+const inverse = tone === 'inverse';
+---
+
+<nav aria-label="麵包屑" class:list={['mb-6', inverse ? 'text-white/75' : 'text-charcoal/70']}>
+	<ol class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium">
+		{
+			items.map((item, index) => {
+				const isLast = index === items.length - 1;
+				return (
+					<li class="flex items-center gap-2 max-w-full">
+						{index > 0 && (
+							<span aria-hidden="true" class={inverse ? 'text-white/40' : 'text-charcoal/40'}>
+								›
+							</span>
+						)}
+						{isLast ? (
+							<span aria-current="page" class:list={['font-bold', inverse ? 'text-white' : 'text-charcoal']}>
+								{item.name}
+							</span>
+						) : (
+							<a
+								href={withBase(item.path)}
+								class:list={[
+									'underline-offset-4 hover:underline',
+									inverse ? 'hover:text-aqua-mint' : 'hover:text-hot-pink',
+								]}
+							>
+								{item.name}
+							</a>
+						)}
+					</li>
+				);
+			})
+		}
+	</ol>
+</nav>
+<script type="application/ld+json" set:html={jsonLd(breadcrumbListSchema(items))} />

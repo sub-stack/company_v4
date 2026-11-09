@@ -1,5 +1,6 @@
 ---
 import BlogPostLayout from '../../../layouts/BlogPostLayout.astro';
+import { withBase } from '../../../utils/withBase';
 ---
 
 <BlogPostLayout
@@ -42,4 +43,13 @@ import BlogPostLayout from '../../../layouts/BlogPostLayout.astro';
   <p>
     要喺 2026 年玩得轉 PMax，關鍵在於「高質素素材 + 準確嘅受眾信號 + 持續優化」。如果你對自己嘅 Google Ads 帳戶表現有疑問，歡迎隨時搵我哋傾吓！
   </p>
+
+  <h2>相關閱讀</h2>
+  <p>如果你同時用緊 Meta 廣告，下面幾篇講帳戶、預算，同點樣睇代理：</p>
+  <ul>
+    <li><a href={withBase('/insights/blog/why-own-your-meta-ads-account')}>Meta 廣告帳戶點解要用自己嘅？</a></li>
+    <li><a href={withBase('/insights/blog/hk-sme-meta-ads-budget-start')}>中小企 Meta 廣告預算點起步？</a></li>
+    <li><a href={withBase('/insights/blog/how-to-choose-meta-ads-agency-hk')}>香港中小企點揀 Meta 廣告代理？</a></li>
+    <li><a href={withBase('/insights/blog/agency-black-box-tactics')}>Agency 黑箱常見手法</a></li>
+  </ul>
 </BlogPostLayout>
