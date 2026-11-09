@@ -64,6 +64,29 @@ export function faqPageSchema(items: { question: string; answer: string }[]) {
 	};
 }
 
+/** HowTo for an existing page. Do not add cost, duration, or outcome guarantees. */
+export function howToSchema(howto: {
+	name: string;
+	description: string;
+	url?: string;
+	steps: { name: string; text: string }[];
+}) {
+	return {
+		"@context": "https://schema.org",
+		"@type": "HowTo",
+		name: howto.name,
+		description: howto.description,
+		inLanguage: "zh-HK",
+		...(howto.url ? { url: howto.url } : {}),
+		step: howto.steps.map((step, index) => ({
+			"@type": "HowToStep",
+			position: index + 1,
+			name: step.name,
+			text: step.text,
+		})),
+	};
+}
+
 export function organizationSchema() {
 	return {
 		"@context": "https://schema.org",

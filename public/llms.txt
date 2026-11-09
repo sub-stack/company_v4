@@ -48,6 +48,9 @@ Double Win Marketing（網站上亦稱 2xWin）係香港線上廣告顧問，標
 - [聯絡](https://www.2xwin.com.hk/contact)
 - [常見問題](https://www.2xwin.com.hk/faq)
 - [Blog](https://www.2xwin.com.hk/insights/blog)：獲客知識，即學即用。
+- [Meta 廣告帳戶點解要用自己嘅？](https://www.2xwin.com.hk/insights/blog/why-own-your-meta-ads-account)（2026-11-09）：廣告喺客戶自己個 Meta 帳戶入面跑，講管理員權限同數據點樣留喺客戶手上。頁面寫明帳戶喺你名下唔等於會有單或 ROAS。
+- [接 Meta 流量前，網站／落地頁要準備咩？](https://www.2xwin.com.hk/insights/blog/prepare-site-before-meta-ads)（2026-11-09）：開廣告前先睇速度、手機版、優惠清唔清楚同追蹤準備。頁面寫明唔保證改完就有某個轉換率。
+- [中小企 Meta 廣告預算點起步？](https://www.2xwin.com.hk/insights/blog/hk-sme-meta-ads-budget-start)（2026-11-09）：分開廣告費同服務費嘅預算框架，同常見錯誤。寫明成效取決於產品、優惠同流程，唔提供 ROAS、CPA 或包單數字。
 - [香港中小企點揀 Meta 廣告代理？](https://www.2xwin.com.hk/insights/blog/how-to-choose-meta-ads-agency-hk)（2026-11-09）：簽約前點樣睇廣告帳戶係咪自己嘅、有無死約，以及「包單」同保證 ROAS 呢類賣點。頁面寫明唔保證包單或 ROAS。
 - [Meta 廣告落唔到單？先查呢 5 樣](https://www.2xwin.com.hk/insights/blog/meta-ads-not-converting-5-checks)（2026-11-09）：有流量但落唔到單時，先查產品準備、承接流程、追蹤、素材同優惠。頁面寫明唔保證查完就有單。
 - [Agency 黑箱常見手法](https://www.2xwin.com.hk/insights/blog/agency-black-box-tactics)（2026-11-09）：可以自己核對嘅常見手法，包括帳戶權限、截圖代替登入、死約、收費點計同報告內容。唔點名任何公司。
