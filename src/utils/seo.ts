@@ -1,5 +1,28 @@
 export const SITE_ORIGIN = "https://www.2xwin.com.hk";
 
+/** Confirmed NAP. Do not add opening hours or extra phone numbers. */
+export const LEGAL_NAME = "Double Win Marketing HK Limited／雙贏營銷香港有限公司";
+export const BUSINESS_EMAIL = "info@2xwin.com";
+export const PHONE_DIGITS = "85252232817";
+export const PHONE_DISPLAY = "+852 5223 2817";
+export const BUSINESS_ADDRESS =
+	"Room 1003, 10/F, Office Tower Two, Grand Plaza, 625-639 Nathan Rd, Mong Kok, Kowloon";
+export const GBP_URL = "https://share.google/sgANCXWx2fL8VlZAn";
+export const FACEBOOK_URL = "https://www.facebook.com/2xwin.marketing";
+export const INSTAGRAM_URL = "https://www.instagram.com/2xwin.marketing";
+
+const SAME_AS = [FACEBOOK_URL, INSTAGRAM_URL, GBP_URL];
+
+function postalAddress() {
+	return {
+		"@type": "PostalAddress",
+		streetAddress: "Room 1003, 10/F, Office Tower Two, Grand Plaza, 625-639 Nathan Rd",
+		addressLocality: "Mong Kok",
+		addressRegion: "Kowloon",
+		addressCountry: "HK",
+	};
+}
+
 export const DEFAULT_DESCRIPTION =
 	"幫中小企擺脫黑箱 Agency，用透明 Meta 廣告穩陣放大生意。唔靠花巧術語，唔靠死約留客。由商業分析、帳戶透明，到投放節奏，都會同你講人話、講真話。";
 
@@ -44,22 +67,40 @@ export function organizationSchema() {
 	return {
 		"@context": "https://schema.org",
 		"@type": "Organization",
-		name: "Double Win Marketing",
-		alternateName: "2xWin",
+		"@id": `${SITE_ORIGIN}/#organization`,
+		name: LEGAL_NAME,
+		alternateName: ["Double Win Marketing", "2xWin"],
 		url: `${SITE_ORIGIN}/`,
 		logo: `${SITE_ORIGIN}/logo.png`,
-		email: "info@2xwin.com",
+		email: BUSINESS_EMAIL,
+		telephone: PHONE_DISPLAY,
 		description: "幫中小企擺脫黑箱 Agency，用透明 Meta 廣告穩陣放大生意。",
-		sameAs: [
-			"https://www.facebook.com/2xwin.marketing",
-			"https://www.instagram.com/2xwin.marketing",
-		],
+		address: postalAddress(),
+		sameAs: SAME_AS,
 		contactPoint: {
 			"@type": "ContactPoint",
-			telephone: "+852-5223-2817",
+			telephone: PHONE_DISPLAY,
+			email: BUSINESS_EMAIL,
 			contactType: "customer service",
 			areaServed: "HK",
 			availableLanguage: ["en", "zh-Hant"],
 		},
+	};
+}
+
+export function localBusinessSchema() {
+	return {
+		"@context": "https://schema.org",
+		"@type": "LocalBusiness",
+		"@id": `${SITE_ORIGIN}/#localbusiness`,
+		name: LEGAL_NAME,
+		url: `${SITE_ORIGIN}/`,
+		logo: `${SITE_ORIGIN}/logo.png`,
+		image: `${SITE_ORIGIN}/logo.png`,
+		email: BUSINESS_EMAIL,
+		telephone: PHONE_DISPLAY,
+		address: postalAddress(),
+		sameAs: SAME_AS,
+		parentOrganization: { "@id": `${SITE_ORIGIN}/#organization` },
 	};
 }
