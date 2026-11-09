@@ -5,6 +5,7 @@ import AEOBlock from '../components/AEOBlock.astro';
 import { Image } from 'astro:assets';
 import whatsapp from '../assets/img/whatsapp.png';
 import { faqPageSchema, jsonLd } from '../utils/seo';
+import { withBase } from '../utils/withBase';
 
 const faqs = [
 	{
@@ -24,7 +25,7 @@ const faqs = [
 ---
 
 <Layout
-	title="常見問題 - 關於 Meta 廣告、網站開發與合作流程"
+	title="常見問題 - 關於 Meta 廣告與合作流程"
 	description="我哋知道你對廣告 Agency 有好多疑慮。呢度有我哋最直白嘅回答，包括點解之前落廣告無效果、係咪要簽長約，同點樣開始合作。"
 >
 	<script type="application/ld+json" set:html={jsonLd(faqPageSchema(faqs))} />
@@ -54,6 +55,21 @@ const faqs = [
 			</div>
 
 			<FAQAccordion items={faqs} />
+
+			<div class="mt-16">
+				<h2 class="font-display font-black text-2xl md:text-3xl mb-6">相關文章</h2>
+				<ul class="space-y-3 text-lg">
+					<li>
+						<a href={withBase('/insights/blog/agency-black-box-tactics')} class="font-bold text-hot-pink underline hover:text-charcoal">Agency 黑箱常見手法</a>
+					</li>
+					<li>
+						<a href={withBase('/insights/blog/how-to-choose-meta-ads-agency-hk')} class="font-bold text-hot-pink underline hover:text-charcoal">香港中小企點揀 Meta 廣告代理？</a>
+					</li>
+					<li>
+						<a href={withBase('/insights/blog/meta-ads-not-converting-5-checks')} class="font-bold text-hot-pink underline hover:text-charcoal">Meta 廣告落唔到單？先查呢 5 樣</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</section>
 

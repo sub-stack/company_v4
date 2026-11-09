@@ -6,6 +6,7 @@ import { Image } from 'astro:assets';
 import whatsapp from '../../assets/img/whatsapp.png';
 import { Target, ShieldCheck, Zap, BarChart3, ArrowRight, Star, Quote } from 'lucide-astro';
 import { SITE_ORIGIN, howToSchema, jsonLd } from '../../utils/seo';
+import { withBase } from '../../utils/withBase';
 
 const steps = [
 	{
@@ -109,6 +110,23 @@ const processHowTo = howToSchema({
 					</div>
 				</div>
 			</div>
+		</div>
+	</section>
+
+	<section class="py-16 bg-white border-b-4 border-black">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="font-display font-black text-2xl md:text-3xl mb-6">相關文章</h2>
+			<ul class="space-y-3 text-lg">
+				<li>
+					<a href={withBase('/insights/blog/how-to-choose-meta-ads-agency-hk')} class="font-bold text-hot-pink underline hover:text-charcoal">香港中小企點揀 Meta 廣告代理？</a>
+				</li>
+				<li>
+					<a href={withBase('/insights/blog/prepare-site-before-meta-ads')} class="font-bold text-hot-pink underline hover:text-charcoal">接 Meta 流量前，網站／落地頁要準備咩？</a>
+				</li>
+				<li>
+					<a href={withBase('/insights/blog/meta-ads-not-converting-5-checks')} class="font-bold text-hot-pink underline hover:text-charcoal">Meta 廣告落唔到單？先查呢 5 樣</a>
+				</li>
+			</ul>
 		</div>
 	</section>
 

@@ -49,6 +49,44 @@ export function jsonLd(data: unknown): string {
 	return JSON.stringify(data).replace(/</g, "\\u003c");
 }
 
+/**
+ * BlogPosting for an existing post. Author is the company, never a person.
+ * Pass dateModified only when the page has a real revision date; otherwise
+ * the caller should reuse datePublished or omit it.
+ */
+export function blogPostingSchema(post: {
+	headline: string;
+	description: string;
+	url: string;
+	image: string;
+	datePublished: string;
+	dateModified?: string;
+}) {
+	return {
+		"@context": "https://schema.org",
+		"@type": "BlogPosting",
+		headline: post.headline,
+		description: post.description,
+		image: post.image,
+		datePublished: post.datePublished,
+		...(post.dateModified ? { dateModified: post.dateModified } : {}),
+		author: {
+			"@type": "Organization",
+			"@id": `${SITE_ORIGIN}/#organization`,
+			name: "Double Win Marketing HK Limited",
+			alternateName: ["2xWin", "Double Win Marketing"],
+			url: `${SITE_ORIGIN}/`,
+		},
+		publisher: { "@id": `${SITE_ORIGIN}/#organization` },
+		mainEntityOfPage: {
+			"@type": "WebPage",
+			"@id": post.url,
+		},
+		url: post.url,
+		inLanguage: "zh-HK",
+	};
+}
+
 export function faqPageSchema(items: { question: string; answer: string }[]) {
 	return {
 		"@context": "https://schema.org",

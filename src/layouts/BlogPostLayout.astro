@@ -2,6 +2,7 @@
 import Layout from './Layout.astro';
 import { ArrowLeft, MessageCircle } from 'lucide-astro';
 import { withBase } from '../utils/withBase';
+import { DEFAULT_OG_IMAGE, blogPostingSchema, canonicalUrl, jsonLd } from '../utils/seo';
 
 interface Props {
   title: string;
@@ -10,12 +11,25 @@ interface Props {
   author?: string;
   description: string;
   publishedTime?: string;
+  /** ISO date when the page records a revision. Omit to reuse datePublished. */
+  modifiedTime?: string;
 }
 
-const { title, date, image, author = "2xWin Team", description, publishedTime } = Astro.props;
+const { title, date, image = withBase('/og.jpg'), author = "2xWin Team", description, publishedTime, modifiedTime } = Astro.props;
+const posting = publishedTime
+  ? blogPostingSchema({
+      headline: title,
+      description,
+      url: canonicalUrl(Astro.url.pathname),
+      image: DEFAULT_OG_IMAGE,
+      datePublished: publishedTime,
+      dateModified: modifiedTime ?? publishedTime,
+    })
+  : null;
 ---
 
 <Layout title={`${title} - 2xWin Blog`} description={description} ogType="article" publishedTime={publishedTime}>
+  {posting && <script type="application/ld+json" set:html={jsonLd(posting)} />}
   <article class="pt-32 pb-24 bg-white min-h-screen">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <a href={withBase('/insights/blog')} class="inline-flex items-center space-x-2 text-charcoal hover:text-hot-pink font-bold mb-8 transition-colors">
@@ -36,7 +50,7 @@ const { title, date, image, author = "2xWin Team", description, publishedTime } 
 
       {image && (
         <div class="neo-brutalism-card overflow-hidden mb-12 p-0">
-          <img src={image} alt={title} class="w-full h-auto object-cover max-h-[500px]" crossorigin="anonymous" referrerpolicy="no-referrer" />
+          <img src={image} alt={title} class="w-full h-auto object-cover max-h-[500px]" />
         </div>
       )}
 
