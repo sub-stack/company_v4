@@ -5,7 +5,7 @@ import whatsapp from '../../assets/img/whatsapp.png';
 import { withBase } from '../../utils/withBase';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
-const cover = withBase('/og.jpg');
+const coverFor = (slug: string) => withBase(`/blog/${slug}.webp`);
 
 ---
 
@@ -54,7 +54,7 @@ const cover = withBase('/og.jpg');
 					<p class="font-mono text-charcoal/80 mb-4">2026年11月9日</p>
 					<div class="neo-brutalism-card overflow-hidden mb-6 p-0">
 						<div class="aspect-[4/3] bg-light-gray relative">
-							<img src={cover} alt="Meta 廣告帳戶點解要用自己嘅？" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+							<img src={coverFor('why-own-your-meta-ads-account')} alt="Meta 廣告帳戶點解要用自己嘅？" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
 						</div>
 					</div>
 					<h3 class="font-display font-bold text-xl text-charcoal group-hover:text-hot-pink transition-colors leading-snug">
@@ -66,7 +66,7 @@ const cover = withBase('/og.jpg');
 					<p class="font-mono text-charcoal/80 mb-4">2026年11月9日</p>
 					<div class="neo-brutalism-card overflow-hidden mb-6 p-0">
 						<div class="aspect-[4/3] bg-light-gray relative">
-							<img src={cover} alt="接 Meta 流量前，網站／落地頁要準備咩？" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+							<img src={coverFor('prepare-site-before-meta-ads')} alt="接 Meta 流量前，網站／落地頁要準備咩？" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
 						</div>
 					</div>
 					<h3 class="font-display font-bold text-xl text-charcoal group-hover:text-hot-pink transition-colors leading-snug">
@@ -78,7 +78,7 @@ const cover = withBase('/og.jpg');
 					<p class="font-mono text-charcoal/80 mb-4">2026年11月9日</p>
 					<div class="neo-brutalism-card overflow-hidden mb-6 p-0">
 						<div class="aspect-[4/3] bg-light-gray relative">
-							<img src={cover} alt="中小企 Meta 廣告預算點起步？" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+							<img src={coverFor('hk-sme-meta-ads-budget-start')} alt="中小企 Meta 廣告預算點起步？" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
 						</div>
 					</div>
 					<h3 class="font-display font-bold text-xl text-charcoal group-hover:text-hot-pink transition-colors leading-snug">
@@ -90,7 +90,7 @@ const cover = withBase('/og.jpg');
 					<p class="font-mono text-charcoal/80 mb-4">2026年11月9日</p>
 					<div class="neo-brutalism-card overflow-hidden mb-6 p-0">
 						<div class="aspect-[4/3] bg-light-gray relative">
-							<img src={cover} alt="香港中小企點揀 Meta 廣告代理？" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+							<img src={coverFor('how-to-choose-meta-ads-agency-hk')} alt="香港中小企點揀 Meta 廣告代理？" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
 						</div>
 					</div>
 					<h3 class="font-display font-bold text-xl text-charcoal group-hover:text-hot-pink transition-colors leading-snug">
@@ -102,7 +102,7 @@ const cover = withBase('/og.jpg');
 					<p class="font-mono text-charcoal/80 mb-4">2026年11月9日</p>
 					<div class="neo-brutalism-card overflow-hidden mb-6 p-0">
 						<div class="aspect-[4/3] bg-light-gray relative">
-							<img src={cover} alt="Meta 廣告落唔到單？先查呢 5 樣" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+							<img src={coverFor('meta-ads-not-converting-5-checks')} alt="Meta 廣告落唔到單？先查呢 5 樣" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
 						</div>
 					</div>
 					<h3 class="font-display font-bold text-xl text-charcoal group-hover:text-hot-pink transition-colors leading-snug">
@@ -114,7 +114,7 @@ const cover = withBase('/og.jpg');
 					<p class="font-mono text-charcoal/80 mb-4">2026年11月9日</p>
 					<div class="neo-brutalism-card overflow-hidden mb-6 p-0">
 						<div class="aspect-[4/3] bg-light-gray relative">
-							<img src={cover} alt="Agency 黑箱常見手法" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+							<img src={coverFor('agency-black-box-tactics')} alt="Agency 黑箱常見手法" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
 						</div>
 					</div>
 					<h3 class="font-display font-bold text-xl text-charcoal group-hover:text-hot-pink transition-colors leading-snug">
@@ -127,7 +127,7 @@ const cover = withBase('/og.jpg');
 					<p class="font-mono text-charcoal/80 mb-4">2026年3月23日</p>
 					<div class="neo-brutalism-card overflow-hidden mb-6 p-0">
 						<div class="aspect-[4/3] bg-light-gray relative">
-							<img src={cover} alt="4 Critical Google Ads Performance Max Updates in 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+							<img src={coverFor('google-ads-pmax-2026')} alt="4 Critical Google Ads Performance Max Updates in 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
 						</div>
 					</div>
 					<h3 class="font-display font-bold text-xl text-charcoal group-hover:text-hot-pink transition-colors leading-snug">
@@ -140,7 +140,7 @@ const cover = withBase('/og.jpg');
 					<p class="font-mono text-charcoal/80 mb-4">2026年2月27日</p>
 					<div class="neo-brutalism-card overflow-hidden mb-6 p-0">
 						<div class="aspect-[4/3] bg-light-gray relative">
-							<img src={cover} alt="The 2026 Lead Gen Engine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+							<img src={coverFor('lead-gen-engine-2026')} alt="The 2026 Lead Gen Engine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
 						</div>
 					</div>
 					<h3 class="font-display font-bold text-xl text-charcoal group-hover:text-hot-pink transition-colors leading-snug">
@@ -153,7 +153,7 @@ const cover = withBase('/og.jpg');
 					<p class="font-mono text-charcoal/80 mb-4">2026年1月26日</p>
 					<div class="neo-brutalism-card overflow-hidden mb-6 p-0">
 						<div class="aspect-[4/3] bg-light-gray relative">
-							<img src={cover} alt="The Evolution of Search" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+							<img src={coverFor('ai-overviews-seo-2026')} alt="The Evolution of Search" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
 						</div>
 					</div>
 					<h3 class="font-display font-bold text-xl text-charcoal group-hover:text-hot-pink transition-colors leading-snug">
