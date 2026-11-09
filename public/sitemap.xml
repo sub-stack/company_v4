@@ -21,6 +21,12 @@
   </url>
 
   <url>
+    <loc>https://www.2xwin.com.hk/about/process</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://www.2xwin.com.hk/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
@@ -36,6 +42,27 @@
     <loc>https://www.2xwin.com.hk/insights/blog</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.2xwin.com.hk/insights/blog/how-to-choose-meta-ads-agency-hk</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.2xwin.com.hk/insights/blog/meta-ads-not-converting-5-checks</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.2xwin.com.hk/insights/blog/agency-black-box-tactics</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
