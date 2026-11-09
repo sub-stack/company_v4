@@ -13,6 +13,7 @@ import {
 	PHONE_DIGITS,
 	PHONE_DISPLAY,
 } from '../utils/seo';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const contactReasons = [
 	"想獲取免費 Meta 廣告診斷",
@@ -28,6 +29,10 @@ const contactReasons = [
 	<!-- Hero -->
 	<section class="pt-32 pb-20 bg-hot-pink/10 border-b-4 border-black">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<Breadcrumbs items={[
+				{ name: '首頁', path: '/' },
+				{ name: '聯絡我哋', path: '/contact' },
+			]} />
 			<div class="max-w-4xl">
 				<h1 class="font-display font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-8 reveal">
 					聯絡我哋：<br />

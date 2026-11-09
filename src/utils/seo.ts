@@ -49,6 +49,39 @@ export function jsonLd(data: unknown): string {
 	return JSON.stringify(data).replace(/</g, "\\u003c");
 }
 
+export interface BreadcrumbItem {
+	name: string;
+	/** Site path such as `/faq`. JSON-LD resolves it to the www canonical URL. */
+	path: string;
+}
+
+/** BreadcrumbList for a real trail. Every `path` must already exist on the site. */
+export function breadcrumbListSchema(items: BreadcrumbItem[]) {
+	return {
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		itemListElement: items.map((item, index) => ({
+			"@type": "ListItem",
+			position: index + 1,
+			name: item.name,
+			item: canonicalUrl(item.path),
+		})),
+	};
+}
+
+/** WebSite node. Publisher points at the Organization already emitted by Layout. */
+export function websiteSchema() {
+	return {
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"@id": `${SITE_ORIGIN}/#website`,
+		name: "Double Win Marketing",
+		url: `${SITE_ORIGIN}/`,
+		inLanguage: "zh-HK",
+		publisher: { "@id": `${SITE_ORIGIN}/#organization` },
+	};
+}
+
 /**
  * BlogPosting for an existing post. Author is the company, never a person.
  * Pass dateModified only when the page has a real revision date; otherwise

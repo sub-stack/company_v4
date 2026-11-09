@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import whatsapp from '../../assets/img/whatsapp.png';
 import { withBase } from '../../utils/withBase';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
 const cover = withBase('/og.jpg');
 
@@ -15,6 +16,13 @@ const cover = withBase('/og.jpg');
 	<!-- Hero -->
 	<section class="pt-32 pb-24 bg-charcoal text-white border-b-4 border-black">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<Breadcrumbs
+				tone="inverse"
+				items={[
+					{ name: '首頁', path: '/' },
+					{ name: 'Blog', path: '/insights/blog' },
+				]}
+			/>
 			<div class="max-w-4xl">
 				<h1 class="font-display font-black text-4xl md:text-5xl lg:text-6xl leading-[1.2] mb-8 reveal">
 					最實用嘅獲客知識，<br />

@@ -1,5 +1,6 @@
 ---
 import BlogPostLayout from '../../../layouts/BlogPostLayout.astro';
+import { withBase } from '../../../utils/withBase';
 ---
 
 <BlogPostLayout
@@ -31,4 +32,13 @@ import BlogPostLayout from '../../../layouts/BlogPostLayout.astro';
   <p>
     SEO 唔係死咗，只係進化咗。提供真正有價值、原創嘅內容，先係 2026 年 SEO 嘅致勝關鍵。
   </p>
+
+  <h2>相關閱讀</h2>
+  <p>搜尋結果變緊，接廣告嘅網站同帳戶都要準備好。可以再睇：</p>
+  <ul>
+    <li><a href={withBase('/insights/blog/prepare-site-before-meta-ads')}>接 Meta 流量前，網站／落地頁要準備咩？</a></li>
+    <li><a href={withBase('/insights/blog/meta-ads-not-converting-5-checks')}>Meta 廣告落唔到單？先查呢 5 樣</a></li>
+    <li><a href={withBase('/insights/blog/how-to-choose-meta-ads-agency-hk')}>香港中小企點揀 Meta 廣告代理？</a></li>
+    <li><a href={withBase('/insights/blog/agency-black-box-tactics')}>Agency 黑箱常見手法</a></li>
+  </ul>
 </BlogPostLayout>
