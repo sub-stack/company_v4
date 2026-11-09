@@ -10,8 +10,9 @@ export const BUSINESS_ADDRESS =
 export const GBP_URL = "https://share.google/sgANCXWx2fL8VlZAn";
 export const FACEBOOK_URL = "https://www.facebook.com/2xwin.marketing";
 export const INSTAGRAM_URL = "https://www.instagram.com/2xwin.marketing";
+export const THREADS_URL = "https://www.threads.com/@2xwin.marketing";
 
-const SAME_AS = [FACEBOOK_URL, INSTAGRAM_URL, GBP_URL];
+const SAME_AS = [FACEBOOK_URL, INSTAGRAM_URL, THREADS_URL, GBP_URL];
 
 function postalAddress() {
 	return {
