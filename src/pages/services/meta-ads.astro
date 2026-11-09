@@ -9,6 +9,7 @@ import metaVerified from '../../assets/img/meta-verified.png';
 import metaPartner from '../../assets/img/meta-partner.png';
 import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote, X, Plus } from 'lucide-astro';
 import { faqPageSchema, jsonLd } from '../../utils/seo';
+import { withBase } from '../../utils/withBase';
 
 const caseStudyImageModules = import.meta.glob('../../assets/img/case-studies/cases-*.jpg', { eager: true });
 const caseStudyImages = Object.values(caseStudyImageModules)
@@ -274,6 +275,23 @@ const processSteps = [
 				關於 Meta 廣告嘅常見問題
 			</h2>
 			<FAQAccordion items={metaAdsFaqs} />
+		</div>
+	</section>
+
+	<section class="py-16 bg-white border-b-4 border-black">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="font-display font-black text-2xl md:text-3xl mb-6">相關文章</h2>
+			<ul class="space-y-3 text-lg">
+				<li>
+					<a href={withBase('/insights/blog/how-to-choose-meta-ads-agency-hk')} class="font-bold text-hot-pink underline hover:text-charcoal">香港中小企點揀 Meta 廣告代理？</a>
+				</li>
+				<li>
+					<a href={withBase('/insights/blog/why-own-your-meta-ads-account')} class="font-bold text-hot-pink underline hover:text-charcoal">Meta 廣告帳戶點解要用自己嘅？</a>
+				</li>
+				<li>
+					<a href={withBase('/insights/blog/agency-black-box-tactics')} class="font-bold text-hot-pink underline hover:text-charcoal">Agency 黑箱常見手法</a>
+				</li>
+			</ul>
 		</div>
 	</section>
 
