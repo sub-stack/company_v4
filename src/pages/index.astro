@@ -15,6 +15,7 @@ import testimonial6 from "../assets/img/testimonial_6.png";
 import testimonial7 from "../assets/img/testimonial_7.png";
 import testimonial8 from "../assets/img/testimonial_8.png";
 import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote, Check } from 'lucide-astro';
+import { homepageReviewsSchema, jsonLd } from '../utils/seo';
 import whatsappImg from '../assets/img/whatsapp.png';
 import metaPartner from '../assets/img/meta-partner.png';
 import metaVerified from '../assets/img/meta-verified.png';
@@ -56,7 +57,7 @@ const advantages = [
 	},
 	{
 		title: "帳戶全透明",
-		description: "你擁有 100% 權限與知情權。我哋係用你嘅帳戶落廣告，所有數據你隨時睇到。",
+		description: "兩種方法都接受：用你自己嘅帳戶，或者用我哋公司帳戶代投，收費唔同，亦唔係每個客都適合用自己帳戶。用你帳戶時，我哋入你帳戶操作，像素、受眾同歷史留喺你度。呢個係合作方式，唔係成效保證。",
 		icon: Star,
 		color: "bg-electric-yellow"
 	},
@@ -154,8 +155,15 @@ const testimonials = [
 
 <Layout
 	title="幫中小企擺脫黑箱 Agency，用透明 Meta 廣告穩陣放大生意"
-	description="雙贏營銷（2xWin）幫香港中小企用自己嘅 Meta 廣告帳戶投放，預算、數據同權限留喺客戶手上。由商業分析、帳戶設定到投放節奏，都會講人話。唔靠死約留客。未合作可以先用 WhatsApp +852 5223 2817 做診斷，網站寫明唔保證有單。"
+	description="雙贏營銷（2xWin）幫香港中小企做 Meta 廣告。可以用客戶自己嘅廣告帳戶，亦可以用公司帳戶代投；兩種收費唔同，亦唔係每個客都適合用自己帳戶。用客戶帳戶時，會入去操作，像素、受眾同歷史留喺客戶手上。由商業分析到投放節奏都會講人話。唔靠死約留客。未合作可以先用 WhatsApp +852 5223 2817 做診斷。呢個係合作方式，網站寫明唔保證有單。"
 >
+	<script
+		type="application/ld+json"
+		set:html={jsonLd(homepageReviewsSchema(testimonials.map((review) => ({
+			name: review.name,
+			body: review.paragraphs.join('\n\n'),
+		}))))}
+	/>
 	<!-- Hero Section -->
 	<section class="relative pt-32 pb-20 overflow-hidden">
 		<!-- Decorative Blur Orbs -->

@@ -195,3 +195,54 @@ export function localBusinessSchema() {
 		parentOrganization: { "@id": `${SITE_ORIGIN}/#organization` },
 	};
 }
+
+/**
+ * The only public service. No price, no discontinued services, no email.
+ * Provider points at the Organization already emitted by Layout.
+ */
+export function metaAdsServiceSchema() {
+	return {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"@id": `${SITE_ORIGIN}/services/meta-ads#service`,
+		name: "Meta 廣告投放",
+		alternateName: "Meta Ads",
+		serviceType: "Meta 廣告投放",
+		url: `${SITE_ORIGIN}/services/meta-ads`,
+		provider: { "@id": `${SITE_ORIGIN}/#organization` },
+		areaServed: {
+			"@type": "Country",
+			name: "Hong Kong",
+		},
+		inLanguage: "zh-HK",
+		description:
+			"Meta 廣告投放。可以用客戶自己的 Meta 廣告帳戶，亦可以用公司帳戶代為投放；兩種收費不同，亦不是每位客戶都適合使用自己的帳戶。使用客戶帳戶時，會在該帳戶內操作，而不是把整個帳戶轉到公司名下、只提供報告；像素、受眾與歷史數據留在客戶一方。這是合作方式，不是成效保證。",
+	};
+}
+
+/**
+ * Reviews already visible on the homepage. Names and bodies must be copied
+ * verbatim. Do not add reviewRating, aggregateRating, or invented dates.
+ * Reviewer Person nodes are only the names already shown; this is not a
+ * founder or staff Person profile.
+ */
+export function homepageReviewsSchema(reviews: { name: string; body: string }[]) {
+	return {
+		"@context": "https://schema.org",
+		"@graph": reviews.map((review) => ({
+			"@type": "Review",
+			author: {
+				"@type": "Person",
+				name: review.name,
+			},
+			reviewBody: review.body,
+			itemReviewed: {
+				"@type": "Organization",
+				"@id": `${SITE_ORIGIN}/#organization`,
+				name: LEGAL_NAME,
+				url: `${SITE_ORIGIN}/`,
+			},
+			inLanguage: "zh-HK",
+		})),
+	};
+}

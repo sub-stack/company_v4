@@ -7,6 +7,7 @@ import { withBase } from '../../../utils/withBase';
   title="接 Meta 流量前，網站／落地頁要準備咩？"
   date="2026年11月9日"
   publishedTime="2026-11-09"
+  modifiedTime="2026-11-25"
   description="開 Meta 廣告之前，先睇網站速度、手機版好唔好用、優惠同下一步清唔清楚，同追蹤準備好未。呢篇係承接流量前嘅清單，幫你避免頁面未準備好就燒預算。唔會話你改完就有某個轉換率或查詢量。呢份清單對齊網站講嘅身體檢查，方便開跑前自己剔一次，唔使一次過改晒。"
   image={withBase('/blog/prepare-site-before-meta-ads.webp')}
 >
@@ -27,7 +28,7 @@ import { withBase } from '../../../utils/withBase';
 
   <h2>速度：人未睇到你賣咩就走</h2>
   <p>
-    用你客人會用嘅方法開一次：手機、流動數據、唔好用公司 Wi-Fi 同已經開住嘅快取。由撳連結到見到你賣咩、價錢或者下一步，中間等幾耐、有冇白畫面、有冇彈出一排窗。
+    用你客人會用嘅方法開一次：手機、流動數據、唔好用公司 Wi-Fi 同已經開住嘅快取。由撳連結到見到你賣咩、價錢或者下一步，中間等幾耐、有冇白畫面、有冇彈出一排窗。Google 用 Core Web Vitals 描述真實使用時嘅載入、互動同版面穩定：<a href="https://developers.google.com/search/docs/appearance/core-web-vitals">Understanding Core Web Vitals and Google search results - Google Search Central</a>。呢個係頁面體驗嘅官方說明，唔係轉換率保證。
   </p>
   <ul>
     <li>主要內容未出現，人已經要決定留定走。呢段等待係你嘅問題，唔係「算法未熱身」。</li>
@@ -37,7 +38,7 @@ import { withBase } from '../../../utils/withBase';
 
   <h2>手機版係咪真係用得？</h2>
   <p>
-    Meta 嘅點擊好多時喺手機上發生。電腦版好睇、手機版要放大先撳到按鈕，等於你將廣告送到一個難用嘅門口。
+    Meta 嘅點擊好多時喺手機上發生。電腦版好睇、手機版要放大先撳到按鈕，等於你將廣告送到一個難用嘅門口。Google 嘅頁面體驗說明會問內容喺手機上顯唔顯示得好：<a href="https://developers.google.com/search/docs/appearance/page-experience">Understanding page experience in Google Search results - Google Search Central</a>。
   </p>
   <ul>
     <li>用手機由上到下行完：字讀唔讀到、按鈕大唔大、表單填唔填到、WhatsApp 開唔開到。</li>
@@ -57,10 +58,10 @@ import { withBase } from '../../../utils/withBase';
 
   <h2>追蹤準備好未？</h2>
   <p>
-    未知道「查詢」或者「購買」會唔會被記低，就開廣告，你之後唔會知道邊筆錢有用。追蹤準備好，先至有得事後對數，唔係為咗令數字變好睇。
+    未知道「查詢」或者「購買」會唔會被記低，就開廣告，你之後唔會知道邊筆錢有用。追蹤準備好，先至有得事後對數，唔係為咗令數字變好睇。Meta Pixel 係放喺網站上嘅程式碼，用嚟量度人喺網站做過嘅動作：<a href="https://www.facebook.com/business/help/742478679120153">Learn about Meta Pixel - Meta Business Help Center</a>。建立 Pixel 同設定事件（例如購買）係喺 Events Manager 做：<a href="https://www.facebook.com/business/help/952192354843755">How to set up a Meta Pixel and events on your website - Meta Business Help Center</a>。
   </p>
   <ul>
-    <li>像素同轉換事件裝喺<strong>你自己個 Meta 帳戶</strong>，唔好只係存在代理個戶。點解帳戶要係你嘅，睇 <a href={withBase('/insights/blog/why-own-your-meta-ads-account')}>呢篇</a>。</li>
+    <li>像素同轉換事件裝喺<strong>你自己個 Meta 帳戶</strong>，唔好只係存在代理個戶。Meta 說明，只有像素所在嘅 business portfolio 先可以將個像素分享俾另一個 portfolio：<a href="https://www.facebook.com/business/help/279059996069252">Add people to your Meta Pixel in Meta Business Suite - Meta Business Help Center</a>。點解帳戶要係你嘅，睇 <a href={withBase('/insights/blog/why-own-your-meta-ads-account')}>呢篇</a>。</li>
     <li>你想優化嘅動作要講得明：係送出表單、撳 WhatsApp、落單，定係淨係瀏覽頁面。淨係量到瀏覽，就未準備好用廣告去學。</li>
     <li>自己做一次測試動作，再入 Events Manager 睇個事件出唔出現。出唔出現係準備問題；出現幾多先算好，呢篇唔答，因為每行唔同，而且冇人可以誠實保證。</li>
   </ul>

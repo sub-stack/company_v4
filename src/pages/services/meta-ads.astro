@@ -8,7 +8,7 @@ import whatsapp from '../../assets/img/whatsapp.png';
 import metaVerified from '../../assets/img/meta-verified.png';
 import metaPartner from '../../assets/img/meta-partner.png';
 import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote, X, Plus } from 'lucide-astro';
-import { faqPageSchema, jsonLd } from '../../utils/seo';
+import { faqPageSchema, jsonLd, metaAdsServiceSchema } from '../../utils/seo';
 import { withBase } from '../../utils/withBase';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import caseStudy1 from '../../assets/img/case-studies/cases-1.jpg';
@@ -95,8 +95,9 @@ const processSteps = [
 
 <Layout
 	title="Meta 廣告投放服務 - 透明、穩陣、講真話"
-	description="Meta 廣告投放係雙贏營銷而家公開嘅服務。頁面講商業診斷、事前帳戶檢查、素材策略同數據檢討，全程用你自己嘅帳戶落廣告，月月清、不綁約。網站寫明唔會保證包單，亦唔會保證某個 ROAS。合作前可以先做診斷；診斷本身唔等於會有客。頁面亦寫明邊類生意唔接。"
+	description="Meta 廣告投放係雙贏營銷而家公開嘅服務。頁面講商業診斷、事前帳戶檢查、素材策略同數據檢討。可以用你自己嘅帳戶，亦可以用公司帳戶代投，兩種收費唔同，亦唔係每個客都適合用自己帳戶。用你帳戶時會入去操作，數據留喺你度。月月清、不綁約。網站寫明唔會保證包單，亦唔會保證某個 ROAS。合作前可以先做診斷；診斷本身唔等於會有客。頁面亦寫明邊類生意唔接。"
 >
+	<script type="application/ld+json" set:html={jsonLd(metaAdsServiceSchema())} />
 	<script type="application/ld+json" set:html={jsonLd(faqPageSchema(metaAdsFaqs))} />
 	<!-- Hero -->
 	<section class="pt-32 pb-20 bg-electric-yellow/10 border-b-4 border-black">
@@ -136,7 +137,7 @@ const processSteps = [
 				<h2 class="font-display font-black text-3xl md:text-5xl mb-6 reveal">
 					點解 2xWin 嘅 Meta 廣告投放唔同？
 				</h2>
-				<AEOBlock content="2xWin 的 Meta 廣告服務核心在於「透明度」與「商業邏輯」。我們不使用花巧術語，而是直接在客戶擁有/我們的帳戶中操作，確保數據 100% 可見。我們結合產品力分析與高轉化素材策略，幫助中小企在不綁約的前提下，實現穩定的業績增長。" />
+				<AEOBlock content="2xWin 的 Meta 廣告服務核心在於「透明度」與「商業邏輯」。我們不使用花巧術語。兩種方法都接受：在客戶自己的 Meta 廣告帳戶內操作，或使用公司帳戶代為投放；兩種收費不同，亦不是每位客戶都適合使用自己的帳戶。若使用客戶帳戶，我們會進入該帳戶操作，而不是把整個帳戶轉到公司名下、只提供報告；像素、受眾與歷史數據留在客戶一方。這是合作方式，不是成效保證。我們結合產品力分析與素材策略，在不綁約的前提下持續檢討投放。" />
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -198,7 +199,7 @@ const processSteps = [
 							<div class="w-6 h-6 bg-green-500/20 border border-green-500 flex items-center justify-center flex-shrink-0 mt-1">
 								<Plus size={14} class="text-green-500" />
 							</div>
-							<p class="text-off-white/90 text-base leading-[1.6]">樂意用你帳戶直接操作，唔怕你睇真實數據，唔怕你知setting，百分百透明</p>
+							<p class="text-off-white/90 text-base leading-[1.6]">兩種都接受：入你自己帳戶操作，或者用我哋公司帳戶代投。兩種收費唔同，亦唔係每個客都適合用自己帳戶。用你帳戶時，我哋入你個戶操作，唔會叫你將成個戶口交到我哋名下、淨係等報告；像素、受眾同歷史留喺你度，唔怕你睇真實數據同 setting。呢個係合作方式，唔係成效保證。</p>
 						</li>
 						<li class="flex items-start space-x-4">
 							<div class="w-6 h-6 bg-green-500/20 border border-green-500 flex items-center justify-center flex-shrink-0 mt-1">
