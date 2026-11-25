@@ -8,7 +8,7 @@ Double Win Marketing（網站上亦稱 2xWin）係香港線上廣告顧問，標
 
 ## 網站自述
 
-- 幫中小企擺脫黑箱 Agency，用客戶自己嘅廣告帳戶落廣告，強調帳戶權限同數據留喺客戶手上。
+- 幫中小企擺脫黑箱 Agency。Meta 廣告可以用客戶自己嘅廣告帳戶，亦可以用公司帳戶代為投放；兩種收費唔同，亦唔係每個客都適合用自己帳戶。用客戶帳戶時，會入該帳戶操作，數據留喺客戶手上。
 - 不綁約、月月清；網站寫明靠實力留客，覺得做得唔好可以停，唔使違約金。
 - 首頁標示：Meta 官方認證、Meta 合作夥伴團隊、不綁約月月清、定額服務費、廣告帳戶 100% 透明。呢啲係網站展示嘅標語，未喺呢份文件額外核實資格。
 - Meta 廣告頁寫明：唔會保證包單或保證 ROAS；如果產品本身有問題，會直接講，而唔係繼續燒廣告費。
@@ -48,7 +48,7 @@ Double Win Marketing（網站上亦稱 2xWin）係香港線上廣告顧問，標
 - [常見問題](https://www.2xwin.com.hk/faq)
 - [Blog](https://www.2xwin.com.hk/insights/blog)：獲客知識，即學即用。
 - [後台話有客，點解 WhatsApp 冇人搵？](https://www.2xwin.com.hk/insights/blog/ads-report-says-leads-whatsapp-quiet)（2026-11-15，2026-11-25 修訂）：後台話有客但 WhatsApp 好靜時，先分清報告數字同真正查詢，自己對數再決定改報告、覆客定產品。頁面寫明唔保證對數就有單。
-- [Meta 廣告帳戶點解要用自己嘅？](https://www.2xwin.com.hk/insights/blog/why-own-your-meta-ads-account)（2026-11-09，2026-11-25 修訂）：廣告喺客戶自己個 Meta 帳戶入面跑，講管理員權限同數據點樣留喺客戶手上。頁面寫明帳戶喺你名下唔等於會有單或 ROAS。
+- [Meta 廣告帳戶點解要用自己嘅？](https://www.2xwin.com.hk/insights/blog/why-own-your-meta-ads-account)（2026-11-09，2026-11-25 修訂）：講點解用自己個 Meta 帳戶通常更易保留管理員權限同數據。頁面同時寫明兩種方法都接受（自己帳戶或公司帳戶代投），用自己帳戶時先係入該帳戶操作、數據留喺客戶一方。頁面寫明帳戶喺你名下唔等於會有單或 ROAS。
 - [接 Meta 流量前，網站／落地頁要準備咩？](https://www.2xwin.com.hk/insights/blog/prepare-site-before-meta-ads)（2026-11-09，2026-11-25 修訂）：開廣告前先睇速度、手機版、優惠清唔清楚同追蹤準備。頁面寫明唔保證改完就有某個轉換率。
 - [中小企 Meta 廣告預算點起步？](https://www.2xwin.com.hk/insights/blog/hk-sme-meta-ads-budget-start)（2026-11-09，2026-11-25 修訂）：分開廣告費同服務費嘅預算框架，同常見錯誤。寫明成效取決於產品、優惠同流程，唔提供 ROAS、CPA 或包單數字。
 - [香港中小企點揀 Meta 廣告代理？](https://www.2xwin.com.hk/insights/blog/how-to-choose-meta-ads-agency-hk)（2026-11-09，2026-11-25 修訂）：簽約前點樣睇廣告帳戶係咪自己嘅、有無死約，以及「包單」同保證 ROAS 呢類賣點。頁面寫明唔保證包單或 ROAS。
