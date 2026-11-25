@@ -11,12 +11,12 @@ import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Q
 import { faqPageSchema, jsonLd } from '../../utils/seo';
 import { withBase } from '../../utils/withBase';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import caseStudy1 from '../../assets/img/case-studies/cases-1.jpg';
+import caseStudy2 from '../../assets/img/case-studies/cases-2.jpg';
+import caseStudy3 from '../../assets/img/case-studies/cases-3.jpg';
+import caseStudy4 from '../../assets/img/case-studies/cases-4.jpg';
 
-const caseStudyImageModules = import.meta.glob('../../assets/img/case-studies/cases-*.jpg', { eager: true });
-const caseStudyImages = Object.values(caseStudyImageModules)
-	.map((img: any) => img.default)
-	.sort((a, b) => a.src.localeCompare(b.src));
-const getCaseStudyImage = (index: number) => caseStudyImages[index] ?? caseStudyImages[0];
+const caseDisclaimer = "過往成功案例範圍，唔代表保證結果。";
 
 const metaAdsFaqs = [
 	{
@@ -45,26 +45,26 @@ const metaAdsFaqs = [
 const caseStudies = [
 	{
 		title: "醫美行業：2個月大幅提升",
-		description: "透過精準受眾定位與素材優化，將原本無人問津的線上諮詢轉化為每日穩定客源。ROAS 提升 400%，每日穩定獲取 10+ 高意向查詢。",
-		image: getCaseStudyImage(0),
+		body: "呢張圖係已公開嘅 Meta 廣告後台數字。客人最初：開始訊息對話 27 次，每次訊息對話開始成本 $528.51，總支出 $14,269.64。之後：開始訊息對話 75 次，每次訊息對話開始成本 $164.44，總支出 $12,332.91。圖上寫「2個月成效提升 321%」。",
+		image: caseStudy1,
 		tags: ["Meta Ads", "受眾定位", "素材優化"]
 	},
 	{
 		title: "零售業：數據驅動優化",
-		description: "打破傳統廣告盲點，利用數據分析找出高價值產品，ROAS 提升 300%。成功將廣告成本降低 40%，同時保持業績穩定增長。",
-		image: getCaseStudyImage(2),
+		body: "呢張圖係已公開嘅 Meta 廣告後台數字。客人最初：總支出 $12,037.35，購買 ROAS（廣告投資回報率）平均 0.74。之後：總支出 $900.95，購買 ROAS 平均 28.57。圖上寫「1個星期網店銷售提升 38倍」。",
+		image: caseStudy3,
 		tags: ["Meta Ads", "數據分析", "查詢成本優化"]
 	},
 	{
 		title: "教育中心：系統化獲客",
-		description: "建立自動化獲客系統，將廣告流量引導至高轉化 Landing Page。成功將每位學生獲取成本降低 50%，報名人數提升 150%。",
-		image: getCaseStudyImage(1),
+		body: "呢張圖係英語補習中心已公開嘅 Meta 廣告後台數字。客人最初：開始訊息對話 50 次，每次訊息對話開始成本 $347.93，總支出 $17,396.40。之後：開始訊息對話 224 次，每次訊息對話開始成本 $135.88，總支出 $30,437.83。圖上寫「3個月成效提升 256%」。",
+		image: caseStudy2,
 		tags: [, "Meta Ads", "獲客系統"]
 	},
 	{
 		title: "奢侈品回收店: 查詢成本平一倍",
-		description: "針對店鋪周邊區域進行精準投放，並優化預約流程。成功將到店率提升 80%，並建立起穩定的新客來源。",
-		image: getCaseStudyImage(3),
+		body: "呢張圖係已公開嘅 Meta 廣告後台數字。客人最初：開始訊息對話 126 次，每次訊息對話開始成本 $157.24，花費金額 $19,812.03。之後：開始訊息對話 258 次，每次訊息對話開始成本 $83.24，花費金額 $21,475.67。圖上寫「查詢量提升，查詢成本平咗近一倍」。",
+		image: caseStudy4,
 		tags: [, "預約優化", "Meta Ads"]
 	}
 ];
@@ -238,7 +238,7 @@ const processSteps = [
 					睇吓我哋幫客戶達成嘅實戰結果
 				</h2>
 				<AEOBlock content="2xWin 的 Meta 廣告實戰案例涵蓋了零售、教育及美容等多個行業。我們通過精準的受眾定位、高轉化素材策略及數據驅動的優化流程，幫助客戶實現了 ROAS 提升 200%-400%、獲客成本降低 50% 等顯著成效。每一個案例都證明了我們「透明、穩陣、講真話」的服務價值。" />
-				<p class="mt-4 text-brand-charcoal text-base leading-[1.6] reveal">過往案例範圍，唔代表保證結果。</p>
+				<p class="mt-4 text-brand-charcoal text-base leading-[1.6] reveal">過往成功案例範圍，唔代表保證結果。</p>
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -263,9 +263,8 @@ const processSteps = [
 								))}
 							</div>
 							<h3 class="font-display font-black text-2xl mb-4">{study.title}</h3>
-							
-						  
-							
+							<p class="text-base leading-[1.7] text-charcoal/90">{study.body}</p>
+							<p class="mt-4 text-base leading-[1.7] text-charcoal">{caseDisclaimer}</p>
 						</div>
 					</div>
 				))}

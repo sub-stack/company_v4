@@ -18,6 +18,17 @@ interface Props {
 
 const { title, date, image = withBase('/og.jpg'), author = "Double Win Marketing", description, publishedTime, modifiedTime } = Astro.props;
 
+/** Visible revision line only when the recorded revision is a different day. */
+const showUpdated = Boolean(publishedTime && modifiedTime && modifiedTime !== publishedTime);
+
+function zhDateFromIso(iso: string): string {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!match) return iso;
+  return `${match[1]}年${Number(match[2])}月${Number(match[3])}日`;
+}
+
+const updatedLabel = showUpdated && modifiedTime ? zhDateFromIso(modifiedTime) : "";
+
 /** Production absolute URL for a hero src. Strips the GitHub Pages base so OG stays on www. */
 function absoluteCoverUrl(src: string): string {
   if (/^https?:\/\//i.test(src)) return src;
@@ -75,8 +86,15 @@ const posting = publishedTime
         <h1 class="font-display font-black text-4xl md:text-5xl lg:text-6xl leading-[1.2] mb-6 text-charcoal">
           {title}
         </h1>
-        <div class="flex items-center space-x-4 font-mono text-charcoal/80 border-b-4 border-black pb-8">
-          <span>{date}</span>
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-charcoal/80 border-b-4 border-black pb-8">
+          {showUpdated ? (
+            <>
+              <time datetime={publishedTime}>發佈：{date}</time>
+              <time datetime={modifiedTime}>更新：{updatedLabel}</time>
+            </>
+          ) : (
+            <span>{date}</span>
+          )}
           <span>•</span>
           <span>{author}</span>
         </div>

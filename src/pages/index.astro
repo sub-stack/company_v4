@@ -6,14 +6,20 @@ import { withBase } from '../utils/withBase';
 import {Image} from 'astro:assets';
 import caseStudy1 from "../assets/img/case-studies/cases-1.jpg";
 import caseStudy2 from "../assets/img/case-studies/cases-2.jpg";
+import testimonial1 from "../assets/img/testimonial_1.png";
+import testimonial2 from "../assets/img/testimonial_2.png";
+import testimonial3 from "../assets/img/testimonial_3.png";
+import testimonial4 from "../assets/img/testimonial_4.png";
+import testimonial5 from "../assets/img/testimonial_5.png";
+import testimonial6 from "../assets/img/testimonial_6.png";
+import testimonial7 from "../assets/img/testimonial_7.png";
+import testimonial8 from "../assets/img/testimonial_8.png";
 import { Target, ShieldCheck, Zap, BarChart3, MessageCircle, ArrowRight, Star, Quote, Check } from 'lucide-astro';
 import whatsappImg from '../assets/img/whatsapp.png';
 import metaPartner from '../assets/img/meta-partner.png';
 import metaVerified from '../assets/img/meta-verified.png';
 
-const testimonialImages = import.meta.glob('../assets/img/testimonial_*.png', { eager: true });
-const images = Object.values(testimonialImages).map((img: any) => img.default);
-const sortedImages = images.sort((a, b) => a.src.localeCompare(b.src));
+const caseDisclaimer = "過往成功案例範圍，唔代表保證結果。";
 
 const trustBadges = [
 	"Meta 官方認證",
@@ -65,13 +71,84 @@ const advantages = [
 const caseStudies = [
 	{
 		title: "醫美行業：2個月大幅提升",
-		image: caseStudy1
+		image: caseStudy1,
+		body: "呢張圖係已公開嘅 Meta 廣告後台數字。客人最初：開始訊息對話 27 次，每次訊息對話開始成本 $528.51，總支出 $14,269.64。之後：開始訊息對話 75 次，每次訊息對話開始成本 $164.44，總支出 $12,332.91。圖上寫「2個月成效提升 321%」。",
 	},
 	{
 		title: "英語補習中心：3個月成效提升",
-		image: caseStudy2
+		image: caseStudy2,
+		body: "呢張圖係英語補習中心已公開嘅 Meta 廣告後台數字。客人最初：開始訊息對話 50 次，每次訊息對話開始成本 $347.93，總支出 $17,396.40。之後：開始訊息對話 224 次，每次訊息對話開始成本 $135.88，總支出 $30,437.83。圖上寫「3個月成效提升 256%」。",
 	},
-	
+];
+
+const testimonials = [
+	{
+		name: "chi kowng mak",
+		image: testimonial1,
+		paragraphs: [
+			"衷心感謝Double win團隊為我公司提供專業且高效的廣告服務。在與貴團隊合作的過程中，我們深刻感受到您們對廣告投放的精準把控與專業建議。您們不僅幫助我們以相同的預算取得更出色的宣傳效果，還以多元化的投放策略讓廣告觸及到更廣泛的目標受眾。這些努力讓我們的品牌知名度大幅提升。",
+			"此外，貴團隊卓越的專業知識使我們能夠避開許多潛在的封鎖風險，確保廣告順利運行。您們貼心的指導與細緻的安排也讓我們的每一步投放策略更加明確、有效。這種專業與敬業的態度值得高度讚揚！",
+			"再次感謝貴團隊的支持與努力，期待未來一直保持合作，共創佳績！",
+		],
+	},
+	{
+		name: "Demure Diamonds",
+		image: testimonial2,
+		paragraphs: [
+			"第一次見未俾錢已經提供專業意見，完全不吝嗇去分享同教我哋點去做，而且每次都會提供意見去優化廣告設定，務求令我哋客戶得到最大利益",
+		],
+	},
+	{
+		name: "WONDERIO ETSY",
+		image: testimonial3,
+		paragraphs: [
+			"Jacky 好勤! 唔洗點樣 brief 都get 到你想做啲咩! Professional 同人勁nice! 廣告落得非常precise! Highly recommend!!",
+		],
+	},
+	{
+		name: "BEAUTI GROUP BEAUTI",
+		image: testimonial4,
+		paragraphs: [
+			"專業、高效率！值得信賴",
+			"遇到有問題時 能快速回應需求並調整方向～",
+			"確保我們能即時掌握進度與成效。",
+		],
+	},
+	{
+		name: "HK New Smile",
+		image: testimonial5,
+		paragraphs: [
+			"之前我哋一直幫襯開另一間廣告公司都有七、八年，但成效其實一直都普通，所以決定試下轉一轉公司。點知真係有驚喜！轉咗之後銷量比以前提升咗兩至三倍，效果好明顯。",
+			"但呢唔只係幫你落廣告咁簡單，而係會同你一齊分析策略。",
+			"例如同一個素材用耐咗銷量開始跌，佢哋會主動提醒我哋準備多啲唔同素材，教我哋點樣做素材池，真係好有廣告策略思維。",
+			"另外佢哋都好願意聆聽我哋嘅感受，會同我哋一齊分析市場情況。例如香港市場有時短暫飽和，佢哋都會建議我哋試下拓展澳門市場，結果又真係有驚喜。",
+			"最欣賞係佢哋會幫客人控制好budget。銷量好嘅時候會幫我哋加大投放，銷量慢落嚟又會幫我哋慳返，唔會亂燒錢。每個星期都會跟進，仲會有幾次匯報數據，令人非常安心。",
+			"收費亦都好合理，係月費形式，性價比好高。佢哋仲會用過去嘅數據幫我哋分析，推薦一啲適合嘅明星素材，真係幫到好多。",
+			"整體嚟講真係好專業又負責任，如果想搵一間會用心幫你做生意嘅廣告公司，真心推薦。",
+		],
+	},
+	{
+		name: "Ka Yeung Chan",
+		image: testimonial6,
+		paragraphs: [
+			"很負責任的公司",
+			"有問題會即時作出回饋及解決",
+		],
+	},
+	{
+		name: "Vicki Sze",
+		image: testimonial7,
+		paragraphs: [
+			"回覆快，真係超快，而且當你有疑難嘅時候，佢會逐個point同你解釋，唔會因為你嘅訴求多而Miss任何一個point，每完成一件你要求嘅細項，都好有交待，令用家覺得安心",
+		],
+	},
+	{
+		name: "joys man",
+		image: testimonial8,
+		paragraphs: [
+			"專業👍服務質素一流，有求必應，超推介！",
+		],
+	},
 ];
 ---
 
@@ -238,7 +315,8 @@ const caseStudies = [
 						</div>
 						<div class="p-8">
 							<h3 class="font-display font-black text-2xl mb-4">{study.title}</h3>
-							
+							<p class="text-base leading-[1.7] text-charcoal/90">{study.body}</p>
+							<p class="mt-4 text-base leading-[1.7] text-charcoal">{caseDisclaimer}</p>
 						</div>
 					</div>
 				))}
@@ -277,21 +355,31 @@ const caseStudies = [
     </div>
 
     <div class="testimonials-masonry columns-1 sm:columns-2 lg:columns-3 gap-10">
-      {sortedImages.map((imgAsset, index) => (
+      {testimonials.map((review, index) => (
         <div
-          class="testimonial-shot-card break-inside-avoid bg-white border-2 border-black rounded-2xl p-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all group mb-10 cursor-pointer"
-          role="button"
-          tabindex="0"
-          aria-label={`Open testimonial screenshot ${index + 1}`}
+          class="testimonial-shot-card break-inside-avoid bg-white border-2 border-black rounded-2xl p-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] mb-10"
         >
-          <div class="testimonial-shot-frame w-full min-h-[220px] bg-[#f1f1f1] rounded-xl border border-black/20 flex items-center justify-center relative overflow-hidden">
+          <div
+            class="testimonial-shot-frame w-full min-h-[220px] bg-[#f1f1f1] rounded-xl border border-black/20 flex items-center justify-center relative overflow-hidden cursor-pointer"
+            role="button"
+            tabindex="0"
+            aria-label={`放大 ${review.name} 嘅 Google 評價截圖`}
+          >
             <Image
-              src={imgAsset}
-              alt={`Client review screenshot ${index + 1}`}
+              src={review.image}
+              alt={`${review.name} 嘅 Google 評價截圖`}
               class="testimonial-shot-image w-full h-auto"
               loading={index < 3 ? "eager" : "lazy"}
               quality="high"
             />
+          </div>
+          <div class="px-2 pt-4 pb-2">
+            <h3 class="font-display font-black text-lg text-charcoal mb-3">{review.name}</h3>
+            <div class="space-y-3 text-sm leading-[1.7] text-charcoal/90">
+              {review.paragraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </div>
           </div>
         </div>
       ))}
@@ -329,7 +417,7 @@ const caseStudies = [
 			const lightbox = document.getElementById('testimonial-lightbox');
 			const lightboxImg = document.getElementById('testimonial-lightbox-image') as HTMLImageElement;
 			const closeBtn = document.getElementById('testimonial-lightbox-close');
-			const cards = document.querySelectorAll('.testimonial-shot-card');
+			const frames = document.querySelectorAll('.testimonial-shot-frame');
 
 			if (!lightbox || !lightboxImg || !closeBtn) return;
 
@@ -354,20 +442,19 @@ const caseStudies = [
 				document.body.style.overflow = '';
 			};
 
-			cards.forEach(card => {
-				card.addEventListener('click', () => {
-					const img = card.querySelector('img');
+			frames.forEach(frame => {
+				frame.addEventListener('click', () => {
+					const img = frame.querySelector('img');
 					if (img && img.src && img.style.display !== 'none') {
 						openLightbox(img.src);
 					}
 				});
-				
-				// Accessibility: open on enter key
-				card.addEventListener('keydown', (e) => {
+
+				frame.addEventListener('keydown', (e) => {
 					const keyboardEvent = e as KeyboardEvent;
 					if (keyboardEvent.key === 'Enter' || keyboardEvent.key === ' ') {
 						e.preventDefault();
-						const img = card.querySelector('img');
+						const img = frame.querySelector('img');
 						if (img && img.src && img.style.display !== 'none') {
 							openLightbox(img.src);
 						}
