@@ -17,6 +17,7 @@ const navLinks = [
 	{ name: '關於我們', href: '/about/mission' },
 	{ name: 'Blog', href: '/insights/blog' },
 	{ name: 'FAQ', href: '/faq' },
+	{ name: '聯絡我們', href: '/contact' },
 ];
 ---
 
@@ -43,7 +44,7 @@ const navLinks = [
 			</a>
 
 			<!-- Desktop Nav -->
-			<nav class="hidden lg:flex items-center space-x-8">
+			<nav class="hidden lg:flex items-center space-x-5">
 				{navLinks.map(link => (
 					link.children ? (
 						<div class="relative group dropdown-container">

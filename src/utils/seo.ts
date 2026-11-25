@@ -2,7 +2,6 @@ export const SITE_ORIGIN = "https://www.2xwin.com.hk";
 
 /** Confirmed NAP. Do not add opening hours or extra phone numbers. */
 export const LEGAL_NAME = "Double Win Marketing HK Limited／雙贏營銷香港有限公司";
-export const BUSINESS_EMAIL = "info@2xwin.com";
 export const PHONE_DIGITS = "85252232817";
 export const PHONE_DISPLAY = "+852 5223 2817";
 export const BUSINESS_ADDRESS =
@@ -25,7 +24,7 @@ function postalAddress() {
 }
 
 export const DEFAULT_DESCRIPTION =
-	"幫中小企擺脫黑箱 Agency，用透明 Meta 廣告穩陣放大生意。唔靠花巧術語，唔靠死約留客。由商業分析、帳戶透明，到投放節奏，都會同你講人話、講真話。";
+	"幫香港中小企睇清 Meta 廣告點樣運作：用客戶自己嘅帳戶投放，預算同數據留喺客戶手上，合作完唔使由零開始。雙贏營銷由商業分析講到投放節奏，唔靠花巧術語，亦唔靠死約。合作前可以先做診斷，唔保證做完就有客。未寫明嘅服務，網站就唔當係而家提供緊。";
 
 export const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/og.jpg`;
 
@@ -167,7 +166,6 @@ export function organizationSchema() {
 		alternateName: ["Double Win Marketing", "2xWin"],
 		url: `${SITE_ORIGIN}/`,
 		logo: `${SITE_ORIGIN}/logo.png`,
-		email: BUSINESS_EMAIL,
 		telephone: PHONE_DISPLAY,
 		description: "幫中小企擺脫黑箱 Agency，用透明 Meta 廣告穩陣放大生意。",
 		address: postalAddress(),
@@ -175,7 +173,6 @@ export function organizationSchema() {
 		contactPoint: {
 			"@type": "ContactPoint",
 			telephone: PHONE_DISPLAY,
-			email: BUSINESS_EMAIL,
 			contactType: "customer service",
 			areaServed: "HK",
 			availableLanguage: ["en", "zh-Hant"],
@@ -192,7 +189,6 @@ export function localBusinessSchema() {
 		url: `${SITE_ORIGIN}/`,
 		logo: `${SITE_ORIGIN}/logo.png`,
 		image: `${SITE_ORIGIN}/logo.png`,
-		email: BUSINESS_EMAIL,
 		telephone: PHONE_DISPLAY,
 		address: postalAddress(),
 		sameAs: SAME_AS,

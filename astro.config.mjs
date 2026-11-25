@@ -16,6 +16,9 @@ const base =
 export default defineConfig({
   site,
   base,
+  // Canonical URLs have no trailing slash, except the homepage.
+  // Astro 6 preview rejects the slash form. Production 301s it via vercel.json.
+  trailingSlash: "never",
   vite: {
     plugins: [tailwindcss()],
   },

@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { withBase } from '../utils/withBase';
+
+const links = [
+	{ name: '首頁', href: '/', note: '透明 Meta 廣告同合作方式' },
+	{ name: 'Meta 廣告投放', href: '/services/meta-ads', note: '而家公開嘅廣告服務' },
+	{ name: '品牌使命', href: '/about/mission', note: '點解帳戶同數據要留喺你手上' },
+	{ name: '合作流程', href: '/about/process', note: '由診斷到執行嘅步驟' },
+	{ name: 'Blog', href: '/insights/blog', note: '帳戶、預算、落地頁同報告筆記' },
+	{ name: '常見問題', href: '/faq', note: '長約、診斷同點樣開始' },
+	{ name: '聯絡我們', href: '/contact', note: 'WhatsApp、電話同辦公地址' },
+];
+---
+
+<Layout
+	title="找不到呢一頁"
+	description="呢個網址喺雙贏營銷網站搵唔到，可能打錯、舊連結已失效，或者頁面已經移走。你可以返首頁、睇 Meta 廣告服務、讀 Blog 同常見問題，或者去聯絡頁用 WhatsApp +852 5223 2817 查詢。網站導航同頁腳亦可以返去主要頁面。"
+>
+	<section class="pt-32 pb-24">
+		<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+			<p class="inline-block bg-electric-yellow border-2 border-black px-3 py-1 font-display font-black text-sm shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] mb-6">
+				404
+			</p>
+			<h1 class="font-display font-black text-4xl md:text-6xl leading-[1.1] mb-6">
+				搵唔到呢一頁
+			</h1>
+			<p class="text-lg md:text-xl text-charcoal/80 leading-relaxed mb-10">
+				你打開嘅網址可能打錯，或者呢頁已經移走。下面係而家網站有嘅頁面，可以直接過去。
+			</p>
+			<ul class="space-y-4">
+				{links.map((link) => (
+					<li>
+						<a
+							href={withBase(link.href)}
+							class="neo-brutalism-card flex items-baseline justify-between gap-4 px-5 py-4 hover:bg-aqua-mint/40"
+						>
+							<span class="font-display font-bold text-lg">{link.name}</span>
+							<span class="text-sm text-charcoal/70 text-right">{link.note}</span>
+						</a>
+					</li>
+				))}
+			</ul>
+		</div>
+	</section>
+</Layout>

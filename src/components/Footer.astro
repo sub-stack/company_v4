@@ -31,6 +31,7 @@ const footerLinks = [
 			{ name: '合作流程', href: '/about/process' },
 			{ name: 'Blog', href: '/insights/blog' },
 			{ name: '常見問題', href: '/faq' },
+			{ name: '聯絡我們', href: '/contact' },
 		]
 	},
 ];
@@ -95,6 +96,9 @@ const footerLinks = [
 					<p class="flex items-start gap-2">
 						<MessageCircle size={16} class="mt-0.5 shrink-0 text-aqua-mint" />
 						<a href={`tel:+${PHONE_DIGITS}`} class="hover:text-white transition-colors">{PHONE_DISPLAY}</a>
+					</p>
+					<p>
+						<a href={withBase('/contact')} class="hover:text-white transition-colors">聯絡我們</a>
 					</p>
 					<p>
 						<a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">WhatsApp 查詢</a>
